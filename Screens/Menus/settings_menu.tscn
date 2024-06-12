@@ -1,0 +1,254 @@
+[gd_scene load_steps=11 format=3 uid="uid://d251fsg22lan5"]
+
+[ext_resource type="PackedScene" path="res://Screens/standard_bg.tscn" id="1_mspoj"]
+[ext_resource type="Script" path="res://scripts/VolSlider.cs" id="2_awlum"]
+[ext_resource type="Texture2D" uid="uid://clakgbagqqttc" path="res://sprites/GUI/SliderPin.png" id="2_gp21o"]
+[ext_resource type="Theme" uid="uid://o4h4maoo3xqe" path="res://Misc/theme1.tres" id="3_vj277"]
+[ext_resource type="Script" path="res://scripts/ExitButton.cs" id="4_76gy6"]
+[ext_resource type="Script" path="res://scripts/inputMap.cs" id="4_qwv57"]
+[ext_resource type="Texture2D" uid="uid://dj7xd88ys88ll" path="res://sprites/GUI/icons.png" id="5_lab5p"]
+
+[sub_resource type="FontFile" id="FontFile_i803v"]
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/24/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="FontFile_bnlx7"]
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/24/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qi4d0"]
+atlas = ExtResource("5_lab5p")
+region = Rect2(192, 0, 32, 32)
+
+[node name="SettingsMenu" type="Node2D"]
+
+[node name="StandardBG" parent="." instance=ExtResource("1_mspoj")]
+
+[node name="VolumeSliders" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MasterVolSlider" type="HSlider" parent="VolumeSliders"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 32.0
+offset_right = 544.0
+offset_bottom = 48.0
+min_value = -20.0
+max_value = 15.0
+script = ExtResource("2_awlum")
+
+[node name="MusicVolSlider" type="HSlider" parent="VolumeSliders"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 80.0
+offset_right = 544.0
+offset_bottom = 96.0
+min_value = -20.0
+max_value = 15.0
+script = ExtResource("2_awlum")
+
+[node name="SFXVolSlider" type="HSlider" parent="VolumeSliders"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 128.0
+offset_right = 544.0
+offset_bottom = 144.0
+min_value = -20.0
+max_value = 15.0
+script = ExtResource("2_awlum")
+
+[node name="Label" type="Label" parent="VolumeSliders"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 208.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 24
+text = "Master Volume"
+
+[node name="Label2" type="Label" parent="VolumeSliders"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 64.0
+offset_right = 208.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 24
+text = "Music Volume"
+
+[node name="Label3" type="Label" parent="VolumeSliders"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 112.0
+offset_right = 208.0
+offset_bottom = 146.0
+theme_override_font_sizes/font_size = 24
+text = "SFX Volume"
+
+[node name="Inputs" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RotLeftButton" type="Button" parent="Inputs"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 176.0
+offset_right = 544.0
+offset_bottom = 240.0
+theme = ExtResource("3_vj277")
+theme_override_fonts/font = SubResource("FontFile_i803v")
+theme_override_font_sizes/font_size = 24
+text = "Currently <LMB>"
+script = ExtResource("4_qwv57")
+
+[node name="Label" type="Label" parent="Inputs"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 192.0
+offset_right = 238.0
+offset_bottom = 226.0
+theme_override_font_sizes/font_size = 24
+text = "Rotate Sword Left"
+
+[node name="RotRightButton" type="Button" parent="Inputs"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 272.0
+offset_right = 544.0
+offset_bottom = 336.0
+theme = ExtResource("3_vj277")
+theme_override_fonts/font = SubResource("FontFile_bnlx7")
+theme_override_font_sizes/font_size = 24
+text = "Currently <RMB>"
+script = ExtResource("4_qwv57")
+
+[node name="Label2" type="Label" parent="Inputs"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 288.0
+offset_right = 252.0
+offset_bottom = 322.0
+theme_override_font_sizes/font_size = 24
+text = "Rotate Sword Right"
+
+[node name="ShieldButton" type="Button" parent="Inputs"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 368.0
+offset_right = 544.0
+offset_bottom = 432.0
+theme = ExtResource("3_vj277")
+theme_override_fonts/font = SubResource("FontFile_bnlx7")
+theme_override_font_sizes/font_size = 24
+text = "Currently <E>"
+script = ExtResource("4_qwv57")
+
+[node name="Label3" type="Label" parent="Inputs"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 384.0
+offset_right = 240.0
+offset_bottom = 418.0
+theme_override_font_sizes/font_size = 24
+text = "Use Shield"
+
+[node name="PunchButton" type="Button" parent="Inputs"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 464.0
+offset_right = 544.0
+offset_bottom = 528.0
+theme = ExtResource("3_vj277")
+theme_override_fonts/font = SubResource("FontFile_bnlx7")
+theme_override_font_sizes/font_size = 24
+text = "Currently <Q>"
+script = ExtResource("4_qwv57")
+
+[node name="Label4" type="Label" parent="Inputs"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 480.0
+offset_right = 240.0
+offset_bottom = 514.0
+theme_override_font_sizes/font_size = 24
+text = "Use Fist"
+
+[node name="CoinButton" type="Button" parent="Inputs"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 560.0
+offset_right = 544.0
+offset_bottom = 624.0
+theme = ExtResource("3_vj277")
+theme_override_fonts/font = SubResource("FontFile_bnlx7")
+theme_override_font_sizes/font_size = 24
+text = "Currently <C>"
+script = ExtResource("4_qwv57")
+
+[node name="Label5" type="Label" parent="Inputs"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 576.0
+offset_right = 240.0
+offset_bottom = 610.0
+theme_override_font_sizes/font_size = 24
+text = "Use Coin"
+
+[node name="SeparatorBar" type="Sprite2D" parent="."]
+position = Vector2(592, 320)
+scale = Vector2(6, 70)
+texture = ExtResource("2_gp21o")
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 960.0
+offset_top = 528.0
+offset_right = 1120.0
+offset_bottom = 624.0
+theme = ExtResource("3_vj277")
+script = ExtResource("4_76gy6")
+
+[node name="Sprite2D" type="Sprite2D" parent="ExitButton"]
+position = Vector2(80, 48)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_qi4d0")
+
+[connection signal="drag_ended" from="VolumeSliders/MasterVolSlider" to="VolumeSliders/MasterVolSlider" method="_on_drag_ended"]
+[connection signal="value_changed" from="VolumeSliders/MasterVolSlider" to="VolumeSliders/MasterVolSlider" method="_on_value_changed"]
+[connection signal="drag_ended" from="VolumeSliders/MusicVolSlider" to="VolumeSliders/MusicVolSlider" method="_on_drag_ended"]
+[connection signal="value_changed" from="VolumeSliders/MusicVolSlider" to="VolumeSliders/MusicVolSlider" method="_on_value_changed"]
+[connection signal="drag_ended" from="VolumeSliders/SFXVolSlider" to="VolumeSliders/SFXVolSlider" method="_on_drag_ended"]
+[connection signal="value_changed" from="VolumeSliders/SFXVolSlider" to="VolumeSliders/SFXVolSlider" method="_on_value_changed"]
+[connection signal="button_up" from="Inputs/RotLeftButton" to="Inputs/RotLeftButton" method="_on_button_up"]
+[connection signal="button_up" from="Inputs/RotRightButton" to="Inputs/RotRightButton" method="_on_button_up"]
+[connection signal="button_up" from="Inputs/ShieldButton" to="Inputs/ShieldButton" method="_on_button_up"]
+[connection signal="button_up" from="Inputs/PunchButton" to="Inputs/PunchButton" method="_on_button_up"]
+[connection signal="button_up" from="Inputs/CoinButton" to="Inputs/CoinButton" method="_on_button_up"]
+[connection signal="button_down" from="ExitButton" to="ExitButton" method="_on_button_down"]

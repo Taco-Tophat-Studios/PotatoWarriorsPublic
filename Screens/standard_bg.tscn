@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://glertibyvh6d"]
+
+[ext_resource type="Script" path="res://scripts/miscScripts/StandardBG.cs" id="1_osvr3"]
+[ext_resource type="Texture2D" uid="uid://bd78lkb0ksbgo" path="res://sprites/Backgrounds/bgGeneral.png" id="2_rrngm"]
+
+[node name="StandardBG" type="Node2D"]
+
+[node name="bg" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="bg"]
+motion_mirroring = Vector2(1536, 768)
+script = ExtResource("1_osvr3")
+
+[node name="bg" type="Sprite2D" parent="bg/ParallaxLayer"]
+position = Vector2(256, 128)
+texture = ExtResource("2_rrngm")
+
+[node name="bg3" type="Sprite2D" parent="bg/ParallaxLayer"]
+position = Vector2(256, 384)
+texture = ExtResource("2_rrngm")
+
+[node name="bg2" type="Sprite2D" parent="bg/ParallaxLayer"]
+position = Vector2(768, 128)
+texture = ExtResource("2_rrngm")
+
+[node name="bg4" type="Sprite2D" parent="bg/ParallaxLayer"]
+position = Vector2(768, 384)
+texture = ExtResource("2_rrngm")
+
+[node name="bg5" type="Sprite2D" parent="bg/ParallaxLayer"]
+position = Vector2(1280, 128)
+texture = ExtResource("2_rrngm")
+
+[node name="bg6" type="Sprite2D" parent="bg/ParallaxLayer"]
+position = Vector2(1280, 384)
+texture = ExtResource("2_rrngm")
+
+[node name="bg7" type="Sprite2D" parent="bg/ParallaxLayer"]
+position = Vector2(1280, 640)
+texture = ExtResource("2_rrngm")
+
+[node name="bg8" type="Sprite2D" parent="bg/ParallaxLayer"]
+position = Vector2(768, 640)
+texture = ExtResource("2_rrngm")
+
+[node name="bg9" type="Sprite2D" parent="bg/ParallaxLayer"]
+position = Vector2(256, 640)
+texture = ExtResource("2_rrngm")

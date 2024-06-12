@@ -24,7 +24,6 @@ public partial class playerBase : CharacterBody2D
 	public bool comboActive = false;
 
 	//Get the gravity from the project settings to be synced with RigidBody nodes.
-	//public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle(); - this is 980 for you NERDZ reading this
 
 	public const float gravity = 1500;
 	
@@ -38,14 +37,13 @@ public partial class playerBase : CharacterBody2D
 	public float startingHealth = 120; 
 	public float health = 120;
 	public void SetHealths(float max, float begin) {
-		//if max not set (???)
 		if (max == 0) {
-			startingHealth = 3600; //because it has a rediculous amount of factors
+			startingHealth = 3600; //because it has so many factors
 		} else {
 			startingHealth = max;
 		}
 
-		//if beginnign health is in an accaptable range
+		//if beginning health is in an accaptable range
 		if (begin <= max && begin != 0) {
 			health = begin;
 		} else {
@@ -59,8 +57,7 @@ public partial class playerBase : CharacterBody2D
 	public bool comboHit = false;
 	[Export]
 	public float preComboDamage = 0;
-	//note to self: maybe put initialize stuff in the constructor??? idk the stupid _Ready() functions override each other (its startingHealth/10)
-	//further note to self: maybe call base._Ready() in the children's overrides when i have less apathy
+	
 	public float preComboDamageRequirement;
 	private Control comboBarMask;
 	private Sprite2D comboSlider;
@@ -77,10 +74,10 @@ public partial class playerBase : CharacterBody2D
 	private Label comboLabel;
 	private AudioStreamPlayer a;
 
-	//because the stupid IsOnWall() gets called multiple times, so only bounce (reverse X vel) on
+	//because  IsOnWall() gets called multiple times, so only bounce (reverse X vel) on
 	private bool bouncing = false;
 
-	//achievements (don't know why i put this in global at first)
+	//achievements
 	public bool hasUsedShield = false;
 	public bool hasUsedFist = false;
 	public bool hasUsedCoin = false;
@@ -189,7 +186,7 @@ public partial class playerBase : CharacterBody2D
 
 	public void StartDisability() 
 	{
-        //https://youtu.be/K-ySW5FGxpw?t=6
+       
         Random r = new Random();
 
         ts.Start();
@@ -216,10 +213,10 @@ public partial class playerBase : CharacterBody2D
 	
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	//DON'T use this. use playerProcess instead, because this is called IN ADDITION to any children's _Process function, such that any of them calling this will run it twice (bruh)
+	//DON'T use this. use playerProcess instead, because this is called IN ADDITION to any children's _Process function, such that any of them calling this will run it twice
 	public override void _Process(double delta)
 	{
-		if (isAuthority && !dead) //NOTE: this is checked here, so don't do it in PlayerProcess() like a dum dum
+		if (isAuthority && !dead) //NOTE: this is checked here, so don't do it in PlayerProcess()
 		{
 			PlayerProcess(delta);
 		}
@@ -234,13 +231,12 @@ public partial class playerBase : CharacterBody2D
 			sword.Lock();
 		}
 	}
-	protected void PlayerProcess(double delta) //holy crap this thing alone is 200 lines of code. Thank it all for Visual Studio's text collapse feature!
+	protected void PlayerProcess(double delta) 
 	{
 
         if (preComboDamage < preComboDamageRequirement && !comboActive)
         {
             preComboSlider.Value = preComboDamage;
-            //GD.Print(preComboDamage / preComboSlider.MaxValue);
         }
         else
         {
@@ -268,7 +264,7 @@ public partial class playerBase : CharacterBody2D
 		Position = new Vector2(Position.X + effectVelocity.X * (float)GetProcessDeltaTime(), Position.Y + effectVelocity.Y * (float)GetProcessDeltaTime());
 
 		if (!IsOnFloor()) {
-			//dunno why but somehow velocity is being called twice, so the * 2 * for EFFECT velocity has to be * 4 *
+			//NOTE: somehow velocity is being called twice, so the * 2 * for EFFECT velocity has to be * 4 *
 			effectVelocity.Y += gravity * 4 * (float)delta;
 		}
 
@@ -309,7 +305,7 @@ public partial class playerBase : CharacterBody2D
         //----------------------------------------------------------------------------------------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        //bounce the silly thing
+        //bounce the player
         if (IsOnWall() && !rolling && !IsOnFloor())
         {
             if (Mathf.Abs(effectVelocity.X) >= 400 && !bouncing)
@@ -328,7 +324,7 @@ public partial class playerBase : CharacterBody2D
 
 
         //NOTE: This is because, while gravity is on, velocity fights effectVelocity, as when effectVelocity
-        //is cut at say, the ceiling, the stored Y component of velocity will shoot it down :/
+        //is cut at say, the ceiling, the stored Y component of velocity will shoot it down 
         if (!IsOnFloor() && effectVelocity.Y == 0)
         {
             velocity.Y += gravity * 2 * (float)delta;
@@ -341,7 +337,6 @@ public partial class playerBase : CharacterBody2D
 			velocity = new Vector2(velocity.X, velocity.Y * -1);
 		}
         // Handle Jump.
-        //for some ungodly reason ui_"""""accept"""" is space and not enter. I know I can change it but i dont wanna
         if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
         {
             velocity.Y = JumpVelocity;
@@ -483,11 +478,11 @@ public partial class playerBase : CharacterBody2D
 		}
 		//SFX
 		if (!megaHit) {
-			a.Stream = Global.sfx[11];
+			//a.Stream = Global.sfx[11];
 			a.Play();
 		} else {
 			Random r = new();
-			a.Stream = Global.sfx[r.Next(3, 5)];
+			//a.Stream = Global.sfx[r.Next(3, 5)];
 			a.Play();
 		}
 		
@@ -541,8 +536,7 @@ public partial class playerBase : CharacterBody2D
 	{
 		if (comboHit && isAuthority)
 		{
-			//If this is right at the end. Its meant to be 90/96 because that is where the end sprite is,
-			//but nobody cares
+			//If this is right at the end. Its meant to be 90/96 because that is where the end sprite is
 			if (tc.timerVal > 0.9f * comboTimes[currentComboIndex])
 			{
 				comboTarget.Damage(comboFist, this.sword, this, 6);
@@ -564,7 +558,7 @@ public partial class playerBase : CharacterBody2D
 			tc.Start(comboTimes[currentComboIndex]);
 			comboLabel.Text = "Hits: " + currentComboIndex + "/4";
 		}
-		//NOTE: it would normally scale down to the left, but i did a little trolling and rotated it 180 so it instead scales to the right
+		//NOTE: it would normally scale down to the left, but i rotated it 180 so it instead scales to the right
 		comboBarMask.Size = new Vector2((1-(tc.timerVal / comboTimes[currentComboIndex]))*96, comboBarMask.Size.Y);
 		comboSlider.Position = new Vector2(tc.timerVal / comboTimes[currentComboIndex] * 96 - 48, comboSlider.Position.Y);
 		//if it goes past
@@ -603,10 +597,9 @@ public partial class playerBase : CharacterBody2D
 
 	protected void SwordDetect(swordBase sw, Fist playerFist, playerBase otherPlayer) /*otherPlayer is the one DOING the damage*/{
 		if (sw != this.sword) {
-			Damage(playerFist, sw, otherPlayer); //so yoi can hit youself without dealing damage
+			Damage(playerFist, sw, otherPlayer); //so you can hit youself without dealing max damage for the boost
 		}
 		
-		//TODO: Stop putting things in the most random places and actually maybe make sense, like putting the check if a player is hitting during a combo NOT in the other player???
 		if ((Mathf.Abs(sw.angVel) >= swordBase.max / 2) && (otherPlayer.preComboDamage >= otherPlayer.preComboDamageRequirement) && !otherPlayer.comboActive)
 		{
 			otherPlayer.StartCombo(this, playerFist);
@@ -615,10 +608,7 @@ public partial class playerBase : CharacterBody2D
 			otherPlayer.comboHit = true;
 		}
 
-		//SLAM them!!! (multiplying by the tipVel should give a sort of accelerating affect as tipVel2d increases)
-		//NOTE: Fix when not procrastinating and intelligent :/
-		//the 1.1519 is about how much tipVel goes for each angVel unit
-		//UPDATE ^^^ I did (maybe [i forgor what it was about])
+		//knockback (multiplying by the tipVel should give a sort of accelerating affect as tipVel2d increases)
 		if (sw.swingMaxReached) {
 			if (sw != this.sword)
 			{
@@ -690,8 +680,6 @@ public partial class playerBase : CharacterBody2D
 	}
 	
 }
-//woohoo! >600 lines!
-//maybe this is more of a curse though...
 
 
 

@@ -1,0 +1,435 @@
+[gd_scene load_steps=33 format=3 uid="uid://chjknqqva25th"]
+
+[ext_resource type="Script" path="res://PlayButton.cs" id="1_gp542"]
+[ext_resource type="Theme" uid="uid://o4h4maoo3xqe" path="res://Misc/theme1.tres" id="2_60e7v"]
+[ext_resource type="PackedScene" uid="uid://glertibyvh6d" path="res://Screens/standard_bg.tscn" id="2_c86a4"]
+[ext_resource type="Script" path="res://scripts/multiplayer/host_join.cs" id="2_gc3ja"]
+[ext_resource type="Script" path="res://scripts/ExitButton.cs" id="4_ie25a"]
+[ext_resource type="Texture2D" uid="uid://dj7xd88ys88ll" path="res://sprites/GUI/icons.png" id="5_la6k5"]
+[ext_resource type="Texture2D" uid="uid://dmc4idd7fgo2j" path="res://sprites/GUI/p1Box1.png" id="6_50bbu"]
+[ext_resource type="Texture2D" uid="uid://b4t75nbgrwfhh" path="res://sprites/GUI/p1Box2.png" id="7_ge1hh"]
+[ext_resource type="Script" path="res://scripts/MatchSettings.cs" id="7_tqfrr"]
+[ext_resource type="Texture2D" uid="uid://ckc1tqad5skwk" path="res://sprites/GUI/ArenaIcons.png" id="8_k7eud"]
+[ext_resource type="Texture2D" uid="uid://cef62mag1ydv2" path="res://sprites/GUI/p2Box1.png" id="8_q2seb"]
+[ext_resource type="Texture2D" uid="uid://b8emy1ivgta5b" path="res://sprites/GUI/p2Box2.png" id="9_u5jbe"]
+[ext_resource type="Texture2D" uid="uid://dvy684ll4ymn" path="res://sprites/GUI/p3Box1.png" id="10_381xr"]
+[ext_resource type="Texture2D" uid="uid://d12vimowsikxe" path="res://sprites/GUI/p3Box2.png" id="11_lcuq3"]
+[ext_resource type="Texture2D" uid="uid://4hfb7lbw1n4r" path="res://sprites/GUI/p4Box1.png" id="12_vfguq"]
+[ext_resource type="Texture2D" uid="uid://bd1drmnth6jyi" path="res://sprites/GUI/p4Box2.png" id="13_vg1y4"]
+[ext_resource type="Script" path="res://scripts/CodeLabel.cs" id="17_wvxyy"]
+[ext_resource type="PackedScene" uid="uid://b730nm0sbseyu" path="res://Screens/host_join.tscn" id="19_34sjn"]
+[ext_resource type="Script" path="res://scripts/buttonBaseClass.cs" id="19_djshr"]
+
+[sub_resource type="FontFile" id="FontFile_0gx8e"]
+cache/0/36/0/ascent = 0.0
+cache/0/36/0/descent = 0.0
+cache/0/36/0/underline_position = 0.0
+cache/0/36/0/underline_thickness = 0.0
+cache/0/36/0/scale = 1.0
+cache/0/36/0/kerning_overrides/36/0 = Vector2(0, 0)
+cache/0/36/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/36/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p55ci"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_50bbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ge1hh")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o3k3o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_q2seb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_u5jbe")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fdjvm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_381xr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lcuq3")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8eidl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_vfguq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vg1y4")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlfk1"]
+atlas = ExtResource("5_la6k5")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mbn2"]
+atlas = ExtResource("8_k7eud")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ok4m8"]
+atlas = ExtResource("8_k7eud")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evirx"]
+atlas = ExtResource("8_k7eud")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv3eb"]
+atlas = ExtResource("8_k7eud")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvvha"]
+atlas = ExtResource("8_k7eud")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iydhp"]
+atlas = ExtResource("8_k7eud")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="FontFile" id="FontFile_pp5i1"]
+cache/0/36/0/ascent = 0.0
+cache/0/36/0/descent = 0.0
+cache/0/36/0/underline_position = 0.0
+cache/0/36/0/underline_thickness = 0.0
+cache/0/36/0/scale = 1.0
+cache/0/36/0/kerning_overrides/36/0 = Vector2(0, 0)
+cache/0/36/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/36/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[node name="Lobby" type="Node2D"]
+
+[node name="StandardBG" parent="." instance=ExtResource("2_c86a4")]
+
+[node name="LobbyControl" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HostJoinNode" type="Node2D" parent="LobbyControl"]
+script = ExtResource("2_gc3ja")
+
+[node name="PlayButton" type="Button" parent="LobbyControl"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 512.0
+offset_right = 400.0
+offset_bottom = 624.0
+theme = ExtResource("2_60e7v")
+theme_override_fonts/font = SubResource("FontFile_0gx8e")
+theme_override_font_sizes/font_size = 36
+text = "Transition to Arena"
+script = ExtResource("1_gp542")
+
+[node name="MatchSettingsButton" type="Button" parent="LobbyControl"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 512.0
+offset_right = 784.0
+offset_bottom = 624.0
+theme = ExtResource("2_60e7v")
+theme_override_fonts/font = SubResource("FontFile_0gx8e")
+theme_override_font_sizes/font_size = 36
+text = "Match Settings"
+script = ExtResource("7_tqfrr")
+
+[node name="Player1ReadyCheck" type="CheckButton" parent="LobbyControl"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 200.0
+offset_right = 300.0
+offset_bottom = 214.0
+scale = Vector2(4, 4)
+theme = ExtResource("2_60e7v")
+
+[node name="Player2ReadyCheck" type="CheckButton" parent="LobbyControl"]
+layout_mode = 0
+offset_left = 784.0
+offset_top = 200.0
+offset_right = 804.0
+offset_bottom = 214.0
+scale = Vector2(4, 4)
+theme = ExtResource("2_60e7v")
+
+[node name="Player3ReadyCheck" type="CheckButton" parent="LobbyControl"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 424.0
+offset_right = 300.0
+offset_bottom = 438.0
+scale = Vector2(4, 4)
+theme = ExtResource("2_60e7v")
+
+[node name="Player4ReadyCheck" type="CheckButton" parent="LobbyControl"]
+layout_mode = 0
+offset_left = 784.0
+offset_top = 424.0
+offset_right = 804.0
+offset_bottom = 438.0
+scale = Vector2(4, 4)
+theme = ExtResource("2_60e7v")
+
+[node name="NameLabel" type="Label" parent="LobbyControl"]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 1155.0
+offset_bottom = 135.0
+theme = ExtResource("2_60e7v")
+theme_override_font_sizes/font_size = 72
+text = "<CUSTOM LOBBY NAME>"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player1Panel" type="AnimatedSprite2D" parent="LobbyControl"]
+position = Vector2(152, 208)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_p55ci")
+
+[node name="Player1Label" type="Label" parent="LobbyControl"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 136.0
+offset_right = 264.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 18
+text = "PLAYER 1"
+autowrap_mode = 1
+
+[node name="Player2Panel" type="AnimatedSprite2D" parent="LobbyControl"]
+position = Vector2(1000, 208)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_o3k3o")
+
+[node name="Player2Label" type="Label" parent="LobbyControl"]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 136.0
+offset_right = 1112.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 18
+text = "PLAYER 2
+"
+horizontal_alignment = 2
+autowrap_mode = 1
+
+[node name="Player3Panel" type="AnimatedSprite2D" parent="LobbyControl"]
+position = Vector2(152, 400)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_fdjvm")
+
+[node name="Player3Label" type="Label" parent="LobbyControl"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 328.0
+offset_right = 264.0
+offset_bottom = 432.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "PLAYER 3"
+autowrap_mode = 1
+
+[node name="Player4Panel" type="AnimatedSprite2D" parent="LobbyControl"]
+position = Vector2(1000, 400)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_8eidl")
+
+[node name="Player4Label" type="Label" parent="LobbyControl"]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 328.0
+offset_right = 1112.0
+offset_bottom = 432.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "PLAYER 4"
+horizontal_alignment = 2
+autowrap_mode = 1
+
+[node name="ExitButton" type="Button" parent="LobbyControl"]
+layout_mode = 0
+offset_left = 784.0
+offset_top = 512.0
+offset_right = 1136.0
+offset_bottom = 624.0
+theme = ExtResource("2_60e7v")
+script = ExtResource("4_ie25a")
+
+[node name="Sprite2D" type="Sprite2D" parent="LobbyControl/ExitButton"]
+position = Vector2(176, 54)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_dlfk1")
+
+[node name="CodeLabel" type="Label" parent="LobbyControl"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 136.0
+offset_right = 704.0
+offset_bottom = 170.0
+theme_override_font_sizes/font_size = 24
+text = "Code:"
+script = ExtResource("17_wvxyy")
+
+[node name="CodeLabel2" type="Label" parent="LobbyControl"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 256.0
+offset_right = 704.0
+offset_bottom = 304.0
+theme_override_font_sizes/font_size = 14
+text = "Code not working?
+Manually enter IP here (is hidden):"
+script = ExtResource("17_wvxyy")
+
+[node name="LineEdit" type="LineEdit" parent="LobbyControl"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 320.0
+offset_right = 704.0
+offset_bottom = 351.0
+theme = ExtResource("2_60e7v")
+secret = true
+
+[node name="MatchSettings" type="Control" parent="LobbyControl"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 192.0
+offset_top = 192.0
+offset_right = 576.0
+offset_bottom = 320.0
+scale = Vector2(2, 2)
+
+[node name="Panel" type="Panel" parent="LobbyControl/MatchSettings"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 400.0
+offset_bottom = 144.0
+theme = ExtResource("2_60e7v")
+
+[node name="ArenaPicker" type="ItemList" parent="LobbyControl/MatchSettings"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 96.0
+theme = ExtResource("2_60e7v")
+item_count = 6
+item_0/text = "Stadium"
+item_0/icon = SubResource("AtlasTexture_5mbn2")
+item_1/text = "Truck"
+item_1/icon = SubResource("AtlasTexture_ok4m8")
+item_2/text = "Ship"
+item_2/icon = SubResource("AtlasTexture_evirx")
+item_3/text = "Space Station"
+item_3/icon = SubResource("AtlasTexture_nv3eb")
+item_4/text = "Rooftop"
+item_4/icon = SubResource("AtlasTexture_kvvha")
+item_5/text = "Random"
+item_5/icon = SubResource("AtlasTexture_iydhp")
+
+[node name="TimeCount" type="SpinBox" parent="LobbyControl/MatchSettings"]
+layout_mode = 0
+offset_left = 192.0
+offset_right = 384.0
+offset_bottom = 31.0
+theme = ExtResource("2_60e7v")
+value = 3.0
+prefix = "Time:"
+suffix = "min"
+
+[node name="HealthCount" type="SpinBox" parent="LobbyControl/MatchSettings"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 32.0
+offset_right = 384.0
+offset_bottom = 63.0
+theme = ExtResource("2_60e7v")
+min_value = 120.0
+max_value = 7200.0
+value = 3600.0
+prefix = "Max Health:"
+
+[node name="HealthCount2" type="SpinBox" parent="LobbyControl/MatchSettings"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 384.0
+offset_bottom = 95.0
+theme = ExtResource("2_60e7v")
+min_value = 120.0
+max_value = 7200.0
+value = 3600.0
+prefix = "Starting Health:"
+
+[node name="CoinAllow" type="CheckBox" parent="LobbyControl/MatchSettings"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 96.0
+offset_right = 288.0
+offset_bottom = 128.0
+button_pressed = true
+text = "Allow Coining"
+
+[node name="HostJoin" parent="." instance=ExtResource("19_34sjn")]
+
+[node name="TutorialButton" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 512.0
+offset_right = 704.0
+offset_bottom = 576.0
+theme = ExtResource("2_60e7v")
+theme_override_fonts/font = SubResource("FontFile_pp5i1")
+theme_override_font_sizes/font_size = 36
+text = "Tutorial"
+script = ExtResource("19_djshr")
+scene = "res://arenas/tutorial.tscn"
+
+[connection signal="button_down" from="LobbyControl/PlayButton" to="LobbyControl/HostJoinNode" method="_on_play_button_button_down"]
+[connection signal="button_down" from="LobbyControl/MatchSettingsButton" to="LobbyControl/MatchSettingsButton" method="_on_button_down"]
+[connection signal="toggled" from="LobbyControl/Player1ReadyCheck" to="LobbyControl/PlayButton" method="_on_player_1_ready_check_toggled"]
+[connection signal="toggled" from="LobbyControl/Player2ReadyCheck" to="LobbyControl/PlayButton" method="_on_player_2_ready_check_toggled"]
+[connection signal="toggled" from="LobbyControl/Player3ReadyCheck" to="LobbyControl/PlayButton" method="_on_player_3_ready_check_toggled"]
+[connection signal="toggled" from="LobbyControl/Player4ReadyCheck" to="LobbyControl/PlayButton" method="_on_player_4_ready_check_toggled"]
+[connection signal="button_down" from="LobbyControl/ExitButton" to="LobbyControl/ExitButton" method="_on_button_down"]
+[connection signal="toggled" from="LobbyControl/MatchSettings/CoinAllow" to="LobbyControl/PlayButton" method="_on_coin_allow_toggled"]
+[connection signal="button_down" from="TutorialButton" to="TutorialButton" method="_on_button_down"]

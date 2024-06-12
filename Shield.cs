@@ -47,8 +47,8 @@ public partial class Shield : Area2D, IPlayerTools
 			tc.TimerFinished += ShieldCooldownDone;
 			cooldownSpr.TextureOver = (Texture2D)GD.Load("res://sprites/GUI/CooldownIcons/ShieldCooldown.png");
 
-			Global.LoadCharData();
-			shieldSpr.Frame = (int)Global.GetLocalPlayerProperty("shieldIndex");
+			//Global.LoadCharData();
+			//shieldSpr.Frame = (int)Global.GetLocalPlayerProperty("shieldIndex");
 		}
 	}
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -67,7 +67,6 @@ public partial class Shield : Area2D, IPlayerTools
 
 			if (t.active) {
 
-				//I refuse to use variables for silly things like "making code readable". This statement is perfectly fine and not long at all
 				angle = Mathf.Atan2(GetGlobalMousePosition().Y - potato.GlobalPosition.Y, GetGlobalMousePosition().X - potato.GlobalPosition.X);
 				shieldCol.Rotation = angle;
 				shieldSpr.Rotation = angle;
@@ -92,8 +91,8 @@ public partial class Shield : Area2D, IPlayerTools
 	public void Reset() {
 		SetVars(false);
 	}
-	//either turn what's on off or turn what's off on (set is true when called upon activation,
-	//false upon reset
+	//either turn what's on to off or turn what's off to on (set is true when called upon activation,
+	//false upon reset)
 	private void SetVars (bool set) {
 		active = set;
 		shieldSpr.Visible = set;
@@ -119,7 +118,7 @@ public partial class Shield : Area2D, IPlayerTools
                     s.CallDeferred("Lock");
 
                     AudioStreamPlayer a = (AudioStreamPlayer)GetNode("../SFXMaker");
-					a.Stream = Global.sfx[7];
+					//a.Stream = Global.sfx[7];
 					a.Play();
 
 					//only set this to true if the shield has interacted with anything, seeing as it doesn't
@@ -128,8 +127,8 @@ public partial class Shield : Area2D, IPlayerTools
         		} else if (area == (Area2D)(m.players[i].GetNode("Fist")))
 				{
 					CallDeferred("SetVars", false);
-					((Fist)(m.players[i].GetNode("Fist"))).CallDeferred("ResetPunch");
-    	    	    ((Fist)(m.players[i].GetNode("Fist"))).active = false;
+					((Fist)m.players[i].GetNode("Fist")).CallDeferred("ResetPunch");
+    	    	    ((Fist)m.players[i].GetNode("Fist")).active = false;
 
 					potato.hasUsedShield = true;
 				}

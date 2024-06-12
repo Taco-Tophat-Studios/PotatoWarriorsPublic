@@ -1,0 +1,137 @@
+[gd_scene load_steps=15 format=3 uid="uid://bmdtycjhq1qi4"]
+
+[ext_resource type="Script" path="res://scripts/MainMenu.cs" id="1_ck8cp"]
+[ext_resource type="Texture2D" uid="uid://b1u1flasl0sxd" path="res://sprites/Backgrounds/MainMenuSpinner.png" id="1_m4xj6"]
+[ext_resource type="Texture2D" uid="uid://tfmvymvx0qdi" path="res://sprites/Backgrounds/MainMenuBG.png" id="3_o5vug"]
+[ext_resource type="Texture2D" uid="uid://deibhdjre1774" path="res://sprites/GUI/Logo.png" id="4_h5afx"]
+[ext_resource type="Theme" uid="uid://o4h4maoo3xqe" path="res://Misc/theme1.tres" id="5_6hclf"]
+[ext_resource type="Script" path="res://scripts/transfer.cs" id="6_2ek8s"]
+[ext_resource type="Texture2D" uid="uid://dj7xd88ys88ll" path="res://sprites/GUI/icons.png" id="7_50k5x"]
+[ext_resource type="Script" path="res://scripts/miscScripts/linkedButton.cs" id="8_ddlke"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f65pq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_amlag"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rv67o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wqk8u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kf82i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4cdk"]
+atlas = ExtResource("7_50k5x")
+region = Rect2(96, 0, 32, 32)
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_ck8cp")
+
+[node name="Spinner" type="Sprite2D" parent="."]
+position = Vector2(576, 320)
+scale = Vector2(6, 6)
+texture = ExtResource("1_m4xj6")
+
+[node name="SwordArt" type="Sprite2D" parent="."]
+position = Vector2(576, 320)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("3_o5vug")
+
+[node name="LogoLeft" type="Sprite2D" parent="."]
+position = Vector2(256, 88)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_h5afx")
+region_enabled = true
+region_rect = Rect2(0, 0, 283, 69)
+
+[node name="LogoRight" type="Sprite2D" parent="."]
+position = Vector2(822, 88)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_h5afx")
+region_enabled = true
+region_rect = Rect2(335.901, 0, 376, 69)
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 344.0
+offset_top = 272.0
+offset_right = 714.0
+offset_bottom = 343.0
+scale = Vector2(1.25, 1.25)
+theme = ExtResource("5_6hclf")
+theme_override_font_sizes/font_size = 48
+text = "PLAY"
+script = ExtResource("6_2ek8s")
+scene = "res://Screens/Menus/Lobby.tscn"
+
+[node name="SettingsButton" type="Button" parent="."]
+offset_left = 368.0
+offset_top = 384.0
+offset_right = 568.0
+offset_bottom = 459.0
+theme = ExtResource("5_6hclf")
+theme_override_font_sizes/font_size = 30
+text = "SETTINGS"
+script = ExtResource("6_2ek8s")
+scene = "res://Screens/Menus/settings_menu.tscn"
+
+[node name="CustomizeButton" type="Button" parent="."]
+offset_left = 368.0
+offset_top = 480.0
+offset_right = 568.0
+offset_bottom = 555.0
+theme = ExtResource("5_6hclf")
+theme_override_font_sizes/font_size = 30
+text = "CUSTOMIZE"
+script = ExtResource("6_2ek8s")
+scene = "res://Screens/Menus/PlayerMenu.tscn"
+
+[node name="CreditsButton" type="Button" parent="."]
+offset_left = 576.0
+offset_top = 384.0
+offset_right = 776.0
+offset_bottom = 459.0
+theme = ExtResource("5_6hclf")
+theme_override_font_sizes/font_size = 30
+text = "CREDITS"
+script = ExtResource("6_2ek8s")
+scene = "res://Screens/Menus/credits.tscn"
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 576.0
+offset_top = 480.0
+offset_right = 776.0
+offset_bottom = 555.0
+theme = ExtResource("5_6hclf")
+theme_override_font_sizes/font_size = 30
+text = "QUIT"
+script = ExtResource("6_2ek8s")
+
+[node name="DiscordButton" type="Button" parent="."]
+offset_left = 1024.0
+offset_top = 224.0
+offset_right = 1152.0
+offset_bottom = 352.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f65pq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_amlag")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rv67o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wqk8u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kf82i")
+icon = SubResource("AtlasTexture_d4cdk")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("8_ddlke")
+url = "https://discord.gg/gSFg8ZfY"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1024.0
+offset_top = 352.0
+offset_right = 1154.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 24
+text = "DISC ORB!!"
+
+[connection signal="button_down" from="PlayButton" to="PlayButton" method="_on_button_down"]
+[connection signal="button_down" from="SettingsButton" to="SettingsButton" method="_on_button_down"]
+[connection signal="button_down" from="CustomizeButton" to="CustomizeButton" method="_on_button_down"]
+[connection signal="button_down" from="CreditsButton" to="CreditsButton" method="_on_button_down"]
+[connection signal="button_down" from="QuitButton" to="QuitButton" method="_on_button_down"]
+[connection signal="button_down" from="DiscordButton" to="DiscordButton" method="_on_button_down"]

@@ -1,0 +1,348 @@
+[gd_scene load_steps=11 format=3 uid="uid://65bwm0fgo2su"]
+
+[ext_resource type="PackedScene" uid="uid://c6geuvo78hpyb" path="res://arenas/BaseArena.tscn" id="1_gf76a"]
+[ext_resource type="PackedScene" uid="uid://dwyfgxrewmed0" path="res://player_1.tscn" id="2_jsn6w"]
+[ext_resource type="Texture2D" uid="uid://c6edcwxv37qcd" path="res://sprites/Backgrounds/bgtutorial.png" id="3_gkbg4"]
+[ext_resource type="PackedScene" uid="uid://6lydy25b4rm5" path="res://launcher.tscn" id="4_61sth"]
+[ext_resource type="Texture2D" uid="uid://0r3dymelrs1o" path="res://sprites/Tiles/GroundTileStadium.png" id="4_marmg"]
+[ext_resource type="PackedScene" uid="uid://b8p5gixd7jfk7" path="res://portal.tscn" id="6_tkcy2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fgy1o"]
+texture = ExtResource("3_gkbg4")
+texture_region_size = Vector2i(128, 256)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_m7vfn"]
+tile_size = Vector2i(128, 256)
+sources/0 = SubResource("TileSetAtlasSource_fgy1o")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s4km5"]
+texture = ExtResource("4_marmg")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:4/0 = 0
+0:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:4/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+1:4/0 = 0
+1:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:4/0/physics_layer_0/angular_velocity = 0.0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:4/0 = 0
+2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:4/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_ir7ya"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_s4km5")
+
+[node name="World" instance=ExtResource("1_gf76a")]
+
+[node name="Player1" parent="." index="0" instance=ExtResource("2_jsn6w")]
+position = Vector2(736, 64)
+scale = Vector2(0.5, 0.5)
+
+[node name="ParallaxLayer" parent="bg" index="0"]
+motion_scale = Vector2(1, 1)
+
+[node name="AnimatedSprite2D" parent="bg/ParallaxLayer" index="0"]
+visible = false
+
+[node name="TileMap" type="TileMap" parent="bg/ParallaxLayer" index="1"]
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_m7vfn")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 262144, 0, 1, 262144, 0, 2, 0, 0, 3, 65536, 0, 4, 262144, 0, 5, 131072, 0, 6, 262144, 0, 7, 262144, 0, 8, 196608, 0, 9, 262144, 0, 10, 131072, 0)
+
+[node name="TileMap" parent="." index="6"]
+tile_set = SubResource("TileSet_ir7ya")
+layer_0/tile_data = PackedInt32Array(196620, 65536, 4, 196619, 65536, 4, 196618, 65536, 4, 196617, 65536, 4, 196616, 65536, 4, 196615, 65536, 4, 196614, 65536, 4, 196613, 65536, 4, 196612, 0, 0, 262148, 0, 1, -65536, 0, 3, 0, 0, 3, 65536, 0, 3, 131072, 0, 3, 196608, 0, 3, 262144, 0, 3, 327680, 0, 3, 393216, 0, 3, 458752, 0, 3, 524288, 0, 3, 589824, 0, 4, -131072, 0, 2, -131071, 65536, 2, -131070, 65536, 2, -131069, 65536, 2, -131068, 65536, 2, -131067, 65536, 2, -131066, 65536, 2, -131065, 65536, 2, -131064, 65536, 2, -131063, 65536, 2, -131062, 65536, 2, -131061, 65536, 2, -131060, 65536, 2, -131059, 131072, 2, -131058, 0, 2, -131057, 65536, 2, -131056, 65536, 2, -131055, 65536, 2, -131054, 65536, 2, -131053, 65536, 2, -131052, 65536, 2, -131051, 65536, 2, -131050, 65536, 2, -131049, 65536, 2, -131048, 65536, 2, -131047, 65536, 2, -131046, 65536, 2, -131045, 65536, 2, -131044, 65536, 2, -131043, 65536, 2, -131042, 65536, 2, -131041, 65536, 2, -131040, 65536, 2, -131039, 65536, 2, -131038, 65536, 2, -131037, 65536, 2, -131036, 65536, 2, -131035, 65536, 2, -131034, 65536, 2, -131033, 65536, 2, -131032, 65536, 2, -131031, 65536, 2, -131030, 65536, 2, -131029, 65536, 2, -131028, 65536, 2, -131027, 65536, 2, -131026, 65536, 2, -131025, 65536, 2, -131024, 65536, 2, -131023, 65536, 2, -131022, 65536, 2, -131021, 65536, 2, -131020, 65536, 2, -131019, 65536, 2, -131018, 65536, 2, -131017, 65536, 2, -131016, 65536, 2, -131015, 65536, 2, -131014, 65536, 2, -131013, 65536, 2, -131012, 65536, 2, -131011, 65536, 2, -131010, 65536, 2, -131009, 65536, 2, -131008, 65536, 2, -131007, 65536, 2, -131006, 65536, 2, -131005, 65536, 2, -131004, 65536, 2, -131003, 65536, 2, -131002, 65536, 2, -131001, 65536, 2, -131000, 65536, 2, -130999, 65536, 2, -130998, 65536, 2, -130997, 65536, 2, -130996, 65536, 2, -130995, 65536, 2, -130994, 65536, 2, -130993, 65536, 2, -130992, 65536, 2, -130991, 65536, 2, -130990, 65536, 2, -130989, 131072, 2, 196621, 131072, 4, 131085, 131072, 3, 65549, 131072, 3, 13, 131072, 3, -65523, 131072, 3, -65522, 0, 3, 14, 0, 3, 65550, 0, 3, 131086, 0, 3, 196622, 0, 3, 262157, 131072, 2, 262156, 65536, 2, 262155, 65536, 2, 262154, 65536, 2, 262153, 65536, 2, 262152, 65536, 2, 262151, 65536, 2, 262150, 65536, 2, 262149, 65536, 2, 589825, 65536, 4, 589826, 65536, 4, 589827, 65536, 4, 589828, 65536, 0, 655364, 0, 4, 655365, 65536, 4, 655366, 65536, 4, 655367, 65536, 4, 655368, 65536, 4, 720904, 131072, 0, 786440, 131072, 0, 851976, 131072, 0, 917512, 131072, 0, 983048, 131072, 0, 983049, 0, 4, 983050, 65536, 4, 983051, 65536, 4, 983052, 65536, 4, 983053, 65536, 4, 983054, 65536, 4, 983055, 65536, 4, 983056, 65536, 4, 983057, 65536, 4, 983058, 65536, 4, 983059, 65536, 4, 983060, 65536, 4, 983061, 65536, 4, 983062, 65536, 4, 983063, 65536, 4, 983064, 65536, 4, 983065, 65536, 4, 983066, 65536, 4, 983067, 65536, 4, 983068, 65536, 4, 983069, 65536, 4, 983070, 65536, 4, 983071, 65536, 4, 983072, 65536, 4, 983073, 65536, 4, 983074, 65536, 4, 983075, 65536, 4, 983076, 65536, 4, 983077, 65536, 4, 983078, 65536, 4, 983079, 65536, 4, 983080, 65536, 4, 983081, 65536, 4, 983082, 65536, 4, 983083, 65536, 4, 983084, 65536, 4, 983085, 65536, 4, 983086, 65536, 4, 983087, 65536, 4, 983088, 65536, 4, 983089, 65536, 4, 983090, 65536, 4, 983091, 65536, 4, 983092, 65536, 4, 983093, 65536, 4, 983094, 65536, 4, 983095, 65536, 4, 983096, 65536, 4, 983097, 65536, 4, 983098, 65536, 4, 983099, 65536, 4, 983100, 65536, 4, 983101, 65536, 4, 983102, 65536, 4, 983103, 65536, 4, 983104, 65536, 4, 983105, 65536, 4, 983106, 65536, 4, 983107, 65536, 4, 983108, 65536, 4, 983109, 65536, 4, 983110, 65536, 4, 983111, 65536, 4, 983112, 65536, 4, 983113, 65536, 4, 983114, 65536, 4, 983115, 65536, 4, 983116, 65536, 4, 983117, 65536, 4, 983118, 65536, 4, 983119, 65536, 4, 983120, 65536, 4, 983121, 65536, 4, 983122, 65536, 4, 983123, 131072, 4, 917587, 131072, 3, 852051, 131072, 3, 786515, 131072, 3, 720979, 131072, 3, 655443, 131072, 3, 589907, 131072, 3, 655438, 65536, 1, 589902, 65536, 0, 524371, 131072, 3, 458835, 131072, 3, 393299, 131072, 3, 327763, 131072, 3, 262227, 131072, 2, 196691, 131072, 4, 131155, 131072, 3, 65619, 131072, 3, 83, 131072, 3, -65453, 131072, 3, 262226, 65536, 2, 262225, 65536, 2, 262224, 65536, 2, 262223, 65536, 2, 262222, 65536, 2, 262221, 65536, 2, 262220, 65536, 2, 262219, 65536, 2, 262218, 65536, 2, 262217, 65536, 2, 262216, 65536, 2, 262215, 65536, 2, 262214, 65536, 2, 262213, 65536, 2, 262212, 65536, 2, 262211, 65536, 2, 262210, 65536, 2, 262209, 65536, 2, 262208, 65536, 2, 262207, 65536, 2, 262206, 65536, 2, 262205, 65536, 2, 262204, 65536, 2, 262203, 65536, 2, 262202, 65536, 2, 262158, 0, 3, 327694, 0, 3, 393230, 0, 3, 458766, 0, 3, 655374, 65536, 2, 524302, 0, 3, 589838, 0, 4, 655373, 0, 1, 655375, 65536, 2, 589837, 131072, 3, 524301, 131072, 3, 458765, 131072, 3, 393229, 131072, 3, 327693, 131072, 3, 589839, 65536, 4, 589840, 65536, 4, 589841, 65536, 4, 589842, 65536, 4, 589843, 65536, 4, 589844, 65536, 4, 589845, 65536, 4, 589846, 65536, 4, 589847, 65536, 4, 589848, 65536, 4, 589849, 65536, 4, 589850, 65536, 4, 589851, 65536, 4, 589852, 65536, 4, 589853, 65536, 4, 589854, 65536, 4, 589855, 65536, 4, 589856, 65536, 4, 589857, 65536, 4, 589858, 65536, 4, 589859, 65536, 4, 589860, 65536, 4, 589861, 65536, 4, 589862, 65536, 4, 589863, 65536, 4, 589864, 65536, 4, 589865, 65536, 4, 589866, 65536, 4, 589867, 65536, 4, 589868, 65536, 4, 589869, 65536, 4, 589870, 65536, 4, 589871, 65536, 4, 589872, 65536, 4, 589873, 65536, 4, 589874, 65536, 4, 589875, 65536, 4, 589876, 65536, 4, 589877, 65536, 4, 589878, 65536, 4, 589879, 65536, 4, 589880, 65536, 4, 589881, 65536, 4, 589882, 65536, 4, 589883, 65536, 4, 589884, 65536, 4, 589885, 65536, 4, 589886, 65536, 4, 655376, 65536, 2, 655377, 65536, 2, 655378, 65536, 2, 655379, 65536, 2, 655380, 65536, 2, 655381, 65536, 2, 655382, 65536, 2, 655383, 65536, 2, 655384, 65536, 2, 655385, 65536, 2, 655386, 65536, 2, 655387, 65536, 2, 655388, 65536, 2, 655389, 65536, 2, 655390, 65536, 2, 655391, 65536, 2, 655392, 65536, 2, 655393, 65536, 2, 655394, 65536, 2, 655395, 65536, 2, 655396, 65536, 2, 655397, 65536, 2, 655398, 65536, 2, 655399, 65536, 2, 655400, 65536, 2, 655401, 65536, 2, 655402, 65536, 2, 655403, 65536, 2, 655404, 65536, 2, 655405, 65536, 2, 655406, 65536, 2, 655407, 65536, 2, 655408, 65536, 2, 655409, 65536, 2, 655410, 65536, 2, 655411, 65536, 2, 655412, 65536, 2, 655413, 65536, 2, 655414, 65536, 2, 655415, 65536, 2, 655416, 65536, 2, 655417, 65536, 2, 655418, 65536, 2, 655419, 65536, 2, 655420, 65536, 2, 655421, 65536, 2, 655422, 65536, 2, 655423, 65536, 2, 655424, 65536, 2, 655425, 65536, 2, 655426, 65536, 2, 655427, 65536, 2, 655428, 65536, 2, 655429, 65536, 2, 655430, 65536, 2, 655431, 65536, 2, 655432, 65536, 2, 655433, 65536, 2, 655434, 65536, 2, 655435, 65536, 2, 655436, 65536, 2, 655437, 65536, 2, 589901, 65536, 4, 589900, 65536, 4, 589899, 65536, 4, 589898, 65536, 4, 589897, 65536, 4, 589896, 65536, 4, 589895, 65536, 4, 589894, 65536, 4, 589893, 65536, 4, 589892, 65536, 4, 589891, 65536, 4, 589890, 65536, 4, 589889, 65536, 4, 589888, 65536, 4, 589887, 65536, 4, 262201, 65536, 2, 262200, 65536, 2, 262199, 65536, 2, 262198, 65536, 2, 262197, 65536, 2, 262196, 65536, 2, 262195, 65536, 2, 262194, 65536, 2, 262193, 65536, 2, 262192, 65536, 2, 262191, 65536, 2, 262190, 65536, 2, 262189, 65536, 2, 262188, 65536, 2, 262187, 65536, 2, 262186, 65536, 2, 262185, 65536, 2, 262184, 65536, 2, 262183, 65536, 2, 262182, 65536, 2, 262181, 65536, 2, 262180, 65536, 2, 262179, 65536, 2, 262178, 65536, 2, 262177, 65536, 2, 262176, 65536, 2, 262175, 65536, 2, 262174, 65536, 2, 262173, 65536, 2, 262172, 65536, 2, 262171, 65536, 2, 262170, 65536, 2, 262169, 0, 1, 196633, 0, 0, 196634, 65536, 4, 196635, 65536, 4, 196636, 65536, 4, 196637, 65536, 4, 196638, 65536, 4, 196639, 65536, 4, 196640, 65536, 4, 196641, 65536, 4, 196642, 65536, 4, 196643, 65536, 4, 196644, 65536, 4, 196645, 65536, 4, 196646, 65536, 4, 196647, 65536, 4, 196648, 65536, 4, 196649, 65536, 4, 196650, 65536, 4, 196651, 65536, 4, 196652, 65536, 4, 196653, 65536, 4, 196654, 65536, 4, 196655, 65536, 4, 196656, 65536, 4, 196657, 65536, 4, 196658, 65536, 4, 196659, 65536, 4, 196660, 65536, 4, 196661, 65536, 4, 196662, 65536, 4, 196663, 65536, 4, 196664, 65536, 4, 196665, 65536, 4, 196666, 65536, 4, 196667, 65536, 4, 196668, 65536, 4, 196669, 65536, 4, 196670, 65536, 4, 196671, 65536, 4, 196672, 65536, 4, 196673, 65536, 4, 196674, 65536, 4, 196675, 65536, 4, 196676, 65536, 4, 196677, 65536, 4, 196678, 65536, 4, 196679, 65536, 4, 196680, 65536, 4, 196681, 65536, 4, 196682, 65536, 4, 196683, 65536, 4, 196684, 65536, 4, 196685, 65536, 4, 196686, 65536, 4, 196687, 65536, 4, 196688, 65536, 4, 196689, 65536, 4, 196690, 65536, 4, 655369, 65536, 0, 720905, 0, 3, 786441, 0, 3, 851977, 0, 3, 917513, 0, 3, 720903, 131072, 0, 786439, 131072, 0, 851975, 131072, 0, 917511, 131072, 0, 983047, 131072, 0, 720898, 131072, 0, 786434, 131072, 0, 720899, 131072, 0, 786435, 131072, 0, 720900, 131072, 0, 786436, 131072, 0, 720901, 131072, 0, 786437, 131072, 0, 720902, 131072, 0, 786438, 131072, 0, 655360, 131072, 0, 720896, 131072, 0, 655361, 131072, 0, 720897, 131072, 0, 655362, 131072, 0, 655363, 131072, 0, 851968, 131072, 1, 917504, 131072, 1, 983040, 131072, 1, 851969, 131072, 1, 917505, 131072, 1, 983041, 131072, 1, 851970, 131072, 1, 917506, 131072, 1, 983042, 131072, 1, 851971, 131072, 1, 917507, 131072, 1, 983043, 131072, 1, 851972, 131072, 1, 917508, 131072, 1, 983044, 131072, 1, 851973, 131072, 1, 917509, 131072, 1, 983045, 131072, 1, 851974, 131072, 1, 917510, 131072, 1, 983046, 131072, 1, 786433, 131072, 1, 786432, 131072, 1)
+
+[node name="UI" parent="." index="9"]
+visible = false
+
+[node name="Header" parent="UI" index="0"]
+visible = false
+
+[node name="P1Label" parent="UI" index="1"]
+visible = false
+
+[node name="P2Label" parent="UI" index="2"]
+visible = false
+
+[node name="P3Label" parent="UI" index="3"]
+visible = false
+
+[node name="P4Label" parent="UI" index="4"]
+visible = false
+
+[node name="TimerLabel" parent="UI" index="5"]
+visible = false
+
+[node name="CamBorderUL" parent="." index="11"]
+position = Vector2(0, -128)
+
+[node name="CamBorderDR" parent="." index="12"]
+position = Vector2(5376, 1024)
+
+[node name="Launcher" parent="." index="13" instance=ExtResource("4_61sth")]
+position = Vector2(1120, 416)
+rotation = 0.785398
+
+[node name="TutorialTexts" type="Control" parent="." index="14"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="TutorialTexts" index="0"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = -32.0
+offset_right = 575.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 48
+text = "Use A and D to move"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="TutorialTexts" index="1"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 32.0
+offset_right = 575.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 24
+text = "Arrow keys can be used as well"
+
+[node name="Label10" type="Label" parent="TutorialTexts" index="2"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 768.0
+offset_right = 607.0
+offset_bottom = 835.0
+theme_override_font_sizes/font_size = 24
+text = "Deals damage to opponents, but you can't 
+use anything, and are stopped by walls"
+
+[node name="Label11" type="Label" parent="TutorialTexts" index="3"]
+layout_mode = 0
+offset_left = 1696.0
+offset_top = 768.0
+offset_right = 2183.0
+offset_bottom = 839.0
+theme_override_font_sizes/font_size = 24
+text = "Disables swords (temporarily), but can be
+broken by a punch"
+
+[node name="Label12" type="Label" parent="TutorialTexts" index="4"]
+layout_mode = 0
+offset_left = 2976.0
+offset_top = 768.0
+offset_right = 3488.0
+offset_bottom = 839.0
+theme_override_font_sizes/font_size = 24
+text = "Breaks Shields (temporarily), but extra
+damage is taken from swords"
+
+[node name="Label13" type="Label" parent="TutorialTexts" index="5"]
+layout_mode = 0
+offset_left = 4352.0
+offset_top = 768.0
+offset_right = 4864.0
+offset_bottom = 839.0
+theme_override_font_sizes/font_size = 24
+text = "Swords start combos, deal damage, and can launch
+potatos, including you. Damage is dealt based on
+NET SPEED of sword tip"
+
+[node name="Label14" type="Label" parent="TutorialTexts" index="6"]
+layout_mode = 0
+offset_left = 3584.0
+offset_top = 384.0
+offset_right = 4175.0
+offset_bottom = 455.0
+theme_override_font_sizes/font_size = 24
+text = "Temporarily freezes time to give breathing room"
+
+[node name="Label15" type="Label" parent="TutorialTexts" index="7"]
+layout_mode = 0
+offset_left = 1280.0
+offset_top = 384.0
+offset_right = 1760.0
+offset_bottom = 455.0
+theme_override_font_sizes/font_size = 24
+text = "Works with any Arena element. This is a
+launcher, which does exactly that"
+
+[node name="Label16" type="Label" parent="TutorialTexts" index="8"]
+layout_mode = 0
+offset_left = 2816.0
+offset_top = -32.0
+offset_right = 3303.0
+offset_bottom = 150.0
+theme_override_font_sizes/font_size = 24
+text = "- Bottom bar represents sword movement
+before a hit; swinging it around before
+impact deals more damage
+- Different swords and shields do not give
+different performances"
+
+[node name="Label17" type="Label" parent="TutorialTexts" index="9"]
+layout_mode = 0
+offset_left = 3456.0
+offset_top = -32.0
+offset_right = 3943.0
+offset_bottom = 150.0
+theme_override_font_sizes/font_size = 24
+text = "- In doing a combo, doing the next hit at
+the very end deals more damage, but
+it gets narrower each time
+- Badges either give points based on
+difficulty, rarity, or compensation (pity)"
+
+[node name="Label18" type="Label" parent="TutorialTexts" index="10"]
+layout_mode = 0
+offset_left = 4352.0
+offset_top = -32.0
+offset_right = 4839.0
+offset_bottom = 150.0
+theme_override_font_sizes/font_size = 24
+text = "This game is still under development!
+
+Bug reports and suggestions are encouraged,
+and can be given in the discord (link in the
+main menu)"
+
+[node name="Label2" type="Label" parent="TutorialTexts" index="11"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 704.0
+offset_right = 575.0
+offset_bottom = 771.0
+theme_override_font_sizes/font_size = 48
+text = "Hold SHIFT to roll"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="TutorialTexts" index="12"]
+layout_mode = 0
+offset_left = 1632.0
+offset_top = 704.0
+offset_right = 2111.0
+offset_bottom = 771.0
+theme_override_font_sizes/font_size = 48
+text = "Press E to shield"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="TutorialTexts" index="13"]
+layout_mode = 0
+offset_left = 3008.0
+offset_top = 704.0
+offset_right = 3487.0
+offset_bottom = 771.0
+theme_override_font_sizes/font_size = 48
+text = "Press Q to Punch"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="TutorialTexts" index="14"]
+layout_mode = 0
+offset_left = 4352.0
+offset_top = 704.0
+offset_right = 4909.0
+offset_bottom = 771.0
+theme_override_font_sizes/font_size = 48
+text = "LMB and RMB to swing"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="TutorialTexts" index="15"]
+layout_mode = 0
+offset_left = 3616.0
+offset_top = 320.0
+offset_right = 4096.0
+offset_bottom = 387.0
+theme_override_font_sizes/font_size = 48
+text = "Press C to Coin"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="TutorialTexts" index="16"]
+layout_mode = 0
+offset_left = 1280.0
+offset_top = 320.0
+offset_right = 1760.0
+offset_bottom = 387.0
+theme_override_font_sizes/font_size = 48
+text = "Press R to Interact"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="TutorialTexts" index="17"]
+layout_mode = 0
+offset_left = 2336.0
+offset_top = 32.0
+offset_right = 2816.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 48
+text = "In addition..."
+horizontal_alignment = 1
+
+[node name="Label19" type="Label" parent="TutorialTexts" index="18"]
+layout_mode = 0
+offset_left = 4000.0
+offset_top = 32.0
+offset_right = 4352.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 48
+text = "Finally,"
+horizontal_alignment = 1
+
+[node name="Portal" parent="." index="15" instance=ExtResource("6_tkcy2")]
+position = Vector2(5152, 64)
+destination = "res://Screens/Menus/MainMenu.tscn"
+
+[node name="Portal2" parent="." index="16" instance=ExtResource("6_tkcy2")]
+position = Vector2(448, 448)
+destination = "res://Screens/Menus/MainMenu.tscn"

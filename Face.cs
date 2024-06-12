@@ -23,7 +23,7 @@ public partial class Face : AnimatedSprite2D
 	}
 	public void AfterReady() {
 		if (parent.isAuthority) {
-			this.Frame = (int)Global.GetLocalPlayerProperty("faceIndex");
+			//this.Frame = (int)Global.GetLocalPlayerProperty("faceIndex");
 		}
 		this.Frame = faceSpriteIndex;
 	}

@@ -1,0 +1,108 @@
+[gd_scene load_steps=24 format=3 uid="uid://c33j54h5rw1a4"]
+
+[ext_resource type="Script" path="res://scripts/Intro.cs" id="1_y1wnu"]
+[ext_resource type="Texture2D" uid="uid://dkhnltc0xe1y2" path="res://sprites/GUI/IntroCard/IntroCard1.png" id="2_ru2wf"]
+[ext_resource type="Texture2D" uid="uid://x1r0ti6ti8h3" path="res://sprites/GUI/IntroCard/IntroCard2.png" id="3_2sg3l"]
+[ext_resource type="Texture2D" uid="uid://c1b5ftvfbtcmh" path="res://sprites/GUI/IntroCard/IntroCard3.png" id="4_u0ggt"]
+[ext_resource type="Texture2D" uid="uid://bouat13l2lie8" path="res://sprites/GUI/IntroCard/IntroCard4.png" id="5_j4fl8"]
+[ext_resource type="Texture2D" uid="uid://daop2hqrq655p" path="res://sprites/GUI/IntroCard/IntroCard5.png" id="6_gt2ti"]
+[ext_resource type="Texture2D" uid="uid://ddfc5ojr1h2f0" path="res://sprites/GUI/IntroCard/IntroCard6.png" id="7_3800s"]
+[ext_resource type="Texture2D" uid="uid://cyeirretp7f8k" path="res://sprites/GUI/IntroCard/IntroCard7.png" id="8_aipjy"]
+[ext_resource type="Texture2D" uid="uid://6parp1sqy1l0" path="res://sprites/GUI/IntroCard/IntroCard8.png" id="9_14t0e"]
+[ext_resource type="Texture2D" uid="uid://bfdmsur8ov333" path="res://sprites/GUI/IntroCard/IntroCard9.png" id="10_tap7q"]
+[ext_resource type="Texture2D" uid="uid://bqnmoy0gqyw4y" path="res://sprites/GUI/IntroCard/IntroCard10.png" id="11_qydls"]
+[ext_resource type="Texture2D" uid="uid://b4w1i1fs6s3m5" path="res://sprites/GUI/IntroCard/IntroCard11.png" id="12_pf5pw"]
+[ext_resource type="Texture2D" uid="uid://21i3ng7xjv6j" path="res://sprites/GUI/IntroCard/IntroCard12.png" id="13_u10ch"]
+[ext_resource type="Texture2D" uid="uid://nxvuq25b5lyl" path="res://sprites/GUI/IntroCard/IntroCard13.png" id="14_1xchk"]
+[ext_resource type="Texture2D" uid="uid://dmjhd5c6yveo7" path="res://sprites/GUI/IntroCard/IntroCard14.png" id="15_474sa"]
+[ext_resource type="Texture2D" uid="uid://d3cay5arq1u2j" path="res://sprites/GUI/IntroCard/IntroCard15.png" id="16_bbn02"]
+[ext_resource type="Texture2D" uid="uid://b5gxbt5g0n2qk" path="res://sprites/GUI/IntroCard/IntroCard16.png" id="17_lplky"]
+[ext_resource type="Texture2D" uid="uid://d32lms7x8rxbq" path="res://sprites/GUI/IntroCard/IntroCard17.png" id="18_wv55h"]
+[ext_resource type="Texture2D" uid="uid://cpb56xlsxwxia" path="res://sprites/GUI/IntroCard/IntroCard18.png" id="19_a76ub"]
+[ext_resource type="Texture2D" uid="uid://du16hw8k77e6u" path="res://sprites/GUI/IntroCard/IntroCard19.png" id="20_uxrj6"]
+[ext_resource type="Texture2D" uid="uid://c20gk3i3l1fhi" path="res://sprites/GUI/IntroCard/IntroCard20.png" id="21_sd8cp"]
+[ext_resource type="Texture2D" uid="uid://q2p30evaoig4" path="res://sprites/GUI/IntroCard/IntroCard21.png" id="22_4oqcm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i833j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ru2wf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2sg3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u0ggt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_j4fl8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gt2ti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3800s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_aipjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_14t0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tap7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qydls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_pf5pw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_u10ch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1xchk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_474sa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bbn02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_lplky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_wv55h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_a76ub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_uxrj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_sd8cp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_4oqcm")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_y1wnu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 320)
+scale = Vector2(6, 6.66667)
+texture = ExtResource("2_ru2wf")
+
+[node name="IntroCard" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 320)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_i833j")

@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://b730nm0sbseyu"]
+
+[ext_resource type="Theme" uid="uid://o4h4maoo3xqe" path="res://Misc/theme1.tres" id="2_rfo18"]
+[ext_resource type="Script" path="res://scripts/ExitButton.cs" id="3_oybtj"]
+[ext_resource type="Script" path="res://scripts/multiplayer/HostButton.cs" id="3_w1e2m"]
+[ext_resource type="Texture2D" uid="uid://dj7xd88ys88ll" path="res://sprites/GUI/icons.png" id="4_b4x6v"]
+
+[sub_resource type="SystemFont" id="SystemFont_47hgd"]
+subpixel_positioning = 0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg22r"]
+atlas = ExtResource("4_b4x6v")
+region = Rect2(192, 0, 32, 32)
+
+[node name="HostJoin" type="Node2D"]
+
+[node name="HostButton" type="Button" parent="."]
+offset_left = 96.0
+offset_top = 288.0
+offset_right = 384.0
+offset_bottom = 352.0
+theme = ExtResource("2_rfo18")
+theme_override_fonts/font = SubResource("SystemFont_47hgd")
+theme_override_font_sizes/font_size = 40
+text = "Host Lobby"
+script = ExtResource("3_w1e2m")
+
+[node name="JoinButton" type="Button" parent="."]
+offset_left = 768.0
+offset_top = 288.0
+offset_right = 1056.0
+offset_bottom = 352.0
+theme = ExtResource("2_rfo18")
+theme_override_fonts/font = SubResource("SystemFont_47hgd")
+theme_override_font_sizes/font_size = 40
+text = "Join"
+
+[node name="JoinEdit" type="LineEdit" parent="."]
+offset_left = 416.0
+offset_top = 288.0
+offset_right = 736.0
+offset_bottom = 352.0
+theme = ExtResource("2_rfo18")
+placeholder_text = "Join (enter code here)"
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 928.0
+offset_top = 480.0
+offset_right = 1120.0
+offset_bottom = 608.0
+theme = ExtResource("2_rfo18")
+script = ExtResource("3_oybtj")
+
+[node name="Sprite2D" type="Sprite2D" parent="ExitButton"]
+position = Vector2(96, 64)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_hg22r")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 96.0
+offset_top = 32.0
+offset_right = 1056.0
+offset_bottom = 160.0
+theme = ExtResource("2_rfo18")
+theme_override_font_sizes/font_size = 96
+text = "HOST OR JOIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CFLabel" type="Label" parent="."]
+offset_left = 416.0
+offset_top = 384.0
+offset_right = 736.0
+offset_bottom = 416.0
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+
+[connection signal="button_down" from="HostButton" to="HostButton" method="_on_button_down"]
+[connection signal="button_down" from="JoinButton" to="HostButton" method="_on_join_button_button_down"]
+[connection signal="button_down" from="ExitButton" to="ExitButton" method="_on_button_down"]

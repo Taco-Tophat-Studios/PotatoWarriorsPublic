@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6sxm4lu8d0ym"]
+
+[ext_resource type="Texture2D" uid="uid://rdwixoxto88e" path="res://sprites/GUI/CooldownIcons/ShieldCooldown.png" id="1_y0k0t"]
+[ext_resource type="Texture2D" uid="uid://bhjn0uyelv8th" path="res://sprites/GUI/CooldownIcons/ShieldCooldownBG.png" id="2_15ig3"]
+[ext_resource type="Texture2D" uid="uid://yaf6acpc8nou" path="res://sprites/GUI/CooldownIcons/PunchCooldown.png" id="3_ct0r3"]
+[ext_resource type="Texture2D" uid="uid://b453f25o4emnq" path="res://sprites/GUI/CooldownIcons/PunchCooldownBG.png" id="4_mafho"]
+[ext_resource type="Texture2D" uid="uid://b1xh81kjgdjv1" path="res://sprites/GUI/CooldownIcons/RollCooldown.png" id="5_a0k4y"]
+[ext_resource type="Texture2D" uid="uid://hhr6r784kn8m" path="res://sprites/GUI/CooldownIcons/RollCooldownBG.png" id="6_vm6e3"]
+
+[node name="CooldownSprites" type="Control"]
+layout_direction = 1
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShieldCooldownSprite" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 960.0
+offset_top = 192.0
+offset_right = 992.0
+offset_bottom = 224.0
+scale = Vector2(2, 2)
+fill_mode = 3
+texture_over = ExtResource("1_y0k0t")
+texture_progress = ExtResource("2_15ig3")
+
+[node name="PunchCooldownSprite" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 960.0
+offset_top = 288.0
+offset_right = 992.0
+offset_bottom = 320.0
+scale = Vector2(2, 2)
+fill_mode = 3
+texture_over = ExtResource("3_ct0r3")
+texture_progress = ExtResource("4_mafho")
+
+[node name="RollCooldownSprite" type="TextureProgressBar" parent="."]
+offset_left = 960.0
+offset_top = 384.0
+offset_right = 992.0
+offset_bottom = 416.0
+scale = Vector2(2, 2)
+fill_mode = 3
+texture_over = ExtResource("5_a0k4y")
+texture_progress = ExtResource("6_vm6e3")

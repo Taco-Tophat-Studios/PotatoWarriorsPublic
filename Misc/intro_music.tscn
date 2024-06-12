@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0505pio0hs46"]
+
+[ext_resource type="AudioStream" uid="uid://pv5n6cmucwhv" path="res://music/PWMain.mp3" id="1_ou5ac"]
+[ext_resource type="Script" path="res://scripts/intro_music.cs" id="2_8aaso"]
+
+[node name="IntroMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_ou5ac")
+bus = &"Music"
+script = ExtResource("2_8aaso")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

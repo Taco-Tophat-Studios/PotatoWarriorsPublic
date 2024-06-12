@@ -18,7 +18,7 @@ public partial class PlayButton : buttonBaseClass
 
 	//use this to store the match stuff, then access this from playbutton to assign the stuff from it to the
 	//actual match class
-	public match SetUpMatch; //no don't put it private, silly, why would you even do that?
+	public match SetUpMatch;
 	public match m;
 	public bool[] playerReadys;
 
@@ -120,13 +120,12 @@ public partial class PlayButton : buttonBaseClass
 	{
 		LeButton(4, toggled_on);
 	}
-	private void LeButton(int n, bool t) //i'm completely out of ideas for check button related method names
+	private void LeButton(int n, bool t) 
 	{
 		if (GameManager.ids.IndexOf(Multiplayer.GetUniqueId()) == n - 1) {
             hj.Sync("CheckButtons", n, t);
         } else
 		{
-			//GD.Print("Whoa there, sammy! That's not your check button!");
 			((CheckButton)GetNode("../Player" + n + "ReadyCheck")).SetPressedNoSignal(false);
 		}
 	}

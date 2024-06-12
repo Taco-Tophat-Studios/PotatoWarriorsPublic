@@ -24,10 +24,6 @@ public partial class Fist : Area2D, IPlayerTools
 	public override void _Ready()
 	{
         potato = (playerBase)this.GetParent();
-       
-
-		/*Ah, but the speed is pixels/second, and the delta time is in seconds, so I'll just have to multiply
-		this by GetProcessDeltaTime() until it equals 100! The perfect plan...*/
 
 		fistCol = (CollisionShape2D)GetNode("FistCollider");
 		fistSpr = (Sprite2D)GetNode("FistSprite");

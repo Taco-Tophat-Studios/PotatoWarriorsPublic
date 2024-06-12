@@ -1,0 +1,171 @@
+[gd_scene load_steps=15 format=3 uid="uid://dcxqc1hjwm212"]
+
+[ext_resource type="PackedScene" uid="uid://glertibyvh6d" path="res://Screens/standard_bg.tscn" id="1_0f5rx"]
+[ext_resource type="PackedScene" uid="uid://y35n40gl1kmi" path="res://simple_player.tscn" id="2_ibbcv"]
+[ext_resource type="PackedScene" uid="uid://badmfqx0fqhwd" path="res://simple_sword.tscn" id="3_b5gtf"]
+[ext_resource type="Theme" uid="uid://o4h4maoo3xqe" path="res://Misc/theme1.tres" id="4_p1wdv"]
+[ext_resource type="Script" path="res://scripts/CreditButton.cs" id="4_uqht6"]
+[ext_resource type="Texture2D" uid="uid://dj7xd88ys88ll" path="res://sprites/GUI/icons.png" id="5_rhqpe"]
+[ext_resource type="Script" path="res://scripts/CreditsText.cs" id="7_gfbb3"]
+[ext_resource type="Texture2D" uid="uid://d07bu6nr3r3os" path="res://sprites/GUI/TTSLogo.png" id="8_xmm14"]
+[ext_resource type="Texture2D" uid="uid://dmm250k7g138e" path="res://sprites/GUI/ArcollegiateLogo.png" id="9_yi4b2"]
+[ext_resource type="Script" path="res://scripts/ExitButton.cs" id="10_e0fwk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jx7l0"]
+size = Vector2(1152, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7avh"]
+size = Vector2(64, 640)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vfnes"]
+size = Vector2(64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1ss0"]
+atlas = ExtResource("5_rhqpe")
+region = Rect2(192, 0, 32, 32)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StandardBG" parent="." instance=ExtResource("1_0f5rx")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(576, 672)
+shape = SubResource("RectangleShape2D_jx7l0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(576, -32)
+shape = SubResource("RectangleShape2D_jx7l0")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-32, 320)
+shape = SubResource("RectangleShape2D_y7avh")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1184, 320)
+shape = SubResource("RectangleShape2D_y7avh")
+
+[node name="SimplePlayer" parent="." instance=ExtResource("2_ibbcv")]
+position = Vector2(64, 576)
+scale = Vector2(0.75, 0.75)
+
+[node name="SimpleSword" parent="." instance=ExtResource("3_b5gtf")]
+position = Vector2(256, 576)
+scale = Vector2(1.5, 1.5)
+
+[node name="LeftArrow" type="Area2D" parent="."]
+position = Vector2(96, 320)
+script = ExtResource("4_uqht6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArrow"]
+shape = SubResource("RectangleShape2D_vfnes")
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftArrow"]
+
+[node name="Panel" type="Panel" parent="LeftArrow"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme = ExtResource("4_p1wdv")
+
+[node name="ArrowSprite" type="Sprite2D" parent="LeftArrow"]
+texture = ExtResource("5_rhqpe")
+region_enabled = true
+region_rect = Rect2(32, 0, 32, 32)
+
+[node name="RightArrow" type="Area2D" parent="."]
+position = Vector2(1056, 320)
+script = ExtResource("4_uqht6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightArrow"]
+shape = SubResource("RectangleShape2D_vfnes")
+
+[node name="Sprite2D" type="Sprite2D" parent="RightArrow"]
+
+[node name="Panel" type="Panel" parent="RightArrow"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme = ExtResource("4_p1wdv")
+
+[node name="ArrowSprite" type="Sprite2D" parent="RightArrow"]
+texture = ExtResource("5_rhqpe")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="CreditsText" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_gfbb3")
+
+[node name="CreditsTitle" type="Label" parent="CreditsText"]
+layout_mode = 0
+offset_left = 384.0
+offset_right = 768.0
+offset_bottom = 144.0
+theme = ExtResource("4_p1wdv")
+theme_override_font_sizes/font_size = 96
+text = "CREDITS"
+horizontal_alignment = 1
+
+[node name="CreditsNames" type="Label" parent="CreditsText"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 128.0
+offset_right = 832.0
+offset_bottom = 448.0
+text = "The people who made this possible!"
+
+[node name="TTSLogo" type="Sprite2D" parent="."]
+position = Vector2(96, 96)
+scale = Vector2(2, 2)
+texture = ExtResource("8_xmm14")
+
+[node name="Label" type="Label" parent="TTSLogo"]
+offset_left = -40.0
+offset_top = 32.0
+offset_right = 126.0
+offset_bottom = 103.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 24
+text = "TACO TOPHAT
+STUDIOS"
+horizontal_alignment = 1
+
+[node name="ACLogo" type="Sprite2D" parent="."]
+position = Vector2(1056, 96)
+scale = Vector2(2, 2)
+texture = ExtResource("9_yi4b2")
+
+[node name="Label" type="Label" parent="ACLogo"]
+offset_left = -32.0
+offset_top = 32.0
+offset_right = 34.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 11
+text = "Arcollegiate
+Media"
+horizontal_alignment = 1
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 1008.0
+offset_top = 544.0
+offset_right = 1168.0
+offset_bottom = 640.0
+scale = Vector2(0.75, 0.75)
+theme = ExtResource("4_p1wdv")
+script = ExtResource("10_e0fwk")
+
+[node name="Sprite2D" type="Sprite2D" parent="ExitButton"]
+position = Vector2(80, 48)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_a1ss0")
+
+[connection signal="area_entered" from="LeftArrow" to="LeftArrow" method="_on_area_entered"]
+[connection signal="area_entered" from="RightArrow" to="RightArrow" method="_on_area_entered"]
+[connection signal="button_down" from="ExitButton" to="ExitButton" method="_on_button_down"]

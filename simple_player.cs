@@ -3,9 +3,7 @@ using System;
 
 public partial class simple_player : CharacterBody2D
 {
-	//this script exists for no other purpose than for a player that does nothing but moves (literally me), for interactive sequences and stuff.
-
-	//I think everything has to be doubled because the player is normally scaled by x2 or something idk I'm not a 
+	//this script exists for no other purpose than for a player that does nothing but moves, for interactive sequences and stuff.
 	public const float Speed = 12f;
 
     public override void _Ready()

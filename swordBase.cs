@@ -62,7 +62,6 @@ public partial class swordBase : Area2D, IPlayerTools
     public override void _Ready()
 	{ 
         player = (playerBase)GetParent();
-        //ElasticVelocity = Vector2.Zero;
 
         tl = new Timer(1.5f, false, this);
         
@@ -78,7 +77,7 @@ public partial class swordBase : Area2D, IPlayerTools
 
         tipPos = tip.GlobalPosition - this.GlobalPosition;
         
-        swordSprite = ((AnimatedSprite2D)GetNode("SwordSprite"));
+        swordSprite = (AnimatedSprite2D)GetNode("SwordSprite");
 
         UpdateVelocity();
         swordCol = (CollisionShape2D)GetNode("NormalCollider");
@@ -90,7 +89,7 @@ public partial class swordBase : Area2D, IPlayerTools
     }
     public void AfterReady() {
         if (player.isAuthority) {
-            swordSpriteIndex = (int)Global.GetLocalPlayerProperty("swordIndex");
+            //swordSpriteIndex = (int)Global.GetLocalPlayerProperty("swordIndex");
         }
         swordSprite.Frame = swordSpriteIndex;
     }
@@ -100,10 +99,6 @@ public partial class swordBase : Area2D, IPlayerTools
 	{
         if (player.isAuthority && m.players.IndexOf(player) == 0)
         {
-            
-            
-            //the code to make the sword more hefty
-            //who woulda thought that the key to making something feel more powerful would be to give it more mass
             
             UpdateVelocity();
 
@@ -116,8 +111,6 @@ public partial class swordBase : Area2D, IPlayerTools
                 GlobalPosition += velocity * (float)GetProcessDeltaTime();
             }
 
-            
-            //GetViewport().WarpMouse(Global.GetScreenCoordinates(this));
 
             KeepSwordInRange();
 
@@ -201,8 +194,6 @@ public partial class swordBase : Area2D, IPlayerTools
             //tip stuff
             tipVelocity2d = (tipPos - tip.GlobalPosition) / (float)GetProcessDeltaTime();
 
-            //use pythagorean theorem the way god(ot) intended
-            //^ This is obsolete because .Length() exists. L for me i guess.
             tipVel = tipVelocity2d.Length();
 
             swingVal += (Mathf.Abs(tipVel) - 1280) * (float)GetProcessDeltaTime();
@@ -244,8 +235,6 @@ public partial class swordBase : Area2D, IPlayerTools
         lastPos = this.GlobalPosition;
 
     }
-    //not gonna make it the same method with an argument 'cause Unlock is part of the TimerFinished event, which
-    //has no args. Sure, its possible, but it takes effort and idrc
     public void Lock() {
         locked = true;
         swordCol.Disabled = true;
@@ -285,7 +274,6 @@ public partial class swordBase : Area2D, IPlayerTools
         overlay.Scale = new Vector2(angVel / MathF.Abs(angVel), 1);
     }
     public void UpdateVelocity () {
-        //good ol' STD
         velocity = (GetGlobalMousePosition() - lastPos) / (float)GetProcessDeltaTime();
     }
     public void BounceSwords(swordBase sw)
@@ -304,10 +292,10 @@ public partial class swordBase : Area2D, IPlayerTools
         sw.angVel = angVel2;
     }
     //f is angVel, v1 and v2 are this and that tPos's, v4 is that vel's
-	protected static float SwordBounceExpression(float f, Vector2 v1, Vector2 v2 /*V2 ULTRAKILL?!?!*/,Vector2 v4) {
+	protected static float SwordBounceExpression(float f, Vector2 v1, Vector2 v2,Vector2 v4) {
 		//v1 and v2 are the tip positions rotated instead of the tip velocities, because the latter can be 0
 		//and cause a bunch of headaches. Therefore, keep the angle signed, but the vectors which it compares with
-		//tangent and normalized, always in positive, so the angle's sign can rub off on them
+		//tangent and normalized, always in positive, so the angle's sign can affect them
 		float ret = f * v1.Rotated(Mathf.Pi/2).Normalized().Dot(v2.Rotated(Mathf.Pi/2).Normalized());
         
 
@@ -323,7 +311,7 @@ public partial class swordBase : Area2D, IPlayerTools
 			BounceSwords(s);
             Random r = new();
 		    int ri = r.Next(8, 11);
-		    a.Stream = Global.sfx[ri];
+		    //a.Stream = Global.sfx[ri];
 		    a.Play();
 		}
         

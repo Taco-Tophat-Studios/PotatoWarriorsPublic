@@ -1,0 +1,224 @@
+[gd_scene load_steps=37 format=3 uid="uid://bcou4nncdf570"]
+
+[ext_resource type="Script" path="res://scripts/victory_screen.cs" id="1_1u66r"]
+[ext_resource type="Texture2D" uid="uid://djn4qjf2vy7mj" path="res://sprites/Backgrounds/Podium2.png" id="1_kxbff"]
+[ext_resource type="Shader" path="res://scripts/miscScripts/playerRecolor.gdshader" id="3_fappa"]
+[ext_resource type="Texture2D" uid="uid://cxvv350suvixw" path="res://sprites/Player/PlayerVictory/PV1.png" id="3_ffunv"]
+[ext_resource type="Theme" uid="uid://o4h4maoo3xqe" path="res://Misc/theme1.tres" id="3_yuetg"]
+[ext_resource type="Script" path="res://scripts/ExitButton.cs" id="4_7voge"]
+[ext_resource type="Texture2D" uid="uid://dr0ns0ib6sofj" path="res://sprites/Player/PlayerVictory/PV2.png" id="4_25ulh"]
+[ext_resource type="Texture2D" uid="uid://de4eif48bu7m5" path="res://sprites/Player/PlayerVictory/PV3.png" id="5_26l4p"]
+[ext_resource type="Texture2D" uid="uid://dj7xd88ys88ll" path="res://sprites/GUI/icons.png" id="5_co1yp"]
+[ext_resource type="Texture2D" uid="uid://c77kul5eqgfqi" path="res://sprites/Player/PlayerVictory/PV4.png" id="6_1aqha"]
+[ext_resource type="Texture2D" uid="uid://bhjkt3sc3ikte" path="res://sprites/Player/PlayerVictory/PV5.png" id="7_8lv3j"]
+[ext_resource type="Texture2D" uid="uid://b8wlptfdvvsbx" path="res://sprites/Player/PlayerVictory/PV6.png" id="8_6ryv3"]
+[ext_resource type="Texture2D" uid="uid://ci1x11ejf8cxa" path="res://sprites/Player/PlayerVictory/PV7.png" id="9_5r10u"]
+[ext_resource type="Texture2D" uid="uid://dd73pqmqkbhn3" path="res://sprites/Player/PlayerVictory/PV8.png" id="10_dp7k5"]
+[ext_resource type="Texture2D" uid="uid://dcpnlkpufuv1o" path="res://sprites/Player/PlayerVictory/PV9.png" id="11_04uyq"]
+[ext_resource type="Texture2D" uid="uid://jg2obkwxtc2i" path="res://sprites/Player/PlayerVictory/PV10.png" id="12_blnu6"]
+[ext_resource type="Texture2D" uid="uid://c8f661aatv578" path="res://sprites/Player/PlayerVictory/PV11.png" id="13_d8t4e"]
+[ext_resource type="Texture2D" uid="uid://cmucsaer3f54w" path="res://sprites/Player/PlayerVictory/PV12.png" id="14_38ogc"]
+[ext_resource type="Texture2D" uid="uid://ct0qplb3vxyvg" path="res://sprites/Player/PlayerVictory/PV13.png" id="15_3e133"]
+[ext_resource type="Texture2D" uid="uid://cswacofxheb68" path="res://sprites/Player/PlayerVictory/PV14.png" id="16_ystcq"]
+[ext_resource type="Texture2D" uid="uid://da2yaiue4tmid" path="res://sprites/Player/PlayerVictory/PV15.png" id="17_ha2pn"]
+[ext_resource type="Texture2D" uid="uid://c30t58s6eplly" path="res://sprites/Player/PlayerVictory/PV16.png" id="18_h6sht"]
+[ext_resource type="Texture2D" uid="uid://58s8r0a4h17m" path="res://sprites/Player/PlayerVictory/PV17.png" id="19_ur66f"]
+[ext_resource type="Texture2D" uid="uid://dv8ohbdfveh03" path="res://sprites/Player/PlayerVictory/PV18.png" id="20_qhopn"]
+[ext_resource type="Texture2D" uid="uid://btsyy1472ds70" path="res://sprites/Player/PlayerVictory/PV19.png" id="21_k8swm"]
+[ext_resource type="Texture2D" uid="uid://djn72x5aectxu" path="res://sprites/Player/PlayerVictory/PV20.png" id="22_qc464"]
+[ext_resource type="Texture2D" uid="uid://cpyo7ptfufq4c" path="res://sprites/Player/PlayerVictory/PV21.png" id="23_ah82a"]
+[ext_resource type="Texture2D" uid="uid://cyxwrpuqfdhu5" path="res://sprites/Player/PlayerVictory/PV22.png" id="24_q3krr"]
+[ext_resource type="Texture2D" uid="uid://d07rbd2udc0bl" path="res://sprites/Player/PlayerVictory/PV23.png" id="25_l23ps"]
+[ext_resource type="Texture2D" uid="uid://bfkxbqeqjc487" path="res://sprites/Player/PlayerVictory/PV24.png" id="26_g2l13"]
+[ext_resource type="Texture2D" uid="uid://1d8d3r6r0a3u" path="res://sprites/Player/PlayerVictory/PV25.png" id="27_k4boy"]
+[ext_resource type="Texture2D" uid="uid://b1g2c8yogafw7" path="res://sprites/Player/PlayerVictory/PV26.png" id="28_vgk4j"]
+[ext_resource type="Texture2D" uid="uid://centerwa2x4un" path="res://sprites/Player/PlayerVictory/PV27.png" id="29_ltpvb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5g5cx"]
+shader = ExtResource("3_fappa")
+shader_parameter/o = Color(0.65098, 0.65098, 0.65098, 1)
+shader_parameter/n = Color(1, 0, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wn45k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ffunv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_25ulh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_26l4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1aqha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8lv3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6ryv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5r10u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dp7k5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_04uyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_blnu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_d8t4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_38ogc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_3e133")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ystcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ha2pn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_h6sht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ur66f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_qhopn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_k8swm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_qc464")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ah82a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_q3krr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_l23ps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_g2l13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_k4boy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_vgk4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ltpvb")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqps2"]
+atlas = ExtResource("5_co1yp")
+region = Rect2(192, 0, 32, 32)
+
+[node name="VictoryScreen" type="Node2D"]
+script = ExtResource("1_1u66r")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(576, 320)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_kxbff")
+
+[node name="PlayerVictorySprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_5g5cx")
+position = Vector2(576, 128)
+scale = Vector2(0.875, 0.875)
+sprite_frames = SubResource("SpriteFrames_wn45k")
+frame = 26
+frame_progress = 1.0
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 976.0
+offset_top = 528.0
+offset_right = 1136.0
+offset_bottom = 624.0
+theme = ExtResource("3_yuetg")
+script = ExtResource("4_7voge")
+
+[node name="Sprite2D" type="Sprite2D" parent="ExitButton"]
+position = Vector2(80, 48)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_yqps2")
+
+[node name="VictorLabel" type="Label" parent="."]
+offset_left = 336.0
+offset_top = 48.0
+offset_right = 824.0
+offset_bottom = 98.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_font_sizes/font_size = 36
+text = "VICTORY to <PLAYER NAME>"
+horizontal_alignment = 1
+
+[node name="Player1AchLabel" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 209.0
+offset_bottom = 198.0
+theme_override_font_sizes/font_size = 24
+text = "<Player 1 name>
+
+- Achievement
+- Achievement
+- Achievement"
+
+[node name="Player2AchLabel" type="Label" parent="."]
+offset_left = 944.0
+offset_top = 16.0
+offset_right = 1137.0
+offset_bottom = 198.0
+theme_override_font_sizes/font_size = 24
+text = "<Player 2 name>
+
+- Achievement
+- Achievement
+- Achievement"
+
+[node name="Player3AchLabel" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 272.0
+offset_right = 209.0
+offset_bottom = 454.0
+theme_override_font_sizes/font_size = 24
+text = "<Player 3 name>
+
+- Achievement
+- Achievement
+- Achievement"
+
+[node name="Player4AchLabel" type="Label" parent="."]
+offset_left = 944.0
+offset_top = 272.0
+offset_right = 1137.0
+offset_bottom = 454.0
+theme_override_font_sizes/font_size = 24
+text = "<Player 4 name>
+
+- Achievement
+- Achievement
+- Achievement"
+
+[connection signal="button_down" from="ExitButton" to="ExitButton" method="_on_button_down"]
