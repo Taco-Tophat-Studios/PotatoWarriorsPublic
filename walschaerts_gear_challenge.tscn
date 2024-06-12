@@ -1,0 +1,107 @@
+[gd_scene load_steps=8 format=3 uid="uid://cv7yu2ag1kv8v"]
+
+[ext_resource type="Script" path="res://scripts/experiments/wheels.cs" id="1_ap6e0"]
+[ext_resource type="Texture2D" uid="uid://duorhaa84isq4" path="res://sprites/Player/Player1Base.png" id="2_jibbl"]
+[ext_resource type="Texture2D" uid="uid://clakgbagqqttc" path="res://sprites/GUI/SliderPin.png" id="3_1k4qc"]
+[ext_resource type="Texture2D" uid="uid://7eoyyxu02f8i" path="res://sprites/GUI/SliderBarBright.png" id="3_fm1hr"]
+[ext_resource type="Script" path="res://scripts/experiments/BarScripts.cs" id="4_bsom1"]
+[ext_resource type="Texture2D" uid="uid://drt35jv2ljvlo" path="res://sprites/GUI/SliderBarDark.png" id="5_u01ur"]
+[ext_resource type="Texture2D" uid="uid://b2e11jv2vxaf1" path="res://sprites/GUI/PanelBase.png" id="6_dctb5"]
+
+[node name="WalschaertsGearChallenge" type="Node2D"]
+
+[node name="Wheels" type="Node2D" parent="."]
+position = Vector2(256, 256)
+script = ExtResource("1_ap6e0")
+
+[node name="Wheel1" type="Sprite2D" parent="Wheels"]
+texture = ExtResource("2_jibbl")
+
+[node name="Wheel2" type="Sprite2D" parent="Wheels"]
+position = Vector2(160, 0)
+texture = ExtResource("2_jibbl")
+
+[node name="Wheel3" type="Sprite2D" parent="Wheels"]
+position = Vector2(320, 0)
+texture = ExtResource("2_jibbl")
+
+[node name="Wheel4" type="Sprite2D" parent="Wheels"]
+position = Vector2(480, 0)
+texture = ExtResource("2_jibbl")
+
+[node name="ConnectionBar" type="Sprite2D" parent="."]
+position = Vector2(496, 256)
+scale = Vector2(5.33333, 4)
+texture = ExtResource("3_fm1hr")
+script = ExtResource("4_bsom1")
+
+[node name="CrankBar" type="Sprite2D" parent="."]
+position = Vector2(744, 256)
+scale = Vector2(3.5, 4)
+texture = ExtResource("5_u01ur")
+script = ExtResource("4_bsom1")
+
+[node name="OffsetBar" type="Sprite2D" parent="."]
+position = Vector2(576, 256)
+scale = Vector2(1.061, 0.25)
+texture = ExtResource("6_dctb5")
+script = ExtResource("4_bsom1")
+
+[node name="ConnectionPoint" type="Node2D" parent="OffsetBar"]
+position = Vector2(-30.1602, -0.00012207)
+
+[node name="DrivingBar" type="Sprite2D" parent="."]
+position = Vector2(1032, 256)
+scale = Vector2(3.75, 0.5)
+texture = ExtResource("6_dctb5")
+script = ExtResource("4_bsom1")
+
+[node name="ConnectionPoint" type="Node2D" parent="DrivingBar"]
+position = Vector2(-32, 0)
+
+[node name="JohnsonBar" type="Sprite2D" parent="."]
+position = Vector2(752, 128)
+scale = Vector2(4, 10.6667)
+texture = ExtResource("3_1k4qc")
+script = ExtResource("4_bsom1")
+
+[node name="ConnectionPoint" type="Node2D" parent="JohnsonBar"]
+position = Vector2(0, 6)
+
+[node name="ConnectionPoint2" type="Node2D" parent="JohnsonBar"]
+position = Vector2(0, 3.75)
+
+[node name="CalibrationBar" type="Sprite2D" parent="."]
+position = Vector2(600, 168)
+scale = Vector2(3.25, 0.25)
+texture = ExtResource("6_dctb5")
+script = ExtResource("4_bsom1")
+
+[node name="SlidingPoint" type="Node2D" parent="."]
+position = Vector2(912, 144)
+scale = Vector2(1.66667, 2.66667)
+script = ExtResource("4_bsom1")
+
+[node name="BackBar" type="Sprite2D" parent="."]
+position = Vector2(824, 160)
+scale = Vector2(1.83333, 2.66667)
+texture = ExtResource("3_fm1hr")
+script = ExtResource("4_bsom1")
+
+[node name="ConnectionPoint" type="Node2D" parent="BackBar"]
+position = Vector2(-48, 0)
+
+[node name="PistonBar" type="Sprite2D" parent="."]
+position = Vector2(1008, 176)
+scale = Vector2(2, 2.66667)
+texture = ExtResource("3_fm1hr")
+script = ExtResource("4_bsom1")
+
+[node name="ConnectionPoint" type="Node2D" parent="PistonBar"]
+position = Vector2(-48, 0)
+
+[node name="LeadBar" type="Sprite2D" parent="."]
+position = Vector2(912, 192)
+scale = Vector2(2, 10.6667)
+texture = ExtResource("3_1k4qc")
+script = ExtResource("4_bsom1")

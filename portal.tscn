@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8p5gixd7jfk7"]
+
+[ext_resource type="Script" path="res://scripts/Portal.cs" id="1_fstin"]
+[ext_resource type="Texture2D" uid="uid://cap6f1s75tm3b" path="res://sprites/Objects/Portal1.png" id="2_x2sj8"]
+[ext_resource type="Texture2D" uid="uid://djmulexjon1fg" path="res://sprites/Objects/Portal2.png" id="3_fuo4g"]
+[ext_resource type="Texture2D" uid="uid://bgdy44kx67tk0" path="res://sprites/Objects/Portal3.png" id="4_bhos6"]
+[ext_resource type="Texture2D" uid="uid://nc3upyk4t00y" path="res://sprites/Objects/Portal4.png" id="5_fs7s6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jywfa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x2sj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fuo4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bhos6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fs7s6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8g5cy"]
+radius = 24.0
+
+[node name="Portal" type="Node2D"]
+script = ExtResource("1_fstin")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_jywfa")
+autoplay = "default"
+frame_progress = 0.167499
+
+[node name="PortalArea" type="Area2D" parent="."]
+scale = Vector2(4, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PortalArea"]
+shape = SubResource("CircleShape2D_8g5cy")
+
+[connection signal="body_entered" from="PortalArea" to="." method="_on_portal_area_body_entered"]

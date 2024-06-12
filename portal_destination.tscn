@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://cl8nk7nqrgpjx"]
+
+[ext_resource type="Texture2D" uid="uid://b0ofd3vxxu2qh" path="res://sprites/Objects/PortalExit1.png" id="1_owspv"]
+[ext_resource type="Texture2D" uid="uid://c05xvx5onoq1w" path="res://sprites/Objects/PortalExit2.png" id="2_jir3c"]
+[ext_resource type="Texture2D" uid="uid://do405ovglvgpg" path="res://sprites/Objects/PortalExit3.png" id="3_bowk1"]
+[ext_resource type="Texture2D" uid="uid://ql6b56mn77l5" path="res://sprites/Objects/PortalExit4.png" id="4_1csp3"]
+[ext_resource type="Texture2D" uid="uid://wc6el0ijopm4" path="res://sprites/Objects/PortalExit5.png" id="5_pogub"]
+[ext_resource type="Texture2D" uid="uid://ddk8qk0j0gn74" path="res://sprites/Objects/PortalExit6.png" id="6_i3wl4"]
+[ext_resource type="Texture2D" uid="uid://yttjyr1gnmxi" path="res://sprites/Objects/PortalExit7.png" id="7_jy6h3"]
+[ext_resource type="Texture2D" uid="uid://bpeoydayt8t1e" path="res://sprites/Objects/PortalExit8.png" id="8_lqu1e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_maqqc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_owspv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jir3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bowk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1csp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pogub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i3wl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jy6h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lqu1e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="PortalDestination" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_maqqc")
+autoplay = "default"
