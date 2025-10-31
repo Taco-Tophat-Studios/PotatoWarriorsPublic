@@ -735,3 +735,4 @@ shape = SubResource("RectangleShape2D_xw23g")
 volume_db = -5.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

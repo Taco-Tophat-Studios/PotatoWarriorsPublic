@@ -1,7 +1,7 @@
-[gd_scene load_steps=68 format=3 uid="uid://c6geuvo78hpyb"]
+[gd_scene load_steps=40 format=3 uid="uid://c6geuvo78hpyb"]
 
 [ext_resource type="Script" path="res://scripts/match.cs" id="1_emwyg"]
-[ext_resource type="Theme" uid="uid://o4h4maoo3xqe" path="res://Misc/theme1.tres" id="7_h6qf5"]
+[ext_resource type="Theme" uid="uid://4jr18wy4hhod" path="res://Misc/theme1.tres" id="7_h6qf5"]
 [ext_resource type="Texture2D" uid="uid://b387anvd77ul6" path="res://sprites/GUI/Scorecard3p/Scorecard1.png" id="8_4sdh3"]
 [ext_resource type="AudioStream" uid="uid://betbp2j083x43" path="res://music/PW3.mp3" id="8_b3cyc"]
 [ext_resource type="Script" path="res://scripts/PauseButton.cs" id="8_jsw4x"]
@@ -12,27 +12,17 @@
 [ext_resource type="Texture2D" uid="uid://dafobhxmiqqrj" path="res://sprites/GUI/Scorecard3p/Scorecard3.png" id="10_j18cy"]
 [ext_resource type="Texture2D" uid="uid://dh2gcj0fec664" path="res://sprites/GUI/Scorecard3p/Scorecard4.png" id="11_0ujap"]
 [ext_resource type="Texture2D" uid="uid://4b1o4fi1f13w" path="res://sprites/GUI/Scorecard3p/Scorecard5.png" id="12_dl7wk"]
-[ext_resource type="Texture2D" uid="uid://c0gwk2ldkdgex" path="res://sprites/GUI/Scorecard3p/Scorecard6.png" id="13_4le28"]
-[ext_resource type="Texture2D" uid="uid://ko57ju8gbky2" path="res://sprites/Player/CoinSprite.png" id="13_jp8wb"]
-[ext_resource type="Texture2D" uid="uid://g7gh55hd3p3j" path="res://sprites/GUI/Scorecard3p/Scorecard7.png" id="14_e1i8p"]
-[ext_resource type="Script" path="res://scripts/coinScript.cs" id="14_l8sau"]
-[ext_resource type="Texture2D" uid="uid://cyg6qxa6345mr" path="res://sprites/GUI/Scorecard3p/Scorecard8.png" id="15_0xndd"]
-[ext_resource type="Texture2D" uid="uid://dwjxdyks2cw0r" path="res://sprites/GUI/Scorecard3p/Scorecard9.png" id="16_ssyj8"]
-[ext_resource type="Texture2D" uid="uid://cc10dalyok00n" path="res://sprites/GUI/Scorecard3p/Scorecard10.png" id="17_jgngu"]
 [ext_resource type="Texture2D" uid="uid://dnvh7xduy37o8" path="res://sprites/GUI/Scorecard4p/Scorecard1.png" id="18_0e4lw"]
 [ext_resource type="Texture2D" uid="uid://1hp13mq8vvjc" path="res://sprites/GUI/Scorecard4p/Scorecard2.png" id="19_l5ryo"]
 [ext_resource type="Texture2D" uid="uid://bqu45ufhcput" path="res://sprites/GUI/Scorecard4p/Scorecard3.png" id="20_ntnaw"]
 [ext_resource type="Texture2D" uid="uid://bujvc7l55c2ao" path="res://sprites/GUI/Scorecard4p/Scorecard4.png" id="21_4jnfr"]
 [ext_resource type="Texture2D" uid="uid://cppus0e0b42n8" path="res://sprites/GUI/Scorecard4p/Scorecard5.png" id="22_g8hck"]
-[ext_resource type="Texture2D" uid="uid://bokvydlwvxmrk" path="res://sprites/GUI/Scorecard4p/Scorecard6.png" id="23_g0j7a"]
-[ext_resource type="Texture2D" uid="uid://bd21ewsqt8rwg" path="res://sprites/GUI/Scorecard4p/Scorecard7.png" id="24_jtwby"]
-[ext_resource type="Texture2D" uid="uid://bb2pfq03x8wcf" path="res://sprites/GUI/Scorecard4p/Scorecard8.png" id="25_ko6fq"]
-[ext_resource type="Texture2D" uid="uid://day8u3jmhtt8t" path="res://sprites/GUI/Scorecard4p/Scorecard9.png" id="26_eb52j"]
-[ext_resource type="Texture2D" uid="uid://lm346ykex6b0" path="res://sprites/GUI/Scorecard4p/Scorecard10.png" id="27_y3tqw"]
 [ext_resource type="Texture2D" uid="uid://bxksohjfep0gs" path="res://sprites/GUI/Scorecard2p/Scorecard1.png" id="28_5bec5"]
 [ext_resource type="Texture2D" uid="uid://d11nm252kqtbu" path="res://sprites/GUI/Scorecard2p/Scorecard2.png" id="29_kqx7o"]
 [ext_resource type="Texture2D" uid="uid://c1vvuf3cvknip" path="res://sprites/GUI/Scorecard2p/Scorecard3.png" id="30_f34jn"]
 [ext_resource type="Texture2D" uid="uid://tmkdw5lcr3uu" path="res://sprites/GUI/Scorecard2p/Scorecard4.png" id="31_ev3t5"]
+[ext_resource type="Texture2D" uid="uid://gcbq2f41m7xm" path="res://sprites/Tiles/DebugTile.png" id="31_oolgd"]
+[ext_resource type="Script" path="res://scripts/miscScripts/DebugTml.cs" id="31_rnvr8"]
 [ext_resource type="Texture2D" uid="uid://dmqstiq7qxbx" path="res://sprites/GUI/Scorecard2p/Scorecard5.png" id="32_6lnk0"]
 [ext_resource type="Texture2D" uid="uid://sc84phvjl3cb" path="res://sprites/GUI/Scorecard2p/Scorecard6.png" id="33_7nave"]
 [ext_resource type="Texture2D" uid="uid://c1jhstr1p4p33" path="res://sprites/GUI/Scorecard2p/Scorecard7.png" id="34_8u4tu"]
@@ -41,61 +31,9 @@
 [ext_resource type="Texture2D" uid="uid://cibuc2e30qpfi" path="res://sprites/GUI/Scorecard2p/Scorecard10.png" id="37_dofli"]
 [ext_resource type="Texture2D" uid="uid://diom5uj4sfqqs" path="res://sprites/GUI/Scorecard2p/Scorecard11.png" id="38_4cfr8"]
 [ext_resource type="Texture2D" uid="uid://ckoufiqh8sen8" path="res://sprites/GUI/Scorecard2p/Scorecard12.png" id="39_kpjeq"]
-[ext_resource type="Texture2D" uid="uid://wahpgilc07e6" path="res://sprites/GUI/Scorecard2p/Scorecard13.png" id="40_ohnov"]
-[ext_resource type="Texture2D" uid="uid://btyhlfti8702f" path="res://sprites/GUI/Scorecard2p/Scorecard14.png" id="41_48ji2"]
-[ext_resource type="Texture2D" uid="uid://cm824n7xivfh8" path="res://sprites/GUI/Scorecard2p/Scorecard15.png" id="42_viyqq"]
-[ext_resource type="Texture2D" uid="uid://cmqqo75rxkdq2" path="res://sprites/GUI/Scorecard2p/Scorecard16.png" id="43_sk40v"]
-[ext_resource type="Texture2D" uid="uid://cu0p0wma0b1sm" path="res://sprites/GUI/Scorecard2p/Scorecard17.png" id="44_14b7i"]
-[ext_resource type="Texture2D" uid="uid://cfnxla4sjldqw" path="res://sprites/GUI/Scorecard2p/Scorecard18.png" id="45_e1ct1"]
-[ext_resource type="Texture2D" uid="uid://cw5mgb853ch67" path="res://sprites/GUI/Scorecard2p/Scorecard19.png" id="46_e3hac"]
-[ext_resource type="Texture2D" uid="uid://cnurcwhfbs35n" path="res://sprites/GUI/Scorecard2p/Scorecard20.png" id="47_xdyxt"]
-[ext_resource type="Texture2D" uid="uid://budgqbdn7l71v" path="res://sprites/GUI/Scorecard2p/Scorecard21.png" id="48_5i3g0"]
-[ext_resource type="Texture2D" uid="uid://c2woy015n2lqa" path="res://sprites/GUI/Scorecard2p/Scorecard22.png" id="49_s5ypo"]
-[ext_resource type="Texture2D" uid="uid://cf6qwlymkbg37" path="res://sprites/GUI/Scorecard2p/Scorecard23.png" id="50_6aglv"]
-[ext_resource type="Texture2D" uid="uid://cc4cbkysaxra2" path="res://sprites/GUI/Scorecard2p/Scorecard24.png" id="51_0lqu1"]
-[ext_resource type="Texture2D" uid="uid://8r3lsok17gmm" path="res://sprites/GUI/Scorecard2p/Scorecard25.png" id="52_3csgt"]
 [ext_resource type="Script" path="res://scripts/Header.cs" id="53_kdnq3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iy1cl"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r4thc"]
-atlas = ExtResource("13_jp8wb")
-region = Rect2(0, 0, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jl2d4"]
-atlas = ExtResource("13_jp8wb")
-region = Rect2(8, 0, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y4mp5"]
-atlas = ExtResource("13_jp8wb")
-region = Rect2(16, 0, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uvo3h"]
-atlas = ExtResource("13_jp8wb")
-region = Rect2(24, 0, 8, 8)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ddx8u"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r4thc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jl2d4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y4mp5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uvo3h")
-}],
-"loop": true,
-"name": &"flip",
-"speed": 15.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1y8ne"]
-size = Vector2(41, 13)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6d0pu"]
 animations = [{
@@ -116,19 +54,19 @@ animations = [{
 "texture": ExtResource("12_dl7wk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_4le28")
+"texture": ExtResource("33_7nave")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_e1i8p")
+"texture": ExtResource("34_8u4tu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_0xndd")
+"texture": ExtResource("35_a7k1i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_ssyj8")
+"texture": ExtResource("36_xayex")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_jgngu")
+"texture": ExtResource("37_dofli")
 }],
 "loop": false,
 "name": &"3player",
@@ -151,19 +89,19 @@ animations = [{
 "texture": ExtResource("22_g8hck")
 }, {
 "duration": 1.0,
-"texture": ExtResource("23_g0j7a")
+"texture": ExtResource("33_7nave")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_jtwby")
+"texture": ExtResource("34_8u4tu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_ko6fq")
+"texture": ExtResource("35_a7k1i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_eb52j")
+"texture": ExtResource("36_xayex")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_y3tqw")
+"texture": ExtResource("37_dofli")
 }],
 "loop": false,
 "name": &"4player",
@@ -205,45 +143,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("39_kpjeq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40_ohnov")
-}, {
-"duration": 1.0,
-"texture": ExtResource("41_48ji2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("42_viyqq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("43_sk40v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("44_14b7i")
-}, {
-"duration": 1.0,
-"texture": ExtResource("45_e1ct1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("46_e3hac")
-}, {
-"duration": 1.0,
-"texture": ExtResource("47_xdyxt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("48_5i3g0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("49_s5ypo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("50_6aglv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("51_0lqu1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("52_3csgt")
 }],
 "loop": false,
 "name": &"base",
@@ -258,23 +157,33 @@ region = Rect2(192, 0, 32, 32)
 atlas = ExtResource("9_2aeb4")
 region = Rect2(224, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dcbyi"]
-atlas = ExtResource("13_jp8wb")
-region = Rect2(0, 0, 8, 8)
-
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_sj3w5"]
 properties/0/path = NodePath(".:freeze")
 properties/0/spawn = true
 properties/0/replication_mode = 2
-properties/1/path = NodePath(".:coining")
+properties/1/path = NodePath(".:matchTime")
 properties/1/spawn = true
-properties/1/replication_mode = 2
-properties/2/path = NodePath("CoinChar:heads")
-properties/2/spawn = true
-properties/2/replication_mode = 2
+properties/1/replication_mode = 1
 
-[node name="World" type="Node2D"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feo0k"]
+texture = ExtResource("31_oolgd")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_klo2y"]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetAtlasSource_feo0k")
+
+[node name="World" type="Node2D" node_paths=PackedStringArray("CBUL", "CBLR", "dTML", "UI", "ArenaMS")]
 script = ExtResource("1_emwyg")
+CBUL = NodePath("CamBorderUL")
+CBLR = NodePath("CamBorderDR")
+dTML = NodePath("DebugTML")
+UI = NodePath("UI")
+ArenaMS = NodePath("ArenaMultSync")
 
 [node name="SpawnPoint1" type="Node2D" parent="."]
 position = Vector2(136, 392)
@@ -288,16 +197,18 @@ position = Vector2(920, 176)
 [node name="SpawnPoint4" type="Node2D" parent="."]
 position = Vector2(920, 408)
 
-[node name="bg" type="ParallaxBackground" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="bg"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.1, 0.1)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bg/ParallaxLayer"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(576, 200)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_iy1cl")
 autoplay = "default"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
 
 [node name="TileMap" type="TileMap" parent="."]
 format = 2
@@ -308,55 +219,45 @@ volume_db = -5.0
 bus = &"Music"
 script = ExtResource("9_j6q28")
 
-[node name="CoinChar" type="CharacterBody2D" parent="."]
-position = Vector2(216, 232)
-scale = Vector2(0.5, 0.5)
-script = ExtResource("14_l8sau")
-
-[node name="CoinSprite" type="AnimatedSprite2D" parent="CoinChar"]
-scale = Vector2(5, 5)
-sprite_frames = SubResource("SpriteFrames_ddx8u")
-animation = &"flip"
-
-[node name="CoinCollider" type="CollisionShape2D" parent="CoinChar"]
-shape = SubResource("RectangleShape2D_1y8ne")
-
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Header" type="AnimatedSprite2D" parent="UI"]
 position = Vector2(576, 48)
 scale = Vector2(2.76, 3)
 sprite_frames = SubResource("SpriteFrames_6d0pu")
-animation = &"4player"
-frame = 9
+animation = &"3player"
 script = ExtResource("53_kdnq3")
 
 [node name="P1Label" type="Label" parent="UI"]
-offset_left = 272.0
-offset_top = 24.0
-offset_right = 448.0
-offset_bottom = 48.0
+offset_left = 256.0
+offset_top = 16.0
+offset_right = 432.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 12
 text = "Player1's Health: Null"
 
 [node name="P2Label" type="Label" parent="UI"]
-offset_left = 712.0
-offset_top = 24.0
-offset_right = 877.0
-offset_bottom = 47.0
+offset_left = 720.0
+offset_top = 16.0
+offset_right = 885.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 12
 text = "Player2's Health: Null"
 
 [node name="P3Label" type="Label" parent="UI"]
-offset_left = 920.0
-offset_top = 24.0
-offset_right = 1088.0
-offset_bottom = 47.0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 200.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 12
 text = "Player3's Health: Null"
 
 [node name="P4Label" type="Label" parent="UI"]
-offset_left = 64.0
-offset_top = 24.0
-offset_right = 240.0
-offset_bottom = 48.0
+offset_left = 944.0
+offset_top = 16.0
+offset_right = 1120.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 12
 text = "Player4's Health: Null"
 
 [node name="TimerLabel" type="Label" parent="UI"]
@@ -406,21 +307,6 @@ position = Vector2(72, 40)
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_7hvfq")
 
-[node name="CoinLabel" type="Label" parent="UI"]
-offset_left = 478.0
-offset_top = 208.0
-offset_right = 674.0
-offset_bottom = 304.0
-theme = ExtResource("7_h6qf5")
-theme_override_font_sizes/font_size = 60
-text = "HEADS"
-horizontal_alignment = 1
-
-[node name="Coin1Sprite" type="Sprite2D" parent="UI"]
-position = Vector2(48, 120)
-scale = Vector2(8, 8)
-texture = SubResource("AtlasTexture_dcbyi")
-
 [node name="SFXMakerWorld" type="AudioStreamPlayer" parent="."]
 
 [node name="CamBorderUL" type="Node2D" parent="."]
@@ -430,6 +316,10 @@ position = Vector2(1728, 960)
 
 [node name="ArenaMultSync" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_sj3w5")
+
+[node name="DebugTML" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_klo2y")
+script = ExtResource("31_rnvr8")
 
 [connection signal="finished" from="MusicPlayer" to="MusicPlayer" method="_on_finished"]
 [connection signal="animation_finished" from="UI/Header" to="UI/Header" method="_on_animation_finished"]

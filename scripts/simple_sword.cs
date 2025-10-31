@@ -4,7 +4,7 @@ using System;
 public partial class simple_sword : Area2D
 {
     // Called when the node enters the scene tree for the first time.
-    const float multiplier = 15f; 
+    const float multiplier = 15f; //hello everyone my name is multiplayer
     AnimatedSprite2D overlay;
     float angVel = 0;
     const float max = 1280;
@@ -18,6 +18,7 @@ public partial class simple_sword : Area2D
     {
         Position = GetGlobalMousePosition();
 
+        //accelerate mouse? Even i dont know exactly what this is
         if (Input.IsMouseButtonPressed(MouseButton.Left) && angVel > -max)
         {
             //left
@@ -84,6 +85,6 @@ public partial class simple_sword : Area2D
 
     }
 
-   
+
 }
 

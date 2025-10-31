@@ -1,7 +1,8 @@
 [gd_scene load_steps=33 format=3 uid="uid://chjknqqva25th"]
 
+[ext_resource type="Script" path="res://scripts/multiplayer/LANMultiplayer.cs" id="1_etgna"]
 [ext_resource type="Script" path="res://PlayButton.cs" id="1_gp542"]
-[ext_resource type="Theme" uid="uid://o4h4maoo3xqe" path="res://Misc/theme1.tres" id="2_60e7v"]
+[ext_resource type="Theme" uid="uid://4jr18wy4hhod" path="res://Misc/theme1.tres" id="2_60e7v"]
 [ext_resource type="PackedScene" uid="uid://glertibyvh6d" path="res://Screens/standard_bg.tscn" id="2_c86a4"]
 [ext_resource type="Script" path="res://scripts/multiplayer/host_join.cs" id="2_gc3ja"]
 [ext_resource type="Script" path="res://scripts/ExitButton.cs" id="4_ie25a"]
@@ -16,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://d12vimowsikxe" path="res://sprites/GUI/p3Box2.png" id="11_lcuq3"]
 [ext_resource type="Texture2D" uid="uid://4hfb7lbw1n4r" path="res://sprites/GUI/p4Box1.png" id="12_vfguq"]
 [ext_resource type="Texture2D" uid="uid://bd1drmnth6jyi" path="res://sprites/GUI/p4Box2.png" id="13_vg1y4"]
-[ext_resource type="Script" path="res://scripts/CodeLabel.cs" id="17_wvxyy"]
 [ext_resource type="PackedScene" uid="uid://b730nm0sbseyu" path="res://Screens/host_join.tscn" id="19_34sjn"]
 [ext_resource type="Script" path="res://scripts/buttonBaseClass.cs" id="19_djshr"]
 
@@ -138,6 +138,10 @@ cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [node name="Lobby" type="Node2D"]
 
+[node name="LANInstance" type="Node" parent="." node_paths=PackedStringArray("bindStatusLabel")]
+script = ExtResource("1_etgna")
+bindStatusLabel = NodePath("../BSL")
+
 [node name="StandardBG" parent="." instance=ExtResource("2_c86a4")]
 
 [node name="LobbyControl" type="Control" parent="."]
@@ -147,8 +151,13 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HostJoinNode" type="Node2D" parent="LobbyControl"]
+[node name="HostJoinNode" type="Node2D" parent="LobbyControl" node_paths=PackedStringArray("titleEdit", "titleLabel", "codeEdit", "codeLabel", "LanInstance")]
 script = ExtResource("2_gc3ja")
+titleEdit = NodePath("../NameEdit")
+titleLabel = NodePath("../NameLabel")
+codeEdit = NodePath("../CodeEdit")
+codeLabel = NodePath("../CodeLabel")
+LanInstance = NodePath("../../LANInstance")
 
 [node name="PlayButton" type="Button" parent="LobbyControl"]
 layout_mode = 0
@@ -176,37 +185,37 @@ script = ExtResource("7_tqfrr")
 
 [node name="Player1ReadyCheck" type="CheckButton" parent="LobbyControl"]
 layout_mode = 0
-offset_left = 280.0
-offset_top = 200.0
-offset_right = 300.0
-offset_bottom = 214.0
+offset_left = 288.0
+offset_top = 208.0
+offset_right = 308.0
+offset_bottom = 226.0
 scale = Vector2(4, 4)
 theme = ExtResource("2_60e7v")
 
 [node name="Player2ReadyCheck" type="CheckButton" parent="LobbyControl"]
 layout_mode = 0
-offset_left = 784.0
-offset_top = 200.0
-offset_right = 804.0
-offset_bottom = 214.0
+offset_left = 768.0
+offset_top = 208.0
+offset_right = 788.0
+offset_bottom = 226.0
 scale = Vector2(4, 4)
 theme = ExtResource("2_60e7v")
 
 [node name="Player3ReadyCheck" type="CheckButton" parent="LobbyControl"]
 layout_mode = 0
-offset_left = 280.0
-offset_top = 424.0
-offset_right = 300.0
-offset_bottom = 438.0
+offset_left = 288.0
+offset_top = 400.0
+offset_right = 308.0
+offset_bottom = 418.0
 scale = Vector2(4, 4)
 theme = ExtResource("2_60e7v")
 
 [node name="Player4ReadyCheck" type="CheckButton" parent="LobbyControl"]
 layout_mode = 0
 offset_left = 784.0
-offset_top = 424.0
+offset_top = 400.0
 offset_right = 804.0
-offset_bottom = 438.0
+offset_bottom = 418.0
 scale = Vector2(4, 4)
 theme = ExtResource("2_60e7v")
 
@@ -220,6 +229,22 @@ theme_override_font_sizes/font_size = 72
 text = "<CUSTOM LOBBY NAME>"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="NameEdit" type="LineEdit" parent="LobbyControl"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 128.0
+offset_right = 672.0
+offset_bottom = 160.0
+placeholder_text = "Enter Lobby Name"
+
+[node name="CodeEdit" type="LineEdit" parent="LobbyControl"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 288.0
+offset_right = 672.0
+offset_bottom = 320.0
+placeholder_text = "Enter Custom Code"
 
 [node name="Player1Panel" type="AnimatedSprite2D" parent="LobbyControl"]
 position = Vector2(152, 208)
@@ -303,32 +328,51 @@ texture = SubResource("AtlasTexture_dlfk1")
 [node name="CodeLabel" type="Label" parent="LobbyControl"]
 layout_mode = 0
 offset_left = 448.0
-offset_top = 136.0
+offset_top = 224.0
 offset_right = 704.0
-offset_bottom = 170.0
+offset_bottom = 258.0
 theme_override_font_sizes/font_size = 24
 text = "Code:"
-script = ExtResource("17_wvxyy")
 
-[node name="CodeLabel2" type="Label" parent="LobbyControl"]
+[node name="Player1KickButton" type="Button" parent="LobbyControl"]
+visible = false
 layout_mode = 0
-offset_left = 448.0
-offset_top = 256.0
-offset_right = 704.0
-offset_bottom = 304.0
-theme_override_font_sizes/font_size = 14
-text = "Code not working?
-Manually enter IP here (is hidden):"
-script = ExtResource("17_wvxyy")
-
-[node name="LineEdit" type="LineEdit" parent="LobbyControl"]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 320.0
-offset_right = 704.0
-offset_bottom = 351.0
+offset_left = 288.0
+offset_top = 160.0
+offset_right = 384.0
+offset_bottom = 192.0
 theme = ExtResource("2_60e7v")
-secret = true
+text = "KICK"
+
+[node name="Player2KickButton" type="Button" parent="LobbyControl"]
+visible = false
+layout_mode = 0
+offset_left = 768.0
+offset_top = 160.0
+offset_right = 864.0
+offset_bottom = 192.0
+theme = ExtResource("2_60e7v")
+text = "KICK"
+
+[node name="Player3KickButton" type="Button" parent="LobbyControl"]
+visible = false
+layout_mode = 0
+offset_left = 288.0
+offset_top = 352.0
+offset_right = 384.0
+offset_bottom = 384.0
+theme = ExtResource("2_60e7v")
+text = "KICK"
+
+[node name="Player4KickButton" type="Button" parent="LobbyControl"]
+visible = false
+layout_mode = 0
+offset_left = 768.0
+offset_top = 352.0
+offset_right = 864.0
+offset_bottom = 384.0
+theme = ExtResource("2_60e7v")
+text = "KICK"
 
 [node name="MatchSettings" type="Control" parent="LobbyControl"]
 visible = false
@@ -398,19 +442,53 @@ offset_bottom = 95.0
 theme = ExtResource("2_60e7v")
 min_value = 120.0
 max_value = 7200.0
-value = 3600.0
+value = 3000.0
 prefix = "Starting Health:"
 
-[node name="CoinAllow" type="CheckBox" parent="LobbyControl/MatchSettings"]
-layout_mode = 0
-offset_left = 96.0
-offset_top = 96.0
-offset_right = 288.0
-offset_bottom = 128.0
-button_pressed = true
-text = "Allow Coining"
-
 [node name="HostJoin" parent="." instance=ExtResource("19_34sjn")]
+
+[node name="JoinDialogue" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 384.0
+offset_bottom = 192.0
+
+[node name="Panel" type="Panel" parent="JoinDialogue"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 192.0
+offset_right = 800.0
+offset_bottom = 448.0
+theme = ExtResource("2_60e7v")
+
+[node name="LobbyNameLabel" type="Label" parent="JoinDialogue/Panel"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 416.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 24
+text = "Are you sure you want to join lobby \"<lobby name>\"?"
+autowrap_mode = 2
+
+[node name="ConfirmJoinButton" type="Button" parent="JoinDialogue/Panel"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 128.0
+offset_right = 192.0
+offset_bottom = 224.0
+theme_override_font_sizes/font_size = 36
+text = "YES"
+
+[node name="RejectJoinButton" type="Button" parent="JoinDialogue/Panel"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 128.0
+offset_right = 416.0
+offset_bottom = 224.0
+theme_override_font_sizes/font_size = 36
+text = "NO"
 
 [node name="TutorialButton" type="Button" parent="."]
 offset_left = 448.0
@@ -424,12 +502,25 @@ text = "Tutorial"
 script = ExtResource("19_djshr")
 scene = "res://arenas/tutorial.tscn"
 
+[node name="BSL" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 544.0
+offset_right = 288.0
+offset_bottom = 576.0
+text = "Can connect to self (debug)
+"
+
 [connection signal="button_down" from="LobbyControl/PlayButton" to="LobbyControl/HostJoinNode" method="_on_play_button_button_down"]
 [connection signal="button_down" from="LobbyControl/MatchSettingsButton" to="LobbyControl/MatchSettingsButton" method="_on_button_down"]
 [connection signal="toggled" from="LobbyControl/Player1ReadyCheck" to="LobbyControl/PlayButton" method="_on_player_1_ready_check_toggled"]
 [connection signal="toggled" from="LobbyControl/Player2ReadyCheck" to="LobbyControl/PlayButton" method="_on_player_2_ready_check_toggled"]
 [connection signal="toggled" from="LobbyControl/Player3ReadyCheck" to="LobbyControl/PlayButton" method="_on_player_3_ready_check_toggled"]
 [connection signal="toggled" from="LobbyControl/Player4ReadyCheck" to="LobbyControl/PlayButton" method="_on_player_4_ready_check_toggled"]
+[connection signal="text_submitted" from="LobbyControl/NameEdit" to="LobbyControl/HostJoinNode" method="_on_name_edit_text_submitted"]
+[connection signal="text_submitted" from="LobbyControl/CodeEdit" to="LobbyControl/HostJoinNode" method="_on_code_edit_text_submitted"]
 [connection signal="button_down" from="LobbyControl/ExitButton" to="LobbyControl/ExitButton" method="_on_button_down"]
-[connection signal="toggled" from="LobbyControl/MatchSettings/CoinAllow" to="LobbyControl/PlayButton" method="_on_coin_allow_toggled"]
+[connection signal="button_up" from="LobbyControl/Player1KickButton" to="LobbyControl/PlayButton" method="_on_player_N_kick_button_pressed" binds= [1]]
+[connection signal="button_up" from="LobbyControl/Player2KickButton" to="LobbyControl/PlayButton" method="_on_player_N_kick_button_pressed" binds= [2]]
+[connection signal="button_up" from="LobbyControl/Player3KickButton" to="LobbyControl/PlayButton" method="_on_player_N_kick_button_pressed" binds= [3]]
+[connection signal="button_up" from="LobbyControl/Player4KickButton" to="LobbyControl/PlayButton" method="_on_player_N_kick_button_pressed" binds= [4]]
 [connection signal="button_down" from="TutorialButton" to="TutorialButton" method="_on_button_down"]

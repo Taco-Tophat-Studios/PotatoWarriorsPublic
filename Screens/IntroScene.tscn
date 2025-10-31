@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c33j54h5rw1a4"]
+[gd_scene load_steps=25 format=3 uid="uid://c33j54h5rw1a4"]
 
 [ext_resource type="Script" path="res://scripts/Intro.cs" id="1_y1wnu"]
 [ext_resource type="Texture2D" uid="uid://dkhnltc0xe1y2" path="res://sprites/GUI/IntroCard/IntroCard1.png" id="2_ru2wf"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://du16hw8k77e6u" path="res://sprites/GUI/IntroCard/IntroCard19.png" id="20_uxrj6"]
 [ext_resource type="Texture2D" uid="uid://c20gk3i3l1fhi" path="res://sprites/GUI/IntroCard/IntroCard20.png" id="21_sd8cp"]
 [ext_resource type="Texture2D" uid="uid://q2p30evaoig4" path="res://sprites/GUI/IntroCard/IntroCard21.png" id="22_4oqcm"]
+[ext_resource type="Theme" uid="uid://4jr18wy4hhod" path="res://Misc/theme1.tres" id="23_0ajmi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i833j"]
 animations = [{
@@ -106,3 +107,13 @@ texture = ExtResource("2_ru2wf")
 position = Vector2(576, 320)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_i833j")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 896.0
+offset_top = 576.0
+offset_right = 1417.0
+offset_bottom = 632.0
+scale = Vector2(0.4, 0.4)
+theme = ExtResource("23_0ajmi")
+theme_override_font_sizes/font_size = 48
+text = "Press 'ESC' Key to skip"

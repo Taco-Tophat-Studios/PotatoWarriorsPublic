@@ -1,9 +1,8 @@
 ﻿using Godot;
-using System;
 
 public partial class Response : Node
 {
-    //used as a type for the enemyBase behaviour dictionary
+    //what is this fancy-ass linguistism? Bro be sayin, "◻︎❒︎□︎⧫︎♏︎♍︎⧫︎♏︎♎︎ ♎︎♏︎●︎♏︎♑︎♋︎⧫︎♏︎ ❖︎□︎♓︎♎︎ ☼︎♏︎⬧︎◻︎□︎■︎⬧︎♏︎🕿︎◻︎♋︎❒︎♋︎❍︎⬧︎ ✞︎♋︎❒︎♓︎♋︎■︎⧫︎☯︎☸︎ ♋︎❒︎♑︎⬧︎✆︎🖴︎"
     public delegate void ResponseDel(params Variant[] args);
     ResponseDel responseMethods;
 
@@ -15,11 +14,13 @@ public partial class Response : Node
     {
         responseMethods = rs[0];
 
-        if (rs.Length > 1) {
-            for (int i = 1; i < rs.Length; i++) {
+        if (rs.Length > 1)
+        {
+            for (int i = 1; i < rs.Length; i++)
+            {
                 responseMethods += rs[i];
             }
         }
     }
-    
+
 }

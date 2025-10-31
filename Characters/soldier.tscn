@@ -1,17 +1,302 @@
-[gd_scene load_steps=14 format=3 uid="uid://ca8axr1gos7uj"]
+[gd_scene load_steps=123 format=3 uid="uid://ca8axr1gos7uj"]
 
 [ext_resource type="Script" path="res://scripts/enemies/Soldier.cs" id="1_osg52"]
+[ext_resource type="Texture2D" uid="uid://oq0v6snevfg" path="res://sprites/Enemies/Soldier/MeleeEnd7.png" id="2_65ipq"]
+[ext_resource type="Texture2D" uid="uid://cxavag2apb71" path="res://sprites/Enemies/Soldier/jumping1.png" id="2_fia2e"]
 [ext_resource type="Texture2D" uid="uid://fv06qtc64wcx" path="res://sprites/Enemies/Soldier/Soldier1.png" id="2_ple0t"]
+[ext_resource type="Texture2D" uid="uid://cf85xa3818kmb" path="res://sprites/Enemies/Soldier/jumping2.png" id="3_17435"]
+[ext_resource type="Texture2D" uid="uid://b171hsd6i54h6" path="res://sprites/Enemies/Soldier/MeleeEnd8.png" id="3_dn6hi"]
 [ext_resource type="Texture2D" uid="uid://ct8greyudqngy" path="res://sprites/Enemies/Soldier/Soldier2.png" id="3_e8opi"]
+[ext_resource type="Texture2D" uid="uid://d0ht40ue7vdmb" path="res://sprites/Enemies/Soldier/MeleeEnd9.png" id="4_kj513"]
 [ext_resource type="Texture2D" uid="uid://6paxeinm3xuh" path="res://sprites/Enemies/Soldier/Soldier3.png" id="4_vvs8k"]
 [ext_resource type="Texture2D" uid="uid://dnxh3v3bv0sel" path="res://sprites/Enemies/Soldier/Soldier4.png" id="5_f3m61"]
+[ext_resource type="Texture2D" uid="uid://btia3xd7nktds" path="res://sprites/Enemies/Soldier/MeleeStart1.png" id="5_paxc2"]
 [ext_resource type="Texture2D" uid="uid://5e028t5n3sfb" path="res://sprites/Enemies/Soldier/Soldier5.png" id="6_4kgi4"]
+[ext_resource type="Texture2D" uid="uid://omujex2ecab4" path="res://sprites/Enemies/Soldier/MeleeStart2.png" id="6_q7k62"]
+[ext_resource type="Texture2D" uid="uid://cvwhcw82l34bd" path="res://sprites/Enemies/Soldier/MeleeStart3.png" id="7_lwxnb"]
 [ext_resource type="Texture2D" uid="uid://clccmrmcuref6" path="res://sprites/Enemies/Soldier/Soldier6.png" id="7_rm6m3"]
 [ext_resource type="Texture2D" uid="uid://0480knb2tj10" path="res://sprites/Enemies/Soldier/Soldier7.png" id="8_e2pxp"]
+[ext_resource type="Texture2D" uid="uid://ciwchwhv2m5af" path="res://sprites/Enemies/Soldier/MeleeStart4.png" id="8_q8p5p"]
 [ext_resource type="Texture2D" uid="uid://bx67ys7v3fneb" path="res://sprites/Enemies/Soldier/Soldier8.png" id="9_65kl5"]
+[ext_resource type="Texture2D" uid="uid://h738pj7xpcix" path="res://sprites/Enemies/Soldier/MeleeStart5.png" id="9_tyy5e"]
+[ext_resource type="Texture2D" uid="uid://bbxa7htkmjqaq" path="res://sprites/Enemies/Soldier/MeleeStart6.png" id="10_cmj7l"]
+[ext_resource type="Texture2D" uid="uid://cuc71a85y62pg" path="res://sprites/Enemies/Soldier/MeleeEnd10.png" id="11_77np3"]
+[ext_resource type="Texture2D" uid="uid://bb2q263c3f2v4" path="res://sprites/Enemies/Soldier/MeleeStart7.png" id="11_ginvp"]
+[ext_resource type="Texture2D" uid="uid://bihvq0qo21cyc" path="res://sprites/Enemies/Soldier/MeleeSlash1.png" id="12_7o6ft"]
+[ext_resource type="Texture2D" uid="uid://3kopfdcyur5d" path="res://sprites/Enemies/Soldier/MeleeStart8.png" id="12_fgiw3"]
+[ext_resource type="Texture2D" uid="uid://lfuh1p7vbv8y" path="res://sprites/Enemies/Soldier/MeleeSlash2.png" id="13_cbw54"]
+[ext_resource type="Texture2D" uid="uid://bttu3g5m72lfw" path="res://sprites/Enemies/Soldier/MeleeStart9.png" id="13_tuamg"]
+[ext_resource type="Texture2D" uid="uid://tumw4dfwtcn0" path="res://sprites/Enemies/Soldier/MeleeStart10.png" id="14_b6mt5"]
+[ext_resource type="Texture2D" uid="uid://d03rnirkdxsiq" path="res://sprites/Enemies/Soldier/MeleeSlash3.png" id="14_fvi2x"]
+[ext_resource type="Texture2D" uid="uid://k4fcnaa2vt86" path="res://sprites/Enemies/Soldier/MeleeSlash4.png" id="15_68qwx"]
+[ext_resource type="Texture2D" uid="uid://da4cwpyw3o0f" path="res://sprites/Enemies/Soldier/MeleeSlash5.png" id="16_tfbxr"]
+[ext_resource type="Texture2D" uid="uid://31bvkt84hwfl" path="res://sprites/Enemies/Soldier/MeleeSlash6.png" id="17_txgsm"]
+[ext_resource type="Texture2D" uid="uid://daldvpp56ttlh" path="res://sprites/Enemies/Soldier/MeleeSlash7.png" id="18_fayw8"]
+[ext_resource type="Texture2D" uid="uid://26w8ttvkrorj" path="res://sprites/Enemies/Soldier/MeleeSlash8.png" id="19_0bh2n"]
+[ext_resource type="Texture2D" uid="uid://kf726ikxol7r" path="res://sprites/Enemies/Soldier/MeleeSlash9.png" id="20_p1f2m"]
+[ext_resource type="Texture2D" uid="uid://dy17o587jvy6w" path="res://sprites/Enemies/Soldier/MeleeSlash10.png" id="21_2p5n0"]
+[ext_resource type="Texture2D" uid="uid://yvffqfms2j2k" path="res://sprites/Enemies/Soldier/MeleeSlash11.png" id="22_tqw78"]
+[ext_resource type="Texture2D" uid="uid://dj0ff8vli3hlb" path="res://sprites/Enemies/Soldier/Recovery1.png" id="23_kt0cy"]
+[ext_resource type="Texture2D" uid="uid://do7k2advgcasc" path="res://sprites/Enemies/Soldier/MeleeSlash12.png" id="23_l25ys"]
+[ext_resource type="Texture2D" uid="uid://w2nnx3fvk1vp" path="res://sprites/Enemies/Soldier/MeleeSlash13.png" id="24_icc03"]
+[ext_resource type="Texture2D" uid="uid://cjewps1gj443h" path="res://sprites/Enemies/Soldier/Recovery2.png" id="24_ilbam"]
+[ext_resource type="Texture2D" uid="uid://dwlslufablykh" path="res://sprites/Enemies/Soldier/MeleeSlash14.png" id="25_5qjxu"]
+[ext_resource type="Texture2D" uid="uid://cbv0g0mr1wxk5" path="res://sprites/Enemies/Soldier/Recovery3.png" id="25_l4ynf"]
+[ext_resource type="Texture2D" uid="uid://bjh4rwigq2w8m" path="res://sprites/Enemies/Soldier/MeleeSlash15.png" id="26_13bfr"]
+[ext_resource type="Texture2D" uid="uid://ctu0fgneep6qm" path="res://sprites/Enemies/Soldier/Recovery4.png" id="26_xxbtk"]
+[ext_resource type="Texture2D" uid="uid://c30l56op1er84" path="res://sprites/Enemies/Soldier/MeleeSlash16.png" id="27_je8my"]
+[ext_resource type="Texture2D" uid="uid://c014480y7qrk" path="res://sprites/Enemies/Soldier/Recovery5.png" id="27_xvypc"]
+[ext_resource type="Texture2D" uid="uid://dhqgd86jwpcpt" path="res://sprites/Enemies/Soldier/Recovery6.png" id="28_d4p3f"]
+[ext_resource type="Texture2D" uid="uid://biwl22xmirvry" path="res://sprites/Enemies/Soldier/MeleeSlash17.png" id="28_e3qw4"]
+[ext_resource type="Texture2D" uid="uid://dnfgpe2ska07i" path="res://sprites/Enemies/Soldier/Recovery7.png" id="29_5p4da"]
+[ext_resource type="Texture2D" uid="uid://bhecyrvf8atth" path="res://sprites/Enemies/Soldier/MeleeSlash18.png" id="29_6f0tx"]
+[ext_resource type="Texture2D" uid="uid://mqcr0yft5nld" path="res://sprites/Enemies/Soldier/MeleeSlash19.png" id="30_ldh2k"]
+[ext_resource type="Texture2D" uid="uid://dmc2samlicxyx" path="res://sprites/Enemies/Soldier/Recovery8.png" id="30_rn2vf"]
+[ext_resource type="Texture2D" uid="uid://ck6pjvddi2lo6" path="res://sprites/Enemies/Soldier/MeleeSlash20.png" id="31_h06bw"]
+[ext_resource type="Texture2D" uid="uid://c5hh6mkbraqlp" path="res://sprites/Enemies/Soldier/Recovery9.png" id="31_qh26i"]
+[ext_resource type="Texture2D" uid="uid://b6i3sg4x4lrgv" path="res://sprites/Enemies/Soldier/Recovery10.png" id="32_7kmi4"]
+[ext_resource type="Texture2D" uid="uid://dfut32akclwwn" path="res://sprites/Enemies/Soldier/MeleeSlash21.png" id="32_bneiv"]
+[ext_resource type="Texture2D" uid="uid://cik43t3b84hua" path="res://sprites/Enemies/Soldier/MeleeSlash22.png" id="33_4oqim"]
+[ext_resource type="Texture2D" uid="uid://upup1an3nsyc" path="res://sprites/Enemies/Soldier/SoldierFire1.png" id="33_lwvmc"]
+[ext_resource type="Texture2D" uid="uid://dl4ug47tvflgv" path="res://sprites/Enemies/Soldier/SoldierFire2.png" id="34_lcwu7"]
+[ext_resource type="Texture2D" uid="uid://cxr2aeoiukjyu" path="res://sprites/Enemies/Soldier/SoldierFire3.png" id="35_i2o53"]
+[ext_resource type="Texture2D" uid="uid://vvsvambyst5e" path="res://sprites/Enemies/Soldier/SoldierFire4.png" id="36_alkk2"]
+[ext_resource type="Texture2D" uid="uid://c0mx2fge001ib" path="res://sprites/Enemies/Soldier/SoldierFire5.png" id="37_51c5u"]
+[ext_resource type="Texture2D" uid="uid://hawx6qph4sri" path="res://sprites/Enemies/Soldier/SoldierStunDie5.png" id="38_gb6kn"]
+[ext_resource type="Texture2D" uid="uid://ds7eyjw8u0811" path="res://sprites/Enemies/Soldier/SoldierFire6.png" id="38_rbrx7"]
+[ext_resource type="Texture2D" uid="uid://c7bs2q3x8bkak" path="res://sprites/Enemies/Soldier/SoldierStunDie6.png" id="39_nuqr1"]
+[ext_resource type="Texture2D" uid="uid://b5ftdosgwnepq" path="res://sprites/Enemies/Soldier/SoldierFire7.png" id="39_qfnjh"]
+[ext_resource type="Texture2D" uid="uid://bfuqtxf1tbcmy" path="res://sprites/Enemies/Soldier/SoldierFire8.png" id="40_2tii0"]
+[ext_resource type="Texture2D" uid="uid://cu62wahq1j8hp" path="res://sprites/Enemies/Soldier/SoldierStunDie7.png" id="40_l1hvv"]
+[ext_resource type="Texture2D" uid="uid://vntys82t5mqh" path="res://sprites/Enemies/Soldier/SoldierFire9.png" id="41_ikhrq"]
+[ext_resource type="Texture2D" uid="uid://e8xxxpee3ti2" path="res://sprites/Enemies/Soldier/SoldierStunDie8.png" id="41_mrjig"]
+[ext_resource type="Texture2D" uid="uid://rec53bisn4oh" path="res://sprites/Enemies/Soldier/SoldierStunDie9.png" id="42_5kfjq"]
+[ext_resource type="Texture2D" uid="uid://csp50f28o8n12" path="res://sprites/Enemies/Soldier/SoldierFire10.png" id="42_cq5k6"]
+[ext_resource type="Texture2D" uid="uid://cxwu4orrf2xjw" path="res://sprites/Enemies/Soldier/SoldierFire11.png" id="43_2o30k"]
+[ext_resource type="Texture2D" uid="uid://h35ibtyt86s8" path="res://sprites/Enemies/Soldier/SoldierStunDie10.png" id="43_pgey4"]
+[ext_resource type="Texture2D" uid="uid://cuvla13hhj1t8" path="res://sprites/Enemies/Soldier/SoldierFire12.png" id="44_q1pon"]
+[ext_resource type="Texture2D" uid="uid://rlrjge7sgovv" path="res://sprites/Enemies/Soldier/SoldierFire13.png" id="45_2s0gp"]
+[ext_resource type="Texture2D" uid="uid://vri8wip6rsu6" path="res://sprites/Enemies/Soldier/SoldierFire14.png" id="46_2753w"]
+[ext_resource type="Texture2D" uid="uid://bbrdk4wnapbw2" path="res://sprites/Enemies/Soldier/SoldierFire15.png" id="47_frv21"]
+[ext_resource type="Texture2D" uid="uid://d14yufnhxqcyn" path="res://sprites/Enemies/Soldier/SoldierFire16.png" id="48_3e3q4"]
+[ext_resource type="Texture2D" uid="uid://drbcx18ndm8th" path="res://sprites/Enemies/Soldier/SoldierRoll1.png" id="49_mfqoy"]
+[ext_resource type="Texture2D" uid="uid://yeophacr34ud" path="res://sprites/Enemies/Soldier/SoldierRoll2.png" id="50_1allf"]
+[ext_resource type="Texture2D" uid="uid://bo17rvftcpquc" path="res://sprites/Enemies/Soldier/SoldierRoll3.png" id="51_mt16w"]
+[ext_resource type="Texture2D" uid="uid://cavbhcgr8s8qm" path="res://sprites/Enemies/Soldier/SoldierRoll4.png" id="52_m4nrh"]
+[ext_resource type="Texture2D" uid="uid://bxarqsug2pbtb" path="res://sprites/Enemies/Soldier/SoldierRoll5.png" id="53_0vbpv"]
+[ext_resource type="Texture2D" uid="uid://cu50xmmqjlnxw" path="res://sprites/Enemies/Soldier/RunStart1.png" id="54_hwdsp"]
+[ext_resource type="Texture2D" uid="uid://duq3yf0u7jobu" path="res://sprites/Enemies/Soldier/SoldierRoll6.png" id="54_pbbff"]
+[ext_resource type="Texture2D" uid="uid://cyylmsavnfax4" path="res://sprites/Enemies/Soldier/RunStart2.png" id="55_hjxmo"]
+[ext_resource type="Texture2D" uid="uid://c1saj7h81wlbw" path="res://sprites/Enemies/Soldier/SoldierRoll7.png" id="55_s7ydh"]
+[ext_resource type="Texture2D" uid="uid://cu5l7l0edetue" path="res://sprites/Enemies/Soldier/RunStart3.png" id="56_p0nx5"]
+[ext_resource type="Texture2D" uid="uid://b81ya2db586e7" path="res://sprites/Enemies/Soldier/SoldierRoll8.png" id="56_w2yab"]
+[ext_resource type="Texture2D" uid="uid://qyb0vp1bokmm" path="res://sprites/Enemies/Soldier/RunStart4.png" id="57_5tf60"]
+[ext_resource type="Texture2D" uid="uid://b3bhwp1kat6at" path="res://sprites/Enemies/Soldier/SoldierRoll9.png" id="57_pmge7"]
+[ext_resource type="Texture2D" uid="uid://bm40mor3ogbl4" path="res://sprites/Enemies/Soldier/RunStart5.png" id="58_in1hm"]
+[ext_resource type="Texture2D" uid="uid://botw78nep0imx" path="res://sprites/Enemies/Soldier/SoldierRoll10.png" id="58_iymhp"]
+[ext_resource type="Texture2D" uid="uid://ri4c0mhk7oj5" path="res://sprites/Enemies/Soldier/SoldierRoll11.png" id="59_hi1cf"]
+[ext_resource type="Texture2D" uid="uid://bf5hfgtd3aj1q" path="res://sprites/Enemies/Soldier/RunStart6.png" id="59_tjxbc"]
+[ext_resource type="Texture2D" uid="uid://ij0bs8lybiqm" path="res://sprites/Enemies/Soldier/SoldierRoll12.png" id="60_aa2bp"]
+[ext_resource type="Texture2D" uid="uid://bngk2l2ck7yv5" path="res://sprites/Enemies/Soldier/RunStart7.png" id="60_cmpoo"]
+[ext_resource type="Texture2D" uid="uid://bg10uepodfpki" path="res://sprites/Enemies/Soldier/SoldierRoll13.png" id="61_2msb0"]
+[ext_resource type="Texture2D" uid="uid://tqb4vpo3xe3j" path="res://sprites/Enemies/Soldier/RunStart8.png" id="61_i4snw"]
+[ext_resource type="Texture2D" uid="uid://dsrggirtqtox8" path="res://sprites/Enemies/Soldier/SoldierRoll14.png" id="62_hioej"]
+[ext_resource type="Texture2D" uid="uid://bipmv2iriw8bn" path="res://sprites/Enemies/Soldier/RunStart9.png" id="62_u4utw"]
+[ext_resource type="Texture2D" uid="uid://crofpy4pl5sv3" path="res://sprites/Enemies/Soldier/RunStart10.png" id="63_t5okl"]
+[ext_resource type="Texture2D" uid="uid://dh1gxissj17a" path="res://sprites/Enemies/Soldier/RunStart11.png" id="64_c1d36"]
+[ext_resource type="Texture2D" uid="uid://3qardhj32wto" path="res://sprites/Enemies/Soldier/RunStart12.png" id="65_usm2v"]
+[ext_resource type="Texture2D" uid="uid://cpbk6k30h7s4g" path="res://sprites/Enemies/Soldier/RunStart13.png" id="66_4j1yi"]
+[ext_resource type="Texture2D" uid="uid://hxny35ohjngr" path="res://sprites/Enemies/Soldier/RunStart14.png" id="67_ns6fu"]
+[ext_resource type="Texture2D" uid="uid://d1dh1nxptau28" path="res://sprites/Enemies/Soldier/RunStart15.png" id="68_ogrvh"]
+[ext_resource type="Texture2D" uid="uid://cvpwyxyhclya" path="res://sprites/Enemies/Soldier/RunStart16.png" id="69_wmv8x"]
+[ext_resource type="Texture2D" uid="uid://cwmyh1h8mief0" path="res://sprites/Enemies/Soldier/RunStart17.png" id="70_on65w"]
+[ext_resource type="Texture2D" uid="uid://c023o134e35vr" path="res://sprites/Enemies/Soldier/RunStart18.png" id="71_710o5"]
+[ext_resource type="Texture2D" uid="uid://c3ptcqv6bcdhh" path="res://sprites/Enemies/Soldier/RunStart19.png" id="72_vwevh"]
+[ext_resource type="Texture2D" uid="uid://3cxkbies03v3" path="res://sprites/Enemies/Soldier/SoldierStunDie1.png" id="92_kd4r7"]
+[ext_resource type="Texture2D" uid="uid://r5w0et2ooood" path="res://sprites/Enemies/Soldier/SoldierStunDie2.png" id="93_avdcr"]
+[ext_resource type="Texture2D" uid="uid://jhe87ep71adq" path="res://sprites/Enemies/Soldier/SoldierStunDie3.png" id="94_182yh"]
+[ext_resource type="Texture2D" uid="uid://bkmdf5vuwahje" path="res://sprites/Enemies/Soldier/SoldierStunDie4.png" id="95_b0c5k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yiaic"]
+size = Vector2(256, 192)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_02jji"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fia2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_17435")
+}],
+"loop": true,
+"name": &"jumping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_b6mt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_tuamg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fgiw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ginvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cmj7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tyy5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_65ipq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dn6hi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kj513")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_77np3")
+}],
+"loop": false,
+"name": &"melee_end",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_7o6ft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_cbw54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fvi2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_68qwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_tfbxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_txgsm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_fayw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_0bh2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_p1f2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_2p5n0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_tqw78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_l25ys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_icc03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_5qjxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_13bfr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_je8my")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_e3qw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_6f0tx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ldh2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_h06bw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_bneiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_4oqim")
+}],
+"loop": false,
+"name": &"melee_slash",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_paxc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q7k62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lwxnb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_q8p5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tyy5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cmj7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ginvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fgiw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_tuamg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_b6mt5")
+}],
+"loop": false,
+"name": &"melee_start",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_gb6kn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_nuqr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_l1hvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_mrjig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_5kfjq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_pgey4")
+}],
+"loop": false,
+"name": &"perish",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_ple0t")
@@ -40,34 +325,291 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_hwdsp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_hjxmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_p0nx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_5tf60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_in1hm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_tjxbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_cmpoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_i4snw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_u4utw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_t5okl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_c1d36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_usm2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_4j1yi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_ns6fu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_ogrvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_wmv8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_on65w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_710o5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_vwevh")
+}],
+"loop": false,
+"name": &"run_start",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_kt0cy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ilbam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_l4ynf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_xxbtk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_xvypc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_d4p3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_5p4da")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_rn2vf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_qh26i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_7kmi4")
+}],
+"loop": false,
+"name": &"shoot_end",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_lwvmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_lcwu7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_i2o53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_alkk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_51c5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_rbrx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_qfnjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_2tii0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_ikhrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_cq5k6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_2o30k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_q1pon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_2s0gp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_2753w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_frv21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_3e3q4")
+}],
+"loop": false,
+"name": &"shoot_shoot",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_mfqoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_1allf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_mt16w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_m4nrh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_0vbpv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_pbbff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_s7ydh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_w2yab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_pmge7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_iymhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_hi1cf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_aa2bp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_2msb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_hioej")
+}],
+"loop": false,
+"name": &"shoot_start",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("92_kd4r7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_avdcr")
+}],
+"loop": false,
+"name": &"stun1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("94_182yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_b0c5k")
+}],
+"loop": false,
+"name": &"stun2",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lcqxc"]
 size = Vector2(128, 160)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5y64a"]
-radius = 48.0
-height = 128.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ut01u"]
+radius = 64.0
+height = 160.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_daed4"]
+radius = 96.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xcf2r"]
 
-[node name="Soldier" type="CharacterBody2D"]
+[node name="Soldier" type="CharacterBody2D" node_paths=PackedStringArray("CharSprite", "fireLineVis", "bodyCol", "damageCol", "meleeArea", "meleeCollider", "fireRay", "r", "JumpDetector")]
 script = ExtResource("1_osg52")
+CharSprite = NodePath("CharSprite")
+fireLineVis = NodePath("FireLineVis")
+bodyCol = NodePath("BodyCol")
+damageCol = NodePath("DamageArea/DamageCol")
+meleeArea = NodePath("MeleeArea")
+meleeCollider = NodePath("MeleeArea/CollisionShape2D")
+fireRay = NodePath("fireCast")
+r = NodePath("LineOfSight")
+JumpDetector = NodePath("ShapeCast2D")
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+position = Vector2(192, 0)
+shape = SubResource("RectangleShape2D_yiaic")
+target_position = Vector2(0, 0)
+max_results = 1
 
 [node name="CharSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_02jji")
 animation = &"run"
+autoplay = "run"
 
 [node name="BodyCol" type="CollisionShape2D" parent="."]
 position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_lcqxc")
 
-[node name="DamageCol" type="CollisionShape2D" parent="."]
-rotation = 0.523599
-shape = SubResource("CapsuleShape2D_5y64a")
+[node name="DamageArea" type="Area2D" parent="."]
+
+[node name="DamageCol" type="CollisionShape2D" parent="DamageArea"]
+position = Vector2(0, 16)
+shape = SubResource("CapsuleShape2D_ut01u")
+
+[node name="MeleeArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeArea"]
+position = Vector2(48, -16)
+shape = SubResource("CircleShape2D_daed4")
 
 [node name="VFXSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xcf2r")
 
-[node name="FireLine" type="Line2D" parent="."]
+[node name="LineOfSight" type="RayCast2D" parent="."]
+target_position = Vector2(0, -96)
+
+[node name="fireCast" type="RayCast2D" parent="."]
+position = Vector2(92, 8)
+target_position = Vector2(0, -24)
+collide_with_areas = true
+
+[node name="FireLineVis" type="Line2D" parent="."]
+
+[connection signal="animation_finished" from="CharSprite" to="." method="_on_char_sprite_animation_finished"]
+[connection signal="area_entered" from="MeleeArea" to="." method="_on_melee_area_area_entered"]

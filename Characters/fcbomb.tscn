@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://cs7p6rqc57x5j"]
+
+[ext_resource type="Script" path="res://scripts/enemies/FCBomb.cs" id="1_sfog6"]
+[ext_resource type="Texture2D" uid="uid://citu5wji8es0s" path="res://sprites/Enemies/FlightCaptain/FCBombs.png" id="2_o4nbw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xopl"]
+atlas = ExtResource("2_o4nbw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xpbg"]
+atlas = ExtResource("2_o4nbw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04o62"]
+atlas = ExtResource("2_o4nbw")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87e5v"]
+atlas = ExtResource("2_o4nbw")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sp7q"]
+atlas = ExtResource("2_o4nbw")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rska7"]
+atlas = ExtResource("2_o4nbw")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r1ct3"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"explosion",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xopl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xpbg")
+}],
+"loop": true,
+"name": &"largeBomb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04o62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87e5v")
+}],
+"loop": true,
+"name": &"mediumBomb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sp7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rska7")
+}],
+"loop": true,
+"name": &"smallBomb",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g73uv"]
+radius = 8.0
+
+[node name="FCBomb" type="Area2D" node_paths=PackedStringArray("bombSprite", "BombCol")]
+script = ExtResource("1_sfog6")
+bombSprite = NodePath("AnimatedSprite2D")
+BombCol = NodePath("CollisionShape2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_r1ct3")
+animation = &"smallBomb"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g73uv")

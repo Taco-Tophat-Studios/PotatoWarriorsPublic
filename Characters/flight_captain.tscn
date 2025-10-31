@@ -1,0 +1,124 @@
+[gd_scene load_steps=19 format=3 uid="uid://b3froj3popaex"]
+
+[ext_resource type="Texture2D" uid="uid://7qmd0plorpak" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly1.png" id="1_edkvn"]
+[ext_resource type="Script" path="res://scripts/enemies/FlightCaptain.cs" id="1_i037m"]
+[ext_resource type="Texture2D" uid="uid://eo8tmwyrmf5" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly2.png" id="2_7tn4x"]
+[ext_resource type="Texture2D" uid="uid://d1to8w2vkkdne" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly3.png" id="3_brqy2"]
+[ext_resource type="Texture2D" uid="uid://cadhs2l0fbvde" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly4.png" id="4_rqk4k"]
+[ext_resource type="Texture2D" uid="uid://bms4ticnkmrla" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly5.png" id="5_q4nbm"]
+[ext_resource type="Texture2D" uid="uid://dyw3tbmb7fyo4" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly6.png" id="6_a8lxu"]
+[ext_resource type="Texture2D" uid="uid://ci3knikiopemj" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly7.png" id="7_jbllm"]
+[ext_resource type="Texture2D" uid="uid://pqtmha1env8r" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly8.png" id="8_tyx14"]
+[ext_resource type="Texture2D" uid="uid://c7nto57d40hes" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly9.png" id="9_6lvbm"]
+[ext_resource type="Texture2D" uid="uid://jakyssue1aft" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly10.png" id="10_ophs7"]
+[ext_resource type="Texture2D" uid="uid://xytsyufo5er4" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly11.png" id="11_tb7q4"]
+[ext_resource type="Texture2D" uid="uid://deuubyku5j65" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly12.png" id="12_u48av"]
+[ext_resource type="Texture2D" uid="uid://uxjjbrox3jte" path="res://Misc/MissingAnimations/MA-FC-fly_start.png" id="14_k24uq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r6auk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_edkvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7tn4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_brqy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rqk4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q4nbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_a8lxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jbllm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tyx14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6lvbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ophs7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tb7q4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_u48av")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_k24uq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_k24uq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_k24uq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_k24uq")
+}],
+"loop": false,
+"name": &"fly_start",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vjgl"]
+size = Vector2(112, 96)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d3w0f"]
+radius = 72.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6wgg"]
+
+[node name="FlightCaptain" type="CharacterBody2D" node_paths=PackedStringArray("CharSprite", "LineOfSight")]
+scale = Vector2(1.25, 1.25)
+script = ExtResource("1_i037m")
+CharSprite = NodePath("CharSprite")
+LineOfSight = NodePath("LineOfSight")
+
+[node name="CharSprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_r6auk")
+animation = &"fly_start"
+autoplay = "fly_start"
+
+[node name="BodyCol" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(1.25, 1.25)
+shape = SubResource("RectangleShape2D_7vjgl")
+
+[node name="HitCol" type="Area2D" parent="."]
+scale = Vector2(1.25, 1.25)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitCol"]
+scale = Vector2(1.25, 1.25)
+polygon = PackedVector2Array(24, -56, -32, -24, -72, 32, -48, 56, 40, 32, 72, -24, 48, -56)
+
+[node name="DamageCol" type="Area2D" parent="."]
+scale = Vector2(1.25, 1.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageCol"]
+scale = Vector2(1.25, 1.25)
+shape = SubResource("CircleShape2D_d3w0f")
+
+[node name="VFXSprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_v6wgg")
+
+[node name="LineOfSight" type="RayCast2D" parent="."]
+scale = Vector2(1.25, 1.25)
+target_position = Vector2(158.72, 0)

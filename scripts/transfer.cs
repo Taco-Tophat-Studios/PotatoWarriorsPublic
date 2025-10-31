@@ -1,16 +1,13 @@
-using Godot;
-using System;
-
 public partial class transfer : buttonBaseClass
 {
     private bool quitting = false;
-	
+
     private void _on_button_down()
     {
-        switch(this.Name)
+        switch (this.Name)
         {
             case "PlayButton":
-                scene = "res://Screens/Menus/Lobby.tscn";
+                scene = "res://Screens/Menus/ModeSelect.tscn";
                 break;
             case "SettingsButton":
                 scene = "res://Screens/Menus/settings_menu.tscn";
@@ -36,6 +33,6 @@ public partial class transfer : buttonBaseClass
         {
             Transfer();
         }
-        
+
     }
 }

@@ -15,18 +15,22 @@ position = Vector2(256, 256)
 script = ExtResource("1_ap6e0")
 
 [node name="Wheel1" type="Sprite2D" parent="Wheels"]
+scale = Vector2(2, 2)
 texture = ExtResource("2_jibbl")
 
 [node name="Wheel2" type="Sprite2D" parent="Wheels"]
 position = Vector2(160, 0)
+scale = Vector2(2, 2)
 texture = ExtResource("2_jibbl")
 
 [node name="Wheel3" type="Sprite2D" parent="Wheels"]
 position = Vector2(320, 0)
+scale = Vector2(2, 2)
 texture = ExtResource("2_jibbl")
 
 [node name="Wheel4" type="Sprite2D" parent="Wheels"]
 position = Vector2(480, 0)
+scale = Vector2(2, 2)
 texture = ExtResource("2_jibbl")
 
 [node name="ConnectionBar" type="Sprite2D" parent="."]

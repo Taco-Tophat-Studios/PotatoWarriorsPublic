@@ -1,15 +1,19 @@
 using Godot;
-using System;
 
 public partial class buttonBaseClass : Button
 {
-    [Export]
-    protected string scene;
-    protected void Transfer()
-    {
-        GetTree().ChangeSceneToFile(scene);
-    }
-    private void _on_button_down() {
-        Transfer();
-    }
+	[Export]
+	public string scene;
+	protected void Transfer()
+	{
+		GetTree().CallDeferred("change_scene_to_file", scene);
+	}
+	private void _on_button_down()
+	{
+		Transfer();
+	}
+	private void _on_button_up()
+	{
+		Transfer();
+	}
 }

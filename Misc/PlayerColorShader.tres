@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://da5euwo3xmhtn"]
+
+[ext_resource type="Shader" path="res://scripts/miscScripts/playerRecolor.gdshader" id="1_xu2lf"]
+
+[resource]
+shader = ExtResource("1_xu2lf")
+shader_parameter/key = Color(0, 0, 0.1, 1)
+shader_parameter/replace = Color(0, 0, 0.1, 1)

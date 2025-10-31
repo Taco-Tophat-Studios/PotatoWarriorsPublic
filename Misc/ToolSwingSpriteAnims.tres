@@ -1,0 +1,608 @@
+[gd_resource type="SpriteFrames" load_steps=148 format=3 uid="uid://bfbxq6hybfm5p"]
+
+[ext_resource type="Texture2D" uid="uid://cx6ln7dsur1mk" path="res://sprites/Player/Sword/FistTrail/FistTrail1.png" id="1_8c4vy"]
+[ext_resource type="Texture2D" uid="uid://cahhtw44sj5y1" path="res://sprites/Player/Sword/FistTrail/FistTrail2.png" id="2_tvmo4"]
+[ext_resource type="Texture2D" uid="uid://cow6uc15ue6ti" path="res://sprites/Player/Sword/FistTrail/FistTrail3.png" id="3_4hx37"]
+[ext_resource type="Texture2D" uid="uid://vg3g4725emsi" path="res://sprites/Player/Sword/FistTrail/FistTrail4.png" id="4_r4kbs"]
+[ext_resource type="Texture2D" uid="uid://cxmtrsyjyw853" path="res://sprites/Player/Sword/FistTrail/FistTrail5.png" id="5_uolc7"]
+[ext_resource type="Texture2D" uid="uid://njqpgmpbynx4" path="res://sprites/Player/Sword/FistTrail/FistTrail6.png" id="6_5a8eh"]
+[ext_resource type="Texture2D" uid="uid://0bosg1k5151b" path="res://sprites/Player/Sword/FistTrail/FistTrail7.png" id="7_b2mdj"]
+[ext_resource type="Texture2D" uid="uid://ei4r6nrn8fxq" path="res://sprites/Player/Sword/FistTrail/FistTrail8.png" id="8_subg5"]
+[ext_resource type="Texture2D" uid="uid://ck86mcj0y7k02" path="res://sprites/Player/Sword/FistTrail/FistTrail9.png" id="9_rq4n7"]
+[ext_resource type="Texture2D" uid="uid://dobb0g72owcoa" path="res://sprites/Player/Sword/FistTrail/FistTrail10.png" id="10_pcqxa"]
+[ext_resource type="Texture2D" uid="uid://bl4nfqqqymm7t" path="res://sprites/Player/Sword/FistTrail/FistTrail11.png" id="11_b4vji"]
+[ext_resource type="Texture2D" uid="uid://dhooiqvq03u14" path="res://sprites/Player/Sword/FistTrail/FistTrail12.png" id="12_a4k50"]
+[ext_resource type="Texture2D" uid="uid://b8imfuoh5gobn" path="res://sprites/Player/Sword/FistTrail/FistTrail13.png" id="13_yp6a1"]
+[ext_resource type="Texture2D" uid="uid://cd3wmylf6ltta" path="res://sprites/Player/Sword/FistTrail/FistTrail14.png" id="14_uo1o5"]
+[ext_resource type="Texture2D" uid="uid://drx72g5j41oos" path="res://sprites/Player/Sword/FistTrail/FistTrail15.png" id="15_6qsr2"]
+[ext_resource type="Texture2D" uid="uid://bnvyidt03sm10" path="res://sprites/Player/Sword/FistTrail/FistTrail16.png" id="16_gco0o"]
+[ext_resource type="Texture2D" uid="uid://c1q6ctldufcpi" path="res://sprites/Player/Sword/FistTrail/FistTrail17.png" id="17_ofkgx"]
+[ext_resource type="Texture2D" uid="uid://c4shvdfm6g32d" path="res://sprites/Player/Sword/FistTrail/FistTrail18.png" id="18_6anyb"]
+[ext_resource type="Texture2D" uid="uid://c1jwp2o4d8ofg" path="res://sprites/Player/Sword/FistTrail/FistTrail19.png" id="19_4wjm0"]
+[ext_resource type="Texture2D" uid="uid://bebj0oxyf3jyp" path="res://sprites/Player/Sword/FistTrail/FistTrail20.png" id="20_f4oqp"]
+[ext_resource type="Texture2D" uid="uid://m7x56mw6rvpk" path="res://sprites/Player/Sword/FistTrail/FistTrail21.png" id="21_0w2oq"]
+[ext_resource type="Texture2D" uid="uid://i0nlpx01lfpn" path="res://sprites/Player/Sword/FistTrail/FistTrail22.png" id="22_jkaod"]
+[ext_resource type="Texture2D" uid="uid://bt3gojnxhf0pi" path="res://sprites/Player/Sword/FistTrail/FistTrail23.png" id="23_ev4e3"]
+[ext_resource type="Texture2D" uid="uid://bk871ua7i5u7k" path="res://sprites/Player/Sword/FistTrail/FistTrail24.png" id="24_qqhka"]
+[ext_resource type="Texture2D" uid="uid://dbrfljex71y0a" path="res://sprites/Player/Sword/FistTrail/FistTrail25.png" id="25_vi48t"]
+[ext_resource type="Texture2D" uid="uid://d4l5avu22eqkt" path="res://sprites/Player/Sword/FistTrail/FistTrail26.png" id="26_wqof0"]
+[ext_resource type="Texture2D" uid="uid://bskobh72snkro" path="res://sprites/Player/Sword/FistTrail/FistTrail27.png" id="27_4atgo"]
+[ext_resource type="Texture2D" uid="uid://dkeir3mc38m8m" path="res://sprites/Player/Sword/FistTrail/FistTrail28.png" id="28_fp5b5"]
+[ext_resource type="Texture2D" uid="uid://cufmobfsqyhju" path="res://sprites/Player/Sword/FistTrail/FistTrail29.png" id="29_vipu5"]
+[ext_resource type="Texture2D" uid="uid://jx0ne8g0xnpa" path="res://sprites/Player/Sword/FistTrail/FistTrail30.png" id="30_gkqsm"]
+[ext_resource type="Texture2D" uid="uid://15n0igrcketl" path="res://sprites/Player/Sword/FistTrail/FistTrail31.png" id="31_1a8t2"]
+[ext_resource type="Texture2D" uid="uid://qld5qudsekv0" path="res://sprites/Player/Sword/FistTrail/FistTrail32.png" id="32_51rmy"]
+[ext_resource type="Texture2D" uid="uid://ltdtjer25lda" path="res://sprites/Player/Sword/FistTrail/FistTrail33.png" id="33_2xhql"]
+[ext_resource type="Texture2D" uid="uid://btfjeu3j8e4ld" path="res://sprites/Player/Sword/FistTrail/FistTrail34.png" id="34_u62o1"]
+[ext_resource type="Texture2D" uid="uid://c07o31gwhkp52" path="res://sprites/Player/Sword/FistTrail/FistTrail35.png" id="35_261t2"]
+[ext_resource type="Texture2D" uid="uid://c0slnsq8oyyb4" path="res://sprites/Player/Sword/FistTrail/FistTrail36.png" id="36_ikmtd"]
+[ext_resource type="Texture2D" uid="uid://dqrri4hx7gf0t" path="res://sprites/Player/Sword/FistTrail/FistTrail37.png" id="37_vgw7d"]
+[ext_resource type="Texture2D" uid="uid://q8fnb6su81i2" path="res://sprites/Player/Sword/FistTrail/FistTrail38.png" id="38_dtcso"]
+[ext_resource type="Texture2D" uid="uid://bigs2xgvghjbs" path="res://sprites/Player/Sword/FistTrail/FistTrail39.png" id="39_d0plw"]
+[ext_resource type="Texture2D" uid="uid://dpfcpri41hsm6" path="res://sprites/Player/Sword/FistTrail/FistTrail40.png" id="40_a4qjs"]
+[ext_resource type="Texture2D" uid="uid://bs0qdanax8yh7" path="res://sprites/Player/Sword/FistTrail/FistTrail41.png" id="41_3i6nb"]
+[ext_resource type="Texture2D" uid="uid://dkajd3vhpwwfq" path="res://sprites/Player/Sword/FistTrail/FistTrail42.png" id="42_ugflr"]
+[ext_resource type="Texture2D" uid="uid://lhldlp3g2035" path="res://sprites/Player/Sword/FistTrail/FistTrail43.png" id="43_rqcmy"]
+[ext_resource type="Texture2D" uid="uid://bcolgwmmjr7gd" path="res://sprites/Player/Sword/FistTrail/FistTrail44.png" id="44_mmlwh"]
+[ext_resource type="Texture2D" uid="uid://c8ffcbbtan0aa" path="res://sprites/Player/Sword/FistTrail/FistTrail45.png" id="45_ls5mo"]
+[ext_resource type="Texture2D" uid="uid://c11ogqfv5rnit" path="res://sprites/Player/Sword/FistTrail/FistTrail46.png" id="46_ys4n7"]
+[ext_resource type="Texture2D" uid="uid://dgw865dw4ea44" path="res://sprites/Player/Sword/FistTrail/FistTrail47.png" id="47_gf5re"]
+[ext_resource type="Texture2D" uid="uid://cbmk6yknds7u8" path="res://sprites/Player/Sword/FistTrail/FistTrail48.png" id="48_qo7bl"]
+[ext_resource type="Texture2D" uid="uid://xcwujw6x8iyr" path="res://sprites/Player/Sword/FistTrail/FistTrail49.png" id="49_fytse"]
+[ext_resource type="Texture2D" uid="uid://df0olaxii1rk3" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail1.png" id="50_jq0tk"]
+[ext_resource type="Texture2D" uid="uid://bvmdbxahlc07k" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail2.png" id="51_djdha"]
+[ext_resource type="Texture2D" uid="uid://dnghu6f5wibfb" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail3.png" id="52_l7j37"]
+[ext_resource type="Texture2D" uid="uid://ci8534l1xtnwg" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail4.png" id="53_7paxs"]
+[ext_resource type="Texture2D" uid="uid://cl8i8wmk2kjq6" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail5.png" id="54_opdvu"]
+[ext_resource type="Texture2D" uid="uid://drtixakvyv2kq" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail6.png" id="55_p1bn0"]
+[ext_resource type="Texture2D" uid="uid://krmnuv0mrqfn" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail7.png" id="56_yhgc7"]
+[ext_resource type="Texture2D" uid="uid://3iejs8cfhukr" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail8.png" id="57_1prlc"]
+[ext_resource type="Texture2D" uid="uid://b37p2qujqblsl" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail9.png" id="58_n8fyu"]
+[ext_resource type="Texture2D" uid="uid://bleg7oaxwufji" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail10.png" id="59_ltisk"]
+[ext_resource type="Texture2D" uid="uid://c2ionvc6fq4g5" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail11.png" id="60_uhl10"]
+[ext_resource type="Texture2D" uid="uid://blvv8w3qidvq1" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail12.png" id="61_is16r"]
+[ext_resource type="Texture2D" uid="uid://8ywkapgycqee" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail13.png" id="62_81h8u"]
+[ext_resource type="Texture2D" uid="uid://csdhdr6ctaifc" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail14.png" id="63_b7q6h"]
+[ext_resource type="Texture2D" uid="uid://b5iq4dq18emvi" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail15.png" id="64_cchik"]
+[ext_resource type="Texture2D" uid="uid://dpn7qjy8teu28" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail16.png" id="65_b6vsv"]
+[ext_resource type="Texture2D" uid="uid://brna7rv2hx5g3" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail17.png" id="66_qua2m"]
+[ext_resource type="Texture2D" uid="uid://dvh4lnb3kyxo8" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail18.png" id="67_f0766"]
+[ext_resource type="Texture2D" uid="uid://cduye84jsgfgn" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail19.png" id="68_8ofxr"]
+[ext_resource type="Texture2D" uid="uid://dohgelvhpr3pd" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail20.png" id="69_wgm8v"]
+[ext_resource type="Texture2D" uid="uid://wrwhiqmsfw71" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail21.png" id="70_04htx"]
+[ext_resource type="Texture2D" uid="uid://bvr8rlomki4t" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail22.png" id="71_pvq22"]
+[ext_resource type="Texture2D" uid="uid://dfubv3w8v3qtn" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail23.png" id="72_wqd21"]
+[ext_resource type="Texture2D" uid="uid://ctci4i17v2igd" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail24.png" id="73_ps1fj"]
+[ext_resource type="Texture2D" uid="uid://hbjmi3p287nh" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail25.png" id="74_uxl1y"]
+[ext_resource type="Texture2D" uid="uid://qp1312v7tmmj" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail26.png" id="75_lng2y"]
+[ext_resource type="Texture2D" uid="uid://xhkow5pwna54" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail27.png" id="76_xinov"]
+[ext_resource type="Texture2D" uid="uid://bat74v32kwalq" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail28.png" id="77_2dj8p"]
+[ext_resource type="Texture2D" uid="uid://c6lo2y827xvkx" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail29.png" id="78_vcws5"]
+[ext_resource type="Texture2D" uid="uid://xsyk5piulpuu" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail30.png" id="79_sw1i0"]
+[ext_resource type="Texture2D" uid="uid://7nhor08iuauw" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail31.png" id="80_s4gw2"]
+[ext_resource type="Texture2D" uid="uid://bwknxwn8j4ojn" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail32.png" id="81_7fka5"]
+[ext_resource type="Texture2D" uid="uid://b2omjjeeycid1" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail33.png" id="82_6opvo"]
+[ext_resource type="Texture2D" uid="uid://b1xep68yr6m3o" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail34.png" id="83_tgve7"]
+[ext_resource type="Texture2D" uid="uid://bbrworgkjkud" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail35.png" id="84_i7hlj"]
+[ext_resource type="Texture2D" uid="uid://dwqjl2jp3p678" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail36.png" id="85_md4xs"]
+[ext_resource type="Texture2D" uid="uid://cch66euvf6px6" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail37.png" id="86_v47vl"]
+[ext_resource type="Texture2D" uid="uid://ckdpbo5s2bh5c" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail38.png" id="87_pmy6n"]
+[ext_resource type="Texture2D" uid="uid://d0pt3msf306pl" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail39.png" id="88_n6jbe"]
+[ext_resource type="Texture2D" uid="uid://cscc0rfkkjfc8" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail40.png" id="89_4h7of"]
+[ext_resource type="Texture2D" uid="uid://buda780soxy3r" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail41.png" id="90_au0rm"]
+[ext_resource type="Texture2D" uid="uid://yj3iewcnhrm3" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail42.png" id="91_6fnlu"]
+[ext_resource type="Texture2D" uid="uid://ccksbj6iwp1iv" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail43.png" id="92_qbegq"]
+[ext_resource type="Texture2D" uid="uid://cweaioli8x1y5" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail44.png" id="93_f31so"]
+[ext_resource type="Texture2D" uid="uid://dnsa2do0lr8bw" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail45.png" id="94_nr45x"]
+[ext_resource type="Texture2D" uid="uid://biin3bppthi76" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail46.png" id="95_1tqw8"]
+[ext_resource type="Texture2D" uid="uid://e0rjbsekabw" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail47.png" id="96_as7g6"]
+[ext_resource type="Texture2D" uid="uid://xgbp1qltn42l" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail48.png" id="97_mrk7l"]
+[ext_resource type="Texture2D" uid="uid://bgkminth3cyib" path="res://sprites/Player/Sword/ShieldTrail/ShieldTrail49.png" id="98_vvrv4"]
+[ext_resource type="Texture2D" uid="uid://c366guhrpy3gk" path="res://sprites/Player/Sword/SwordTrail/SwordTrail1.png" id="99_uj8im"]
+[ext_resource type="Texture2D" uid="uid://bakl35d1jjira" path="res://sprites/Player/Sword/SwordTrail/SwordTrail2.png" id="100_btc4v"]
+[ext_resource type="Texture2D" uid="uid://btofvd30kknn2" path="res://sprites/Player/Sword/SwordTrail/SwordTrail3.png" id="101_vrby1"]
+[ext_resource type="Texture2D" uid="uid://cp2f7u7op0liu" path="res://sprites/Player/Sword/SwordTrail/SwordTrail4.png" id="102_s2juj"]
+[ext_resource type="Texture2D" uid="uid://tpxue23mv7nk" path="res://sprites/Player/Sword/SwordTrail/SwordTrail5.png" id="103_sjavg"]
+[ext_resource type="Texture2D" uid="uid://dxnd12b6vqsna" path="res://sprites/Player/Sword/SwordTrail/SwordTrail6.png" id="104_db7gs"]
+[ext_resource type="Texture2D" uid="uid://bw0pt8bhrqy4n" path="res://sprites/Player/Sword/SwordTrail/SwordTrail7.png" id="105_knm6w"]
+[ext_resource type="Texture2D" uid="uid://ciewxjxo7or1q" path="res://sprites/Player/Sword/SwordTrail/SwordTrail8.png" id="106_xh1jv"]
+[ext_resource type="Texture2D" uid="uid://blmi3l5v53gwe" path="res://sprites/Player/Sword/SwordTrail/SwordTrail9.png" id="107_53m2w"]
+[ext_resource type="Texture2D" uid="uid://bedw41yfbpnux" path="res://sprites/Player/Sword/SwordTrail/SwordTrail10.png" id="108_8vecs"]
+[ext_resource type="Texture2D" uid="uid://ulahgo2nqq04" path="res://sprites/Player/Sword/SwordTrail/SwordTrail11.png" id="109_rnf2b"]
+[ext_resource type="Texture2D" uid="uid://bqb3ya5l1xp4h" path="res://sprites/Player/Sword/SwordTrail/SwordTrail12.png" id="110_fkqm5"]
+[ext_resource type="Texture2D" uid="uid://dx5rghd22rfu2" path="res://sprites/Player/Sword/SwordTrail/SwordTrail13.png" id="111_ji6gc"]
+[ext_resource type="Texture2D" uid="uid://cnb0cssbm7tjk" path="res://sprites/Player/Sword/SwordTrail/SwordTrail14.png" id="112_pau4t"]
+[ext_resource type="Texture2D" uid="uid://blkq4c4s2ad8n" path="res://sprites/Player/Sword/SwordTrail/SwordTrail15.png" id="113_nodki"]
+[ext_resource type="Texture2D" uid="uid://hvdm332mj0ra" path="res://sprites/Player/Sword/SwordTrail/SwordTrail16.png" id="114_4julx"]
+[ext_resource type="Texture2D" uid="uid://ckx6od3km8hik" path="res://sprites/Player/Sword/SwordTrail/SwordTrail17.png" id="115_t3h6q"]
+[ext_resource type="Texture2D" uid="uid://cvymnrkl0xvd" path="res://sprites/Player/Sword/SwordTrail/SwordTrail18.png" id="116_m5wim"]
+[ext_resource type="Texture2D" uid="uid://dcqpwrg1jyw8" path="res://sprites/Player/Sword/SwordTrail/SwordTrail19.png" id="117_m6nx5"]
+[ext_resource type="Texture2D" uid="uid://8uvk62n5m3so" path="res://sprites/Player/Sword/SwordTrail/SwordTrail20.png" id="118_0ewwr"]
+[ext_resource type="Texture2D" uid="uid://11xiqihd4m5f" path="res://sprites/Player/Sword/SwordTrail/SwordTrail21.png" id="119_8v073"]
+[ext_resource type="Texture2D" uid="uid://dulvpmrc6lgau" path="res://sprites/Player/Sword/SwordTrail/SwordTrail22.png" id="120_vr31l"]
+[ext_resource type="Texture2D" uid="uid://ksbp2q3552wj" path="res://sprites/Player/Sword/SwordTrail/SwordTrail23.png" id="121_0tp8i"]
+[ext_resource type="Texture2D" uid="uid://tuclexwxjrph" path="res://sprites/Player/Sword/SwordTrail/SwordTrail24.png" id="122_3jd2q"]
+[ext_resource type="Texture2D" uid="uid://rg1xobk36k31" path="res://sprites/Player/Sword/SwordTrail/SwordTrail25.png" id="123_fe22d"]
+[ext_resource type="Texture2D" uid="uid://cmws701wugx5e" path="res://sprites/Player/Sword/SwordTrail/SwordTrail26.png" id="124_6d3hg"]
+[ext_resource type="Texture2D" uid="uid://trlqs2vbk2mc" path="res://sprites/Player/Sword/SwordTrail/SwordTrail27.png" id="125_tatny"]
+[ext_resource type="Texture2D" uid="uid://ipr832sehs4x" path="res://sprites/Player/Sword/SwordTrail/SwordTrail28.png" id="126_jpcdn"]
+[ext_resource type="Texture2D" uid="uid://btg2hblvqns2v" path="res://sprites/Player/Sword/SwordTrail/SwordTrail29.png" id="127_3vtvp"]
+[ext_resource type="Texture2D" uid="uid://uqjow0qsl213" path="res://sprites/Player/Sword/SwordTrail/SwordTrail30.png" id="128_4pjob"]
+[ext_resource type="Texture2D" uid="uid://brgvv5pava31s" path="res://sprites/Player/Sword/SwordTrail/SwordTrail31.png" id="129_xq4mh"]
+[ext_resource type="Texture2D" uid="uid://c3v53fd5w8biu" path="res://sprites/Player/Sword/SwordTrail/SwordTrail32.png" id="130_jpqys"]
+[ext_resource type="Texture2D" uid="uid://de3jw43wlmyf5" path="res://sprites/Player/Sword/SwordTrail/SwordTrail33.png" id="131_6kgir"]
+[ext_resource type="Texture2D" uid="uid://xo8j2kvn8hlk" path="res://sprites/Player/Sword/SwordTrail/SwordTrail34.png" id="132_nctbr"]
+[ext_resource type="Texture2D" uid="uid://crelr0yqq0gwk" path="res://sprites/Player/Sword/SwordTrail/SwordTrail35.png" id="133_5mvhb"]
+[ext_resource type="Texture2D" uid="uid://d2poqpfemorg4" path="res://sprites/Player/Sword/SwordTrail/SwordTrail36.png" id="134_7hsgn"]
+[ext_resource type="Texture2D" uid="uid://dwdhecdo8k3s2" path="res://sprites/Player/Sword/SwordTrail/SwordTrail37.png" id="135_vvijs"]
+[ext_resource type="Texture2D" uid="uid://bod32qu80hs6r" path="res://sprites/Player/Sword/SwordTrail/SwordTrail38.png" id="136_hn6xj"]
+[ext_resource type="Texture2D" uid="uid://ca214u0crq8pl" path="res://sprites/Player/Sword/SwordTrail/SwordTrail39.png" id="137_mcufm"]
+[ext_resource type="Texture2D" uid="uid://wpyf2cgccm7j" path="res://sprites/Player/Sword/SwordTrail/SwordTrail40.png" id="138_d3uy1"]
+[ext_resource type="Texture2D" uid="uid://bnydqvyde64mx" path="res://sprites/Player/Sword/SwordTrail/SwordTrail41.png" id="139_icaj0"]
+[ext_resource type="Texture2D" uid="uid://wpup6yjaya8k" path="res://sprites/Player/Sword/SwordTrail/SwordTrail42.png" id="140_t4ts3"]
+[ext_resource type="Texture2D" uid="uid://cdvfjotjtgbat" path="res://sprites/Player/Sword/SwordTrail/SwordTrail43.png" id="141_xfpjh"]
+[ext_resource type="Texture2D" uid="uid://c780hdg7rih2o" path="res://sprites/Player/Sword/SwordTrail/SwordTrail44.png" id="142_2hgtu"]
+[ext_resource type="Texture2D" uid="uid://brviuhn317qqx" path="res://sprites/Player/Sword/SwordTrail/SwordTrail45.png" id="143_yi0m3"]
+[ext_resource type="Texture2D" uid="uid://brkfybt7hmkow" path="res://sprites/Player/Sword/SwordTrail/SwordTrail46.png" id="144_2d3it"]
+[ext_resource type="Texture2D" uid="uid://cfua4tcl25c23" path="res://sprites/Player/Sword/SwordTrail/SwordTrail47.png" id="145_kntag"]
+[ext_resource type="Texture2D" uid="uid://co63iws1klgdm" path="res://sprites/Player/Sword/SwordTrail/SwordTrail48.png" id="146_ebe8r"]
+[ext_resource type="Texture2D" uid="uid://cb0j15177ww1a" path="res://sprites/Player/Sword/SwordTrail/SwordTrail49.png" id="147_1pghv"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8c4vy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tvmo4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4hx37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r4kbs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uolc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5a8eh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_b2mdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_subg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rq4n7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pcqxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_b4vji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_a4k50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_yp6a1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_uo1o5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_6qsr2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_gco0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ofkgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_6anyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_4wjm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_f4oqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_0w2oq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_jkaod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ev4e3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_qqhka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_vi48t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_wqof0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_4atgo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_fp5b5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_vipu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_gkqsm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_1a8t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_51rmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_2xhql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_u62o1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_261t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_ikmtd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_vgw7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_dtcso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_d0plw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_a4qjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_3i6nb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_ugflr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_rqcmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_mmlwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_ls5mo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_ys4n7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_gf5re")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_qo7bl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_fytse")
+}],
+"loop": false,
+"name": &"fist",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("50_jq0tk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_djdha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_l7j37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_7paxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_opdvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_p1bn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_yhgc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_1prlc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_n8fyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_ltisk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_uhl10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_is16r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_81h8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_b7q6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_cchik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_b6vsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_qua2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_f0766")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_8ofxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_wgm8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_04htx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_pvq22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_wqd21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_ps1fj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_uxl1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_lng2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_xinov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_2dj8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_vcws5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_sw1i0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_s4gw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_7fka5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_6opvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_tgve7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_i7hlj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_md4xs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_v47vl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_pmy6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_n6jbe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_4h7of")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_au0rm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_6fnlu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_qbegq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_f31so")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_nr45x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_1tqw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_as7g6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_mrk7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_vvrv4")
+}],
+"loop": false,
+"name": &"shield",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("99_uj8im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_btc4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_vrby1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_s2juj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_sjavg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_db7gs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_knm6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_xh1jv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_53m2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_8vecs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_rnf2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_fkqm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_ji6gc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_pau4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_nodki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_4julx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_t3h6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_m5wim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_m6nx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_0ewwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_8v073")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_vr31l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_0tp8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_3jd2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_fe22d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_6d3hg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_tatny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_jpcdn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_3vtvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_4pjob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_xq4mh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_jpqys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_6kgir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_nctbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_5mvhb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_7hsgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_vvijs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_hn6xj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_mcufm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_d3uy1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_icaj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_t4ts3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_xfpjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_2hgtu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_yi0m3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_2d3it")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_kntag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_ebe8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_1pghv")
+}],
+"loop": false,
+"name": &"sword",
+"speed": 5.0
+}]

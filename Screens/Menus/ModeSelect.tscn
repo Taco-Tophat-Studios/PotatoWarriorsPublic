@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://s0dp5yi8fnif"]
+
+[ext_resource type="PackedScene" uid="uid://glertibyvh6d" path="res://Screens/standard_bg.tscn" id="1_qj24i"]
+[ext_resource type="Theme" uid="uid://4jr18wy4hhod" path="res://Misc/theme1.tres" id="2_8u43x"]
+[ext_resource type="Script" path="res://scripts/buttonBaseClass.cs" id="3_ajhvl"]
+[ext_resource type="Script" path="res://scripts/ExitButton.cs" id="4_8m5jg"]
+[ext_resource type="Texture2D" uid="uid://dj7xd88ys88ll" path="res://sprites/GUI/icons.png" id="5_ais7c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rvj5"]
+atlas = ExtResource("5_ais7c")
+region = Rect2(192, 0, 32, 32)
+
+[node name="ModeSelect" type="Node2D"]
+
+[node name="StandardBG" parent="." instance=ExtResource("1_qj24i")]
+
+[node name="MainBattleMultiplayerButton" type="Button" parent="."]
+offset_left = 256.0
+offset_top = 48.0
+offset_right = 576.0
+offset_bottom = 112.0
+scale = Vector2(2, 2)
+theme = ExtResource("2_8u43x")
+theme_override_font_sizes/font_size = 20
+text = "LAN MULTIPLAYER"
+script = ExtResource("3_ajhvl")
+scene = "res://Screens/Menus/Lobby.tscn"
+
+[node name="FendOffSingleplayerButton" type="Button" parent="."]
+offset_left = 256.0
+offset_top = 208.0
+offset_right = 576.0
+offset_bottom = 272.0
+scale = Vector2(2, 2)
+theme = ExtResource("2_8u43x")
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "FEND OFF (SINGLEPLAYER)
+Sorry, currently WIP"
+script = ExtResource("3_ajhvl")
+scene = "res://Screens/Menus/FendOffMenu.tscn"
+
+[node name="TutorialButton" type="Button" parent="."]
+offset_left = 256.0
+offset_top = 368.0
+offset_right = 576.0
+offset_bottom = 432.0
+scale = Vector2(2, 2)
+theme = ExtResource("2_8u43x")
+theme_override_font_sizes/font_size = 20
+text = "TUTORIAL"
+script = ExtResource("3_ajhvl")
+scene = "res://arenas/tutorial.tscn"
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 960.0
+offset_top = 512.0
+offset_right = 1136.0
+offset_bottom = 624.0
+theme = ExtResource("2_8u43x")
+script = ExtResource("4_8m5jg")
+
+[node name="Sprite2D" type="Sprite2D" parent="ExitButton"]
+position = Vector2(88, 56)
+scale = Vector2(2.5, 2.5)
+texture = SubResource("AtlasTexture_8rvj5")
+
+[connection signal="button_up" from="MainBattleMultiplayerButton" to="MainBattleMultiplayerButton" method="_on_button_up"]
+[connection signal="button_up" from="FendOffSingleplayerButton" to="FendOffSingleplayerButton" method="_on_button_up"]
+[connection signal="button_up" from="TutorialButton" to="MainBattleMultiplayerButton" method="_on_button_up"]
+[connection signal="button_down" from="ExitButton" to="ExitButton" method="_on_button_down"]

@@ -1,0 +1,319 @@
+[gd_scene load_steps=48 format=3 uid="uid://d3v4sge8x1kx7"]
+
+[ext_resource type="PackedScene" uid="uid://glertibyvh6d" path="res://Screens/standard_bg.tscn" id="1_gn00w"]
+[ext_resource type="Theme" uid="uid://4jr18wy4hhod" path="res://Misc/theme1.tres" id="2_8ieeb"]
+[ext_resource type="Texture2D" uid="uid://fv06qtc64wcx" path="res://sprites/Enemies/Soldier/Soldier1.png" id="2_yhynp"]
+[ext_resource type="Texture2D" uid="uid://ct8greyudqngy" path="res://sprites/Enemies/Soldier/Soldier2.png" id="3_jv2o6"]
+[ext_resource type="Texture2D" uid="uid://bfvynfjhv36v6" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide1.png" id="3_oac31"]
+[ext_resource type="Texture2D" uid="uid://7qmd0plorpak" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly1.png" id="4_wcshg"]
+[ext_resource type="Texture2D" uid="uid://6paxeinm3xuh" path="res://sprites/Enemies/Soldier/Soldier3.png" id="4_wpw5b"]
+[ext_resource type="Texture2D" uid="uid://dnxh3v3bv0sel" path="res://sprites/Enemies/Soldier/Soldier4.png" id="5_4bayq"]
+[ext_resource type="Texture2D" uid="uid://5e028t5n3sfb" path="res://sprites/Enemies/Soldier/Soldier5.png" id="6_vi708"]
+[ext_resource type="Texture2D" uid="uid://clccmrmcuref6" path="res://sprites/Enemies/Soldier/Soldier6.png" id="7_kqpsf"]
+[ext_resource type="Texture2D" uid="uid://0480knb2tj10" path="res://sprites/Enemies/Soldier/Soldier7.png" id="8_cksai"]
+[ext_resource type="Texture2D" uid="uid://bx67ys7v3fneb" path="res://sprites/Enemies/Soldier/Soldier8.png" id="9_hj37g"]
+[ext_resource type="Texture2D" uid="uid://m6ott4mpobak" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide2.png" id="11_n8tlo"]
+[ext_resource type="Texture2D" uid="uid://b2ytoa834j1gq" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide3.png" id="12_bayq5"]
+[ext_resource type="Texture2D" uid="uid://cv0037v42nf3p" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide4.png" id="13_bjtr7"]
+[ext_resource type="Texture2D" uid="uid://bjg2y7xguxjxt" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide5.png" id="14_a6afh"]
+[ext_resource type="Texture2D" uid="uid://dxrssssxc2q6h" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide6.png" id="15_wyiuw"]
+[ext_resource type="Texture2D" uid="uid://dare71m3o2skk" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide7.png" id="16_bccc1"]
+[ext_resource type="Texture2D" uid="uid://brsh1r0n8m83j" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide8.png" id="17_qi2rg"]
+[ext_resource type="Texture2D" uid="uid://chajn483sf5ji" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide9.png" id="18_7w65x"]
+[ext_resource type="Texture2D" uid="uid://bn30ilhv5ett8" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide10.png" id="19_t3enu"]
+[ext_resource type="Texture2D" uid="uid://cn1t5qatthd61" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide11.png" id="20_aglq3"]
+[ext_resource type="Texture2D" uid="uid://m78uookg7hps" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide12.png" id="21_g3aib"]
+[ext_resource type="Texture2D" uid="uid://1hvf67f01xas" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide13.png" id="22_uho82"]
+[ext_resource type="Texture2D" uid="uid://ppsp3j0urtk5" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide14.png" id="23_ofusk"]
+[ext_resource type="Texture2D" uid="uid://b16gvaodhy72s" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide15.png" id="24_w5pev"]
+[ext_resource type="Texture2D" uid="uid://dn5alkg8xhvbw" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide16.png" id="25_syrvi"]
+[ext_resource type="Texture2D" uid="uid://dnjnt1flnrxjp" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide17.png" id="26_lxrwr"]
+[ext_resource type="Texture2D" uid="uid://cv2lfr50kqryc" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide18.png" id="27_f7jv7"]
+[ext_resource type="Texture2D" uid="uid://dvobr2sd2y6r3" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide19.png" id="28_axckm"]
+[ext_resource type="Texture2D" uid="uid://djpqicimwxkqw" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide20.png" id="29_3l7ie"]
+[ext_resource type="Texture2D" uid="uid://6rweofqnkse4" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide21.png" id="30_xowl1"]
+[ext_resource type="Texture2D" uid="uid://c7556mem67ppn" path="res://sprites/Enemies/SpecializedUnit/SURide/SURide22.png" id="31_trsw0"]
+[ext_resource type="Texture2D" uid="uid://eo8tmwyrmf5" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly2.png" id="33_bsp80"]
+[ext_resource type="Texture2D" uid="uid://d1to8w2vkkdne" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly3.png" id="34_36a5y"]
+[ext_resource type="Texture2D" uid="uid://cadhs2l0fbvde" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly4.png" id="35_5jl50"]
+[ext_resource type="Texture2D" uid="uid://bms4ticnkmrla" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly5.png" id="36_7kutg"]
+[ext_resource type="Texture2D" uid="uid://dyw3tbmb7fyo4" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly6.png" id="37_x05cm"]
+[ext_resource type="Texture2D" uid="uid://ci3knikiopemj" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly7.png" id="38_4hy3m"]
+[ext_resource type="Texture2D" uid="uid://pqtmha1env8r" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly8.png" id="39_xmryp"]
+[ext_resource type="Texture2D" uid="uid://c7nto57d40hes" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly9.png" id="40_4gh1c"]
+[ext_resource type="Texture2D" uid="uid://jakyssue1aft" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly10.png" id="41_63p0h"]
+[ext_resource type="Texture2D" uid="uid://xytsyufo5er4" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly11.png" id="42_rksd7"]
+[ext_resource type="Texture2D" uid="uid://deuubyku5j65" path="res://sprites/Enemies/FlightCaptain/FCFly/FCFly12.png" id="43_eiy8u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_st8rw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yhynp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jv2o6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wpw5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4bayq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vi708")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kqpsf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cksai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hj37g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xv01a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_oac31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_n8tlo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_bayq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bjtr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_a6afh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_wyiuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bccc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_qi2rg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_7w65x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_t3enu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_aglq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_g3aib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_uho82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ofusk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_w5pev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_syrvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_lxrwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_f7jv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_axckm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_3l7ie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_xowl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_trsw0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yhqtk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_wcshg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_bsp80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_36a5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_5jl50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_7kutg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_x05cm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_4hy3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_xmryp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_4gh1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_63p0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_rksd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_eiy8u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="Wiki" type="Node2D"]
+
+[node name="StandardBG" parent="." instance=ExtResource("1_gn00w")]
+
+[node name="SoldierAnim" type="AnimatedSprite2D" parent="."]
+position = Vector2(128, 528)
+scale = Vector2(1.83333, 1.83333)
+sprite_frames = SubResource("SpriteFrames_st8rw")
+autoplay = "default"
+
+[node name="SUCKAnim" type="AnimatedSprite2D" parent="."]
+position = Vector2(448, 528)
+scale = Vector2(1.83333, 1.83333)
+sprite_frames = SubResource("SpriteFrames_xv01a")
+autoplay = "default"
+
+[node name="FCAnim" type="AnimatedSprite2D" parent="."]
+position = Vector2(800, 544)
+scale = Vector2(1.83333, 1.83333)
+sprite_frames = SubResource("SpriteFrames_yhqtk")
+autoplay = "default"
+
+[node name="SoldierTitle" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 144.0
+offset_bottom = 54.0
+theme = ExtResource("2_8ieeb")
+theme_override_font_sizes/font_size = 32
+text = "SOLDIER"
+
+[node name="SoldierDescription" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 48.0
+offset_right = 285.0
+offset_bottom = 487.0
+theme_override_font_sizes/font_size = 14
+text = "The Soldier recruitment is a direct
+result of the repeated failures to
+defeat the potato warriors with
+tactical units, with the Human
+Militaristic Forces (HMF) now using
+strength in numbers for a primary
+part of their attack plan,  in 
+using fairly unskilled personnel, 
+and writing off any ineffectivity as 
+the recruits being unskilled
+
+The soldier's gun doubles as both
+a ranged laser and a blunt-force
+weapon, with which they are
+trained to shoot from afar, but
+hit with up close. Fortunately,
+they are not particularly hardy"
+
+[node name="SUCKTitle" type="Label" parent="."]
+offset_left = 304.0
+offset_top = 16.0
+offset_right = 452.0
+offset_bottom = 54.0
+theme = ExtResource("2_8ieeb")
+theme_override_font_sizes/font_size = 32
+text = "S. U. C. K."
+
+[node name="SUCKDescription" type="Label" parent="."]
+offset_left = 304.0
+offset_top = 48.0
+offset_right = 666.0
+offset_bottom = 513.0
+theme_override_font_sizes/font_size = 14
+text = "The Specialized Unit for Critical Killing is a 
+highly trained soldier, often either being 
+eleigible due to a show of aptitude during 
+combat (or buying their way in). Thus, a 
+culture of looking cool and being excessive
+is a core part of their combat tactics,
+dresswear, and general attitude. For this 
+reason, they are often disliked by personnel
+both below and above them in rank, and 
+have adopted a tight social clique
+
+Their Wheeled Omni-Navigator and 
+lack of an ammunition tank (unlike the Soldier, 
+who is expected to miss much more often)
+allows the SUCK to move quickly and perform
+acrobatic maneuvers to bash foes at high
+speeds and gain vantage points with which
+they can snipe from above."
+
+[node name="FlightCaptainTitle" type="Label" parent="."]
+offset_left = 656.0
+offset_top = 16.0
+offset_right = 901.0
+offset_bottom = 54.0
+theme = ExtResource("2_8ieeb")
+theme_override_font_sizes/font_size = 32
+text = "FLIGHT CAPTAIN"
+
+[node name="FlightCaptainDescription" type="Label" parent="."]
+offset_left = 656.0
+offset_top = 48.0
+offset_right = 1028.0
+offset_bottom = 513.0
+theme_override_font_sizes/font_size = 14
+text = "Fortunately for the HMF, the most apparent and
+exploitable weakness of the potato warriors
+is the complete lack of airworthiness, with any
+aircraft they capture taking years to properly
+learn, easily identifiable and trackable, and with
+the PWs themselves being incapable of natural
+flight. Thus, to extend the HMF air power, any
+pilots recovered from war, and now lacking a 
+plane, were given a flight suit to serve as a sort
+of air infantry.
+
+Their flight suit allows them to easily navigate
+over otherwise rough terrain, position them-
+selves perfectly to drop bombs, and dive into
+foes for impact damage. However, given that 
+their fuel is not infinite, and its incredibly hard
+to land a flight suit, so waiting for them to fall
+and crash is a suprisingly viable combat option."

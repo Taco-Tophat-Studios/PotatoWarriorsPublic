@@ -1,130 +1,134 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public partial class victory_screen : Node2D
 {
-	public match m;
+    Color[] playerColors = new Color[4] { new(1, 0, 0), new(0, 0, 1), new(1, 0, 1), new(0, 1, 0) };
+    public match m;
+    public playerBase winner;
+    public int winnerNum;
+    [Export]
+    AnimatedSprite2D PlayerVictoryAnimation1;
+    [Export]
+    AnimatedSprite2D PlayerVictoryAnimation2;
+    [Export]
+    AnimatedSprite2D PlayerVictoryAnimation3;
+    [Export]
+    AnimatedSprite2D PlayerVictoryAnimation4;
 
-	//Each player has a set of achievements they can make each round. By making them static, 
-	//They can be changed elsewhere, not even in the scene, but can be accessed here
-	//(they also don't need to be saved between sessions, so making them false upon initialization is fine)
-	public static int achNumber = 5;
-	public static string[] achievementNames = {"Close Call", "No Shield", "No Fist", "No Coin", "DEBUG"};
-	//exp per achievement
-	private int[] exp = {100, 150, 150, 50, 0};
-	private int matchPoints = 0;
-	//a dictionary as an array. What a time we live in.
-	public Dictionary<string, bool>[] playerAchs;
-	public bool tie = false;
-	public playerBase winner;
-	public int winnerNum;
+    string cause;
 
-	#nullable enable
-	public void SetUpVictoryScreen(Dictionary<string, bool>[] p, playerBase? w, int wN, match ma) {
-	#nullable disable
-		playerAchs = p;
-		winner = w;
-		winnerNum = wN;
-		m = ma;
-		
-		SetPlayerText(p1L, 1);
-		SetPlayerText(p2L, 2);
-		SetPlayerText(p3L, 3);
-		SetPlayerText(p4L, 4);
+    private AnimatedSprite2D[] VictorAnimArray;
+    private PlayerInfo[] playerInfos = new PlayerInfo[4];
+    private int[] pointsArr = new int[4];
+    private Label[] vicLabels = new Label[3];
+    [Export]
+    Label WinnerLabel;
+    int playerCount;
 
-		winnerLabel.Text = CreateWinners(winner);
+    public void SetUpVictoryScreen(playerBase W, int pC, int[] points, match ma, string eC)
+    {
+        GD.Print("UNO " + pC + " | " + points.Join(", ") + " | " + W.name + " | " + eC);
+        m = ma;
+        playerCount = pC;
+        cause = eC;
+        VictorAnimArray = new AnimatedSprite2D[4] { PlayerVictoryAnimation1, PlayerVictoryAnimation2, PlayerVictoryAnimation3, PlayerVictoryAnimation4 };
+        foreach (AnimatedSprite2D a in VictorAnimArray)
+        {
+            ((ShaderMaterial)a.Material).SetShaderParameter("key", new Color(166f / 255f, 166f / 255f, 166f / 255f));
+            a.Stop();
+            a.Visible = false;
+        }
 
-		//reset their scores (after round ends)
-		SetAchToEmpty();
-	}
+        // RANKING SYSTEM
+        winner = W;
+        // Do NOT mutate the original points array. Create an index array sorted by points (descending).
+        int[] sortedIndexes = Enumerable.Range(0, playerCount).ToArray();
+        Array.Sort(sortedIndexes, (a, b) => points[b].CompareTo(points[a])); // sorts indexes by points descending
 
-	Label p1L;
-	Label p2L;
-	Label p3L;
-	Label p4L;
-	Label winnerLabel;
+        GD.Print("Sorted indexes (desc): " + sortedIndexes.Join(", "));
 
-	AnimatedSprite2D pVAnim;
+        // ensure we have the right-size label array (exclude overall winner if cause == "win")
+        int labelsCount = (cause == "win") ? Math.Max(0, playerCount - 1) : playerCount;
+        vicLabels = new Label[labelsCount];
+        for (int i = 0; i < labelsCount; i++)
+        {
+            vicLabels[i] = (Label)GetNode("Place" + (i + 2) + "Label");
+        }
 
-	
-	public override void _Ready()
-	{
+        if (cause == "win")
+        {
+            int winnerPoints = (W.playerIndex >= 0 && W.playerIndex < points.Length) ? points[W.playerIndex] : 0;
+            WinnerLabel.Text = "VICTORY TO " + (m.authorityPlayer != null && m.authorityPlayer == W ? "YOU!" : W.name);
+            // color the winner slot (slot 0 is winner)
+            ((ShaderMaterial)VictorAnimArray[0].Material).SetShaderParameter("replace", playerColors[W.playerIndex]);
+        }
 
-		p1L = (Label)GetNode("Player1AchLabel");
-		p2L = (Label)GetNode("Player2AchLabel");
-		p3L = (Label)GetNode("Player3AchLabel");
-		p4L = (Label)GetNode("Player4AchLabel");
+        // fill labels by rank and color the victory sprites
+        int labelIdx = 0;
+        for (int rank = 0; rank < playerCount; rank++)
+        {
+            int pIndex = sortedIndexes[rank];
+            string pname = (m.players != null && pIndex < m.players.Count) ? m.players[pIndex].name : ("Player " + (pIndex + 1));
+            if (cause == "win" && rank == 0)
+            {
+                // already handled winner display above; skip adding a label for winner
+            }
+            else
+            {
+                if (labelIdx < vicLabels.Length)
+                {
+                    vicLabels[labelIdx].Text = m.authorityPlayer != null && m.authorityPlayer.playerIndex == pIndex ? "(YOU) " : pname;
+                    labelIdx++;
+                }
+            }
 
-		winnerLabel = (Label)GetNode("VictorLabel");
+            // color the animator corresponding to this rank (slot 0 = winner, 1 = 2nd, etc.)
+            if (rank < VictorAnimArray.Length)
+            {
+                ((ShaderMaterial)VictorAnimArray[rank].Material).SetShaderParameter("replace", playerColors[pIndex]);
+            }
+            GD.Print("TRES " + pIndex + " | " + rank + " | " + pname + " | " + ((labelIdx < vicLabels.Length) ? vicLabels[Math.Max(0,labelIdx-1)].Text : "nuthin") + " | " + playerColors[pIndex]);
+        }
 
-		pVAnim = (AnimatedSprite2D)GetNode("PlayerVictorySprite");
-		//((ShaderMaterial)(pVAnim.Material)).SetShaderParameter("a", Global.colors[winnerNum]);
+        Global.LoadCharData();
+        if (W == m.authorityPlayer)
+        {
+            Global.wonGames++;
+        }
+        else
+        {
+            Global.lostGames++;
+        }
+        Global.points += points[m.authorityPlayer.playerIndex];
+        Global.StoreData();
+    }
 
-		tie = false;
-	}
+    // Called every frame. 'delta' is the elapsed time since the previous frame.
+    public override void _Process(double delta)
+    {
+    }
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-	private void SetPlayerText(Label label, int playerNum) {
-		playerNum--;
+    public override void _Ready()
+    {
+        for (int i = 0; i < playerCount; i++)
+        {
+            VictorAnimArray[i].Visible = true;
+            VictorAnimArray[i].Play("PlayerVic" + (i + 1));
+        }
 
-		string text = "";
+        // Defer freeing root nodes so we don't dispose the running match while its handler is still executing.
+        var root = GetTree().Root;
+        if (root.HasNode("Lobby"))
+            root.GetNode("Lobby").CallDeferred("queue_free");
+        if (root.HasNode("World"))
+            root.GetNode("World").CallDeferred("queue_free");
+    }
+    public void TransitionToAnimLoop(int ind)
+    {
+        VictorAnimArray[ind].Play("VicLoop" + (ind + 1));
+    }
 
-		for (int i = 0; i < achNumber; i++) {
-			//accesses the bool for each achievement in the particular player's dictionary
-			if (playerAchs[playerNum][achievementNames[i]]) { //error here
-				text = text + achievementNames[i] + "\n";
-				matchPoints += exp[i];
-			}
-		}
-		
-		if (text != "") {
-			label.Text = "Player" + playerNum + " (" + matchPoints + ")\nAchivements:\n" + text;
-		} else {
-			label.Text = "Player" + playerNum + " (" + matchPoints + ")\nAchivements:\nNone (get better, bozo)";
-		}
-		
-		if (playerNum - 1 == GameManager.ids.IndexOf(Multiplayer.GetUniqueId())) {
-			//Global.SetWonOrLost(winnerNum == playerNum, matchPoints); //if this method is being called by the person
-																	  //who did win, set their data
-		}
-	}
-	public void SetAchToEmpty() {
-		foreach (Dictionary<string, bool> d in playerAchs) {
-			for (int i = 0; i < achNumber; i++) {
-				d[achievementNames[i]] = false;
-			}
-		}
-	}
-	public void InitAch (out Dictionary<string, bool>[] a) {
-		if (m.playerCount == 0) {
-			m.playerCount = 2; //default
-		}
-		a = new Dictionary<string, bool>[m.playerCount];
-
-		for (int i = 0; i < m.playerCount; i++) {
-			//create new dict for each player
-			a[i] = new Dictionary<string, bool>();
-			for (int j = 0; j < achNumber; j++) {
-				//make each dict full of the ach's and falses
-				a[i].Add(achievementNames[j], false);
-			}
-		}
-	}
-
-	#nullable enable
-	public string CreateWinners (playerBase? w) {
-	#nullable disable
-		string text = "";
-		
-		if (w != null)
-		{
-			text = "VICTORY TO " + w.name;
-		}
-
-		return text;
-	}
 }

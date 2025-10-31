@@ -1,18 +1,24 @@
 using Godot;
-using System;
 using System.Collections.Generic;
 
 public partial class GameManager : Node
 {
-	public static List<PlayerInfo> players = new List<PlayerInfo>();
-	public static List<long> ids = new List<long>();
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
+    public static List<PlayerInfo> players = new();
+    public static List<long> ids = new();
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+    public static new string ToString()
+    {
+        string result = "GameManager State:\n";
+        result += "Players:\n";
+        for (int i = 0; i < players.Count; i++)
+        {
+            result += $"Player {i}---NAME: {players[i].name}, DESC: {players[i].desc}, READY: {players[i].ready}\n";
+        }
+        result += "IDs:\n";
+        foreach (var id in ids)
+        {
+            result += id.ToString() + "\n";
+        }
+        return result;
+    }
 }

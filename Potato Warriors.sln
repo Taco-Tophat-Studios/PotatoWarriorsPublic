@@ -1,12 +1,20 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Potato Warriors", "Potato Warriors.csproj", "{83F72A42-3656-4924-8407-83EA1B2741F0}"
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Potato Warriors", "Potato Warriors.csproj", "{83F72A42-3656-4924-8407-83EA1B2741F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D5480887-6B32-4B8C-BF1F-707EC8463C86}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-	Debug|Any CPU = Debug|Any CPU
-	ExportDebug|Any CPU = ExportDebug|Any CPU
-	ExportRelease|Any CPU = ExportRelease|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		ExportDebug|Any CPU = ExportDebug|Any CPU
+		ExportRelease|Any CPU = ExportRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{83F72A42-3656-4924-8407-83EA1B2741F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -15,5 +23,8 @@ Global
 		{83F72A42-3656-4924-8407-83EA1B2741F0}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
 		{83F72A42-3656-4924-8407-83EA1B2741F0}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
 		{83F72A42-3656-4924-8407-83EA1B2741F0}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqxnl3tfhjnl2"]
+
+[ext_resource type="Script" path="res://scripts/enemies/Dummy.cs" id="1_fccio"]
+[ext_resource type="Texture2D" uid="uid://bu2a7vja5txfg" path="res://sprites/Enemies/Dummy/Dummy.png" id="2_4p7da"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_61ijw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4p7da")
+}],
+"loop": true,
+"name": &"dum",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fu8sa"]
+radius = 32.0
+height = 112.0
+
+[node name="Dummy" type="CharacterBody2D" node_paths=PackedStringArray("damageCol")]
+script = ExtResource("1_fccio")
+damageCol = NodePath("DamageCol")
+
+[node name="CharSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1.60001)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_61ijw")
+animation = &"dum"
+
+[node name="DummyCol" type="CollisionPolygon2D" parent="."]
+position = Vector2(-96, -94.4)
+polygon = PackedVector2Array(40, 88, 72, 192, 120, 192, 152, 88, 120, 16, 96, 0, 72, 16)
+
+[node name="DamageCol" type="Area2D" parent="."]
+position = Vector2(-96, -94.4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageCol"]
+position = Vector2(96, 96)
+shape = SubResource("CapsuleShape2D_fu8sa")

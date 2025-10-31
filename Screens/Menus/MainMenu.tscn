@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b1u1flasl0sxd" path="res://sprites/Backgrounds/MainMenuSpinner.png" id="1_m4xj6"]
 [ext_resource type="Texture2D" uid="uid://tfmvymvx0qdi" path="res://sprites/Backgrounds/MainMenuBG.png" id="3_o5vug"]
 [ext_resource type="Texture2D" uid="uid://deibhdjre1774" path="res://sprites/GUI/Logo.png" id="4_h5afx"]
-[ext_resource type="Theme" uid="uid://o4h4maoo3xqe" path="res://Misc/theme1.tres" id="5_6hclf"]
+[ext_resource type="Theme" uid="uid://4jr18wy4hhod" path="res://Misc/theme1.tres" id="5_6hclf"]
 [ext_resource type="Script" path="res://scripts/transfer.cs" id="6_2ek8s"]
 [ext_resource type="Texture2D" uid="uid://dj7xd88ys88ll" path="res://sprites/GUI/icons.png" id="7_50k5x"]
 [ext_resource type="Script" path="res://scripts/miscScripts/linkedButton.cs" id="8_ddlke"]
@@ -60,7 +60,7 @@ theme = ExtResource("5_6hclf")
 theme_override_font_sizes/font_size = 48
 text = "PLAY"
 script = ExtResource("6_2ek8s")
-scene = "res://Screens/Menus/Lobby.tscn"
+scene = "res://Screens/Menus/ModeSelect.tscn"
 
 [node name="SettingsButton" type="Button" parent="."]
 offset_left = 368.0
@@ -106,9 +106,9 @@ text = "QUIT"
 script = ExtResource("6_2ek8s")
 
 [node name="DiscordButton" type="Button" parent="."]
-offset_left = 1024.0
+offset_left = 1008.0
 offset_top = 224.0
-offset_right = 1152.0
+offset_right = 1136.0
 offset_bottom = 352.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_f65pq")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_amlag")
@@ -122,12 +122,15 @@ script = ExtResource("8_ddlke")
 url = "https://discord.gg/gSFg8ZfY"
 
 [node name="Label" type="Label" parent="."]
-offset_left = 1024.0
+offset_left = 992.0
 offset_top = 352.0
-offset_right = 1154.0
-offset_bottom = 386.0
+offset_right = 1139.0
+offset_bottom = 408.0
+theme = ExtResource("5_6hclf")
 theme_override_font_sizes/font_size = 24
-text = "DISC ORB!!"
+text = "DISCORD!!
+(Click Icon)"
+horizontal_alignment = 1
 
 [connection signal="button_down" from="PlayButton" to="PlayButton" method="_on_button_down"]
 [connection signal="button_down" from="SettingsButton" to="SettingsButton" method="_on_button_down"]

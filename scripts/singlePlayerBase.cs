@@ -1,197 +1,139 @@
 using Godot;
 using System;
 
-public partial class singlePlayerBase : CharacterBody2D
+public partial class singlePlayerBase : playerInherited
 {
-	private const float effectDecceleration = 0.99f;
-	private Vector2 pastPosition;
-	public const float Speed = 600.0f;
-	private Vector2 defaultScale = new(1, 1);
-	public const float JumpVelocity = -1350.0f;
-
-	public swordBase sword;
-	private Shield shield;
-	public Fist fist;
-	[Export]
-	public bool comboActive = false;
-
-	//Get the gravity from the project settings to be synced with RigidBody nodes.
-
-	public const float gravity = 1500;
-	
-	private const float rollAccel = 10;
-	public bool rollingFast = false;
-	private bool rolling = false;
-	private const float rollMax = 1200;
-
-	private AnimatedSprite2D rollBufferSpr;
-
-	public float startingHealth = 120; 
-	public float health = 120;
-	public void SetHealths(float max, float begin) {
-		//if max not set (???)
-		if (max == 0) {
-			startingHealth = 3600; //because it has so many factors
-		} else {
-			startingHealth = max;
-		}
-
-		//if beginning health is in an accaptable range
-		if (begin <= max && begin != 0) {
-			health = begin;
-		} else {
-			health = max;
-		}
-	}
-	public Vector2 effectVelocity;
-	[Export]
-	public bool comboHit = false;
-	[Export]
-	public float preComboDamage = 0;
-	
-	public float preComboDamageRequirement;
-	private Control comboBarMask;
-	private Sprite2D comboSlider;
-	//in seconds, the time window you have for each successive combo hit
-	private float[] comboTimes = { 1.5f, 1f, 0.75f, 0.5f };
-	Timer tc;
-	Timer trc;
-	[Export]
-	private int currentComboIndex = 0;
-	private playerBase comboTarget;
-	private Fist comboFist;
-	
-	private HSlider preComboSlider;
-	private Label comboLabel;
-	private AudioStreamPlayer a;
-
-	//because IsOnWall() gets called multiple times, so only bounce (reverse X vel) on
-	private bool bouncing = false;
-
-	private CollisionShape2D bodyCol;
-	private CollisionShape2D damageCol;
-	private AnimatedSprite2D bodySpr;
-	public Transform2D bodySprTransform;
-	public Face faceSpr;
-
-	private TextureProgressBar rollCooldownSpr;
-
-	public Camera2D cam;
-
-	public bool stunned;
-	[Export]
-	public bool frozen = false;
-	[Export]
-	public bool shaking = false;
-	public Timer ts;
-	public coinScript coin;
-	public bool dead = false;
-	public Vector2 StartingScale;
-
+    public FendOffMatch f;
+    [Export]
+    public Area2D damageArea;
+    [Export]
+    public AnimatedSprite2D VFXTemp;
+    public void AddToVFXTemp(AnimatedSprite2D anim, Vector2 pos, Vector2 scale, string animName) {
+        VFXTemp.AddChild(anim);
+        anim.Position = pos;
+        anim.Scale = scale;
+        anim.Play(animName);
+        anim.AnimationFinished += () => {effects.Remove(anim); anim.QueueFree();}; //should delete the animation after animaiton finish
+        GD.Print("New anim added:" + anim.ToString());
+    }
     public override void _Ready()
     {
-        sword = (swordBase)GetNode("Sword");
-		shield = (Shield)GetNode("Shield");
-		fist = (Fist)GetNode("Fist");
+        base.BaseReady();
+        f = (FendOffMatch)GetTree().Root.GetNode("World");
+        Random r = new();
 
-        cam = (Camera2D)GetNode("PlayerCam");
-		tc = new Timer(0, false, this);
-		trc = new Timer(2.5f, true, this);
-		trc.TimerFinished += RollCooldownFinished;
-		ts = new Timer(1.5f, false, this);
-		
-		a = (AudioStreamPlayer)GetNode("SFXMaker");
+        trc.TimerFinished += RollCooldownFinished;
 
-		
-		rollBufferSpr = (AnimatedSprite2D)GetNode("RollBuffer");
-		rollBufferSpr.Visible = false;
-		
-		effectVelocity = Vector2.Zero;
-		pastPosition = Position;
+        bodySpr.Frame = r.Next(0, 4); //TODO: allow customization, or literally anything better than random selection
 
-		comboBarMask = (Control)GetNode("Combo/DarkBarMask");
-		comboSlider = (Sprite2D)GetNode("Combo/Slider");
-		preComboDamageRequirement = Mathf.Round(startingHealth / 10);
-		((Node2D)GetNode("Combo")).Visible = false;
-		preComboSlider = (HSlider)GetNode("PreComboSlider");
-		preComboSlider.MaxValue = preComboDamageRequirement;
-		comboLabel = (Label)GetNode("ComboLabel");
-		comboLabel.Text = "";
+        shaking = false;
 
-		tc.TimerFinished += EndCombo;
-		ts.TimerFinished += StopDisability;
+        tool = (PlayerToolUniv)GetNode("PlayerTools");
+        tool.AfterPlayerReady();
 
-		bodyCol = (CollisionShape2D)GetNode("BodyCol");
-		damageCol = (CollisionShape2D)GetNode("DamageArea/DamageCol");
-		bodySpr = (AnimatedSprite2D)GetNode("BodySprite");
-		bodySpr.Scale = new Vector2(2, 2);
-		bodySprTransform = new Transform2D(new Vector2(0, 1), new Vector2(1, 0), new Vector2(0, 0));
-		faceSpr = (Face)GetNode("FaceSprite");
+        cam.LimitRight = (int)f.CBLR.GlobalPosition.X;
+        cam.LimitBottom = (int)f.CBLR.GlobalPosition.Y;
 
-		rollCooldownSpr = (TextureProgressBar)GetNode("GUICanvas/CooldownSprites").GetNode("RollCooldownSprite");
-
-		bodySpr.Frame = 1;
-        
-		rollCooldownSpr.TextureOver = (Texture2D)GD.Load("res://sprites/GUI/CooldownIcons/RollCooldown.png");
-		
-
-		shaking = false;
-
-		this.Velocity = Vector2.Zero;
-		this.Position = new Vector2(this.Position.X, this.Position.Y - 64);
-		this.StartingScale = new Vector2(Scale.X, Scale.Y);
-		
-		sword.AfterReady();
-		shield.AfterReady();
-		fist.AfterReady();
+        health = 3000;
+        startingHealth = health;
+        isAuthority = true;
+        cam.Zoom = new Vector2(0.5f, 0.5f);
     }
 
-    // Get the gravity from the project settings to be synced with RigidBody nodes.
+    public override void _Process(double delta)
+    {
+        if (!dead) //NOTE: this is checked here, so don't do it in PlayerProcess() like a dum dum
+        {
+            PlayerProcess(delta);
+        }
+        if (!Input.IsActionPressed("ui_down") && !stunned)
+        {
+            if (IsOnFloor())
+            {
+                bodySprTransform = new Transform2D(new Vector2(2, 0), new Vector2(-0.25f * Mathf.Sign(Velocity.X), 2), Vector2.Zero);
+            }
+            else
+            {
+                bodySprTransform = new Transform2D(new Vector2(2, -0.5f * Mathf.Sign(Velocity.X) * VelocityWithEffVel.Y / (JumpVelocity)), new Vector2(-0.25f * Mathf.Sign(VelocityWithEffVel.X), 2), Vector2.Zero);
+            }
+        }
+        bodySpr.Transform = bodySprTransform;
+        if (Input.IsActionJustPressed("zoomOut")) {
+            defaultCamZoom = 0.5f;
+        } else if (Input.IsActionJustReleased("zoomOut")) {
+            defaultCamZoom = 1;
+        }
+    }
+    private void PlayerProcess(double delta) //holy crap this thing alone is 200 lines of code. Thank it all for Visual Studio's text collapse feature!
+    {
+        EntityStartUpdateVelocities();
 
-    public override void _PhysicsProcess(double delta)
-	{
-		Vector2 velocity = Velocity;
+        //MOVEMENT
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-		// Add the gravity.
-		if (!IsOnFloor())
-			velocity.Y += gravity * (float)delta;
+        BaseHandleCoyoteTime();
 
-		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
-			velocity.Y = JumpVelocity;
+        if (!floorAndWallStatus[2] && EffectVelocity.Y == 0 && !th.active && !tCoyote.active)
+        {
+            velocity.Y += gravity * (float)delta;
+        }
 
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		if (direction != Vector2.Zero)
-		{
-			velocity.X = direction.X * Speed;
-		}
-		else
-		{
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
-		}
+        // Handle Jump.
+        //for some ungodly reason ui_"""""accept"""" is space and not enter. I know I can change it but i dont wanna
+        //NOTE: this is difficult to test during coyote time, so it may be working anyway (How the hell am I bad at my own game?)
+        if (Input.IsActionPressed("ui_accept") && (floorAndWallStatus[0] || tCoyote.active))
+        {
+            velocity.Y = JumpVelocity;
+        }
 
-		Velocity = velocity;
-		MoveAndSlide();
-	}
-	public void RollCooldownFinished() {
+        // Get the input direction and handle the movement/deceleration.
+        // As good practice, you should replace UI actions with custom gameplay actions.
+        Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+        //set LNZD to, well, the last non-zero direction vector
+        lastNonZeroDirectionVector = !direction.IsEqualApprox(Vector2.Zero) ? direction : lastNonZeroDirectionVector;
+        
+        if (direction != Vector2.Zero && !rolling && !stunned)
+        {
+            velocity.X = direction.X * Speed;
+        }
+        else if (!rolling)
+        {
+            velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
+        }
 
-	}
-	public void StartCombo() {
+        //Roll
 
-	}
-	public void Combo() {
-		
-	}
+        BaseHandleRoll(direction);
 
-	public void EndCombo() {
+        EntityEndUpdateVelocities((float)delta);
+    }
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    public override void RollCooldownFinished()
+    {
+        rollCooldownSpr.TextureOver = EndRollCooldownOver;
+    }
 
-	}
-		public void StartDisability() {
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	}
-	public void StopDisability() {
+    private void _on_damage_area_body_entered(Node2D body)
+    {
+        float EVL = EffectVelocity.Length();
+        float ratio = EVL / BalancedValues.UNIT_EFFECT_VELOCITY;
+        if (body == f.tm && !tool.toolPreventingTerrainDamage)
+        {
+            hitTerrainFirst = true;
+            if (ratio > 1)
+            {
+                //damage from terrain collision
+                Damage(ratio * BalancedValues.UNIT_DAMAGE, "Single Player Terrain Collision");
+            }
+        }
+    }
 
-	}
+    private void _on_damage_area_body_exited(Node2D body)
+    {
+        hitTerrainFirst = false;
+    }
+
 }
